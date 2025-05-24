@@ -1,0 +1,1907 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <title>Marie Challet - Portfolio Science des Données & Cybersécurité</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="description" content="Portfolio de Marie Challet, spécialiste en science des données avec une expertise en cybersécurité, recherchant une alternance pour 2025" />
+    <meta name="keywords" content="data science, cybersécurité, portfolio, Marie Challet, alternance, INSA, threat intelligence, SOC" />
+    <meta name="author" content="Marie Challet" />
+    <meta property="og:title" content="Marie Challet - Portfolio Science des Données & Cybersécurité" />
+    <meta property="og:description" content="Découvrez mes projets en data science et cybersécurité" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#2c3e50" />
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    
+    <!-- Chargement des feuilles de style dans l'ordre (après le preload) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- FontAwesome après preload -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+    <script>
+        // Configuration du chemin des workers pour PDF.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof pdfjsLib !== 'undefined') {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            }
+        });
+    </script>
+    <!-- Données structurées pour le SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marie Challet",
+        "url": "https://www.mariechallet-portfolio.fr",
+        "jobTitle": "Future Ingénieure en Cybersécurité",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "FormaSup Auvergne"
+        },
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "IUT Clermont Auvergne"
+        },
+        "description": "Spécialiste en science des données avec expertise en cybersécurité",
+        "skills": "Data Science, Cybersécurité, Investigation numérique, Threat intelligence"
+    }
+    </script>
+</head>
+<body class="is-preload">
+    <!-- SVG Definitions for gradients -->
+    <svg class="defs-only">
+        <defs>
+            <linearGradient id="certif-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="var(--primary-color)"/>
+                <stop offset="100%" stop-color="var(--accent-color)"/>
+            </linearGradient>
+        </defs>
+    </svg>
+    
+    <!-- Menu de navigation flottant supprimé -->
+    
+    <!-- Header avec introduction du portfolio -->
+    <section id="header" class="hero" role="banner">
+        <div id="particles-js"></div>
+        <div class="noise-overlay"></div>
+        <div class="geometry-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="inner">
+            <div class="hero-content">
+                <div class="glitch-container">
+                    <h1 class="glitch-text" data-text="Marie Challet">Marie Challet</h1>
+                </div>
+                <p class="main-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </p>
+                <div class="portfolio-intro animate__animated animate__fadeIn animate__delay-2s">
+                    <p class="intro-text">Bienvenue dans mon portfolio !</p>
+                </div>
+                <div class="scroll-indicator animate__animated animate__fadeIn animate__delay-2s">
+                    <a href="#one" class="scroll-link" aria-label="Découvrir mon profil">
+                        <span>Découvrir</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Me - Layout créatif avec formes géométriques -->
+    <section id="one" class="main style1" role="region" aria-labelledby="about-title">
+        <div class="diagonal-background"></div>
+        <div class="container">
+            <div class="profile-wrapper">
+                <div class="about-content-wrapper" data-aos="fade-left">
+                    <header class="section-header">
+                        <h2 id="about-title" class="section-title with-gradient">À propos de moi</h2>
+                        <div class="title-underline animated"></div>
+                    </header>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="text-justify">Spécialiste en devenir à l'interface entre data science et cybersécurité, je présente dans ce portfolio les compétences techniques acquises durant mon Bachelor Universitaire de Technologie en Science des Données à l'IUT Clermont Auvergne.</p>
+                            
+                            <p class="text-justify">Future élève-ingénieure à l'INSA Centre Val de Loire (2025-2028) en Sécurité et Technologies Informatiques, mon parcours académique et mes projets m'ont permis de développer une expertise en <strong>analyse de données</strong>, <strong>développement d'outils décisionnels</strong> et <strong>sécurisation des systèmes d'information</strong>. Je m'intéresse particulièrement à l'investigation numérique forensique et aux infrastructures SOC (Security Operations Center).</p>
+                            
+                            <p class="text-justify">Ce portfolio illustre mon approche technique et analytique à travers différents projets concrets réalisés dans des contextes professionnels et académiques.</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Formation et Parcours Académique -->
+    <section id="formation" class="main style3" role="region" aria-labelledby="formation-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="section-header" data-aos="fade-up">
+                        <h2 id="formation-title" class="section-title with-gradient">Formation & Parcours</h2>
+                        <div class="title-underline animated"></div>
+                    </header>
+                </div>
+            </div>
+            
+            <div class="timeline-container" data-aos="fade-up">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>2025-2028</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-right">
+                            <h3 class="timeline-title">Diplôme d'Ingénieur en Sécurité et Technologies Informatiques</h3>
+                            <p class="timeline-location">INSA Centre Val de Loire</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">En alternance</span>
+                                <span class="timeline-tag">SecNumdu</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>2022-2025</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-left">
+                            <h3 class="timeline-title">B.U.T. Science des Données - Option Cybersécurité - Parcours Visualisation, Conception d'Outils Décisionnels</h3>
+                            <p class="timeline-location">IUT Clermont Auvergne</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">En alternance</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>2021-2022</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-right">
+                            <h3 class="timeline-title">L1 Sciences de l'éducation</h3>
+                            <p class="timeline-location">Université Clermont Auvergne</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>2018-2021</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-left">
+                            <h3 class="timeline-title">L1 Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales</h3>
+                            <p class="timeline-location">Université Clermont Auvergne</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Compétences et Projets -->
+    <section id="competences" class="main style2" role="region" aria-labelledby="competences-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="section-header" data-aos="fade-up">
+                        <h2 id="competences-title" class="section-title with-gradient">Projets par compétence</h2>
+                        <div class="title-underline animated"></div>
+                    </header>
+                </div>
+            </div>
+            
+            <!-- Filtres pour les compétences -->
+            <div class="skills-filter" data-aos="fade-up" role="tablist">
+                <button class="filter-btn active" data-filter="all" aria-selected="true" role="tab">Tous les projets</button>
+                <button class="filter-btn" data-filter="traitement" aria-selected="false" role="tab">Traitement des données</button>
+                <button class="filter-btn" data-filter="analyse" aria-selected="false" role="tab">Analyse statistique</button>
+                <button class="filter-btn" data-filter="valorisation" aria-selected="false" role="tab">Valorisation</button>
+                <button class="filter-btn" data-filter="conception" aria-selected="false" role="tab">Conception d'outils</button>
+                <button class="filter-btn" data-filter="cybersecurity" aria-selected="false" role="tab">Cybersécurité</button>
+            </div>
+            
+            <!-- Descriptions des compétences -->
+            <div class="competence-descriptions" data-aos="fade-up" aria-live="polite">
+                <div class="competence-description" id="traitement-description">
+                    <h3><i class="fas fa-database"></i>Traitement des données à des fins décisionnelles</h3>
+                    <p>Cette compétence couvre la collecte, le nettoyage, l'intégration et la transformation des données brutes en informations exploitables pour la prise de décision.</p>
+                    
+                    <p>Cette compétence aborde l'approche décisionnelle à travers des situations d'apprentissage et d'évaluation introduisant la manipulation des données structurées et le développement de visualisations et de reportings performants.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>L'extraction de données depuis diverses sources</li>
+                        <li>La conception et l'implémentation de pipelines ETL</li>
+                        <li>Le nettoyage et la préparation des données</li>
+                        <li>La modélisation de données relationnelle et dimensionnelle</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Contextes professionnels d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-chart-line"></i> Développement de systèmes d'information décisionnels</li>
+                            <li><i class="fas fa-tasks"></i> Préparation des données à des fins d'analyses statistiques</li>
+                            <li><i class="fas fa-project-diagram"></i> Conception d'entrepôts de données et datawarehouses</li>
+                            <li><i class="fas fa-business-time"></i> Création de tableaux de bord pour l'aide à la décision</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="analyse-description">
+                    <h3><i class="fas fa-chart-bar"></i>Analyse statistique pour l'aide à la décision</h3>
+                    <p>Cette compétence couvre l'application de méthodes statistiques pour extraire des connaissances significatives à partir de données complexes.</p>
+                    
+                    <p>Cette compétence aborde l'approche statistique à travers des situations d'apprentissage et d'évaluation introduisant la description de données dans le cadre de l'analyse d'une variable et des liens entre variables. Les premiers éléments inférentiels sont également abordés.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>L'analyse descriptive et exploratoire des données</li>
+                        <li>L'étude des corrélations et des relations entre variables</li>
+                        <li>L'application de tests statistiques appropriés</li>
+                        <li>L'interprétation des résultats pour la prise de décision</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Contextes professionnels d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-tools"></i> Programmation d'outils d'aide à la décision</li>
+                            <li><i class="fas fa-search"></i> Conduite de projets d'études statistiques</li>
+                            <li><i class="fas fa-lightbulb"></i> Analyse prédictive et modélisation</li>
+                            <li><i class="fas fa-chart-pie"></i> Élaboration de tableaux de bord analytiques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="valorisation-description">
+                    <h3><i class="fas fa-chart-pie"></i>Valorisation des données et restitution des résultats</h3>
+                    <p>Cette compétence couvre l'art de communiquer efficacement les insights et conclusions tirés des données pour faciliter la prise de décision.</p>
+                    
+                    <p>Cette compétence aborde la valorisation des résultats, à travers les notions de rédaction et de présentation de résultats, tout en s'attachant à leur mise en contexte. Les situations d'apprentissages et d'évaluation introduisent la valorisation à travers la production des données et la restitution de résultats statistiques.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>La création de visualisations percutantes et informatives</li>
+                        <li>La conception de tableaux de bord interactifs</li>
+                        <li>La rédaction de rapports analytiques clairs et concis</li>
+                        <li>La présentation orale adaptée aux différents publics cibles</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Contextes professionnels d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-tachometer-alt"></i> Développement d'outils décisionnels et tableaux de bord</li>
+                            <li><i class="fas fa-file-alt"></i> Restitution des résultats d'études statistiques</li>
+                            <li><i class="fas fa-users"></i> Présentation de résultats à des décideurs ou parties prenantes</li>
+                            <li><i class="fas fa-laptop-code"></i> Conception d'interfaces de visualisation de données</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="conception-description">
+                    <h3><i class="fas fa-tools"></i>Conception et développement d'outils décisionnels</h3>
+                    <p>Cette compétence couvre la création et l'implémentation de solutions permettant aux organisations de prendre des décisions éclairées basées sur leurs données.</p>
+                    
+                    <p>Cette compétence englobe plusieurs aspects techniques et méthodologiques, allant de la collecte et la transformation des données à la visualisation des résultats pour les utilisateurs finaux.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>La conception et le développement de tableaux de bord interactifs</li>
+                        <li>L'implémentation de solutions BI (Business Intelligence)</li>
+                        <li>La mise en place de systèmes ETL (Extract, Transform, Load)</li>
+                        <li>La création d'interfaces utilisateur ergonomiques et intuitives</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Contextes professionnels d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-rocket"></i> Déploiement de solutions décisionnelles complètes</li>
+                            <li><i class="fas fa-cogs"></i> Automatisation de reporting et de visualisation</li>
+                            <li><i class="fas fa-database"></i> Implémentation de datawarehouses et datamarts</li>
+                            <li><i class="fas fa-users-cog"></i> Développement de solutions adaptées aux besoins utilisateurs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="cybersecurity-description">
+                    <h3><i class="fas fa-shield-alt"></i>Sécurisation des données et cybersécurité</h3>
+                    <p>Cette compétence couvre la protection des données et des systèmes d'information contre les menaces informatiques, les accès non autorisés, et les vulnérabilités de sécurité.</p>
+                    
+                    <p>Elle englobe les aspects de gouvernance, de conformité réglementaire et de mise en œuvre des mesures techniques pour garantir la confidentialité, l'intégrité et la disponibilité des données tout au long de leur cycle de vie.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>L'identification et l'évaluation des risques liés à la sécurité des données</li>
+                        <li>La mise en œuvre de solutions d'anonymisation et de pseudonymisation</li>
+                        <li>La gestion des accès et des identités selon le principe du moindre privilège</li>
+                        <li>L'application des réglementations sur la protection des données (RGPD, etc.)</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Contextes professionnels d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-lock"></i> Sécurisation des environnements de données sensibles</li>
+                            <li><i class="fas fa-search"></i> Investigation numérique et analyse de menaces</li>
+                            <li><i class="fas fa-file-alt"></i> Conception de politiques de sécurité des données</li>
+                            <li><i class="fas fa-code"></i> Implémentation de mécanismes de protection des données</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteneur de projets restructuré -->
+            <div class="projects-grid">
+                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="project-title">Plateforme Data Analytics FormaSup Auvergne</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'une plateforme data collaborative pour FormaSup Auvergne, intégrant une architecture multi-conteneurs et des tableaux de bord analytiques personnalisés.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator in-progress"></div>
+                                <span>En développement</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet consiste en la conception et le développement d'une plateforme data complète pour FormaSup Auvergne, transformant des données métier disparates en un système décisionnel centralisé et sécurisé. La solution permet une analyse et un partage d'informations entre le CFA et ses établissements partenaires, avec des vues personnalisées pour chaque partenaire.</p>
+                            
+                            <div class="details-section">
+                                <h5>Architecture technique</h5>
+                                <ul>
+                                    <li><strong>PostgreSQL :</strong> Base de données centrale avec double schéma (staging pour nettoyage, DWH pour analyses).</li>
+                                    <li><strong>Apache Superset :</strong> Interface de visualisation et d'analyse personnalisée.</li>
+                                    <li><strong>Service de migration :</strong> Scripts Python pour ETL, transformation et nettoyage des données.</li>
+                                    <li><strong>Service de planification :</strong> Automatisation des tâches récurrentes via cron (mises à jour, rapports).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Caractéristiques techniques</h5>
+                                <ul>
+                                    <li>Infrastructure Docker multi-conteneurs avec réseau dédié sécurisé.</li>
+                                    <li>Scripts d'initialisation automatisés pour PostgreSQL et Superset.</li>
+                                    <li>Volumes Docker pour persistance des données et mise à jour des scripts.</li>
+                                    <li>Healthchecks pour garantir la disponibilité des services critiques.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Processus de data management</h5>
+                                <ul>
+                                    <li><strong>Ingestion et transformation :</strong> Extraction depuis sources hétérogènes, transformation vers un modèle unifié.</li>
+                                    <li><strong>Nettoyage et validation :</strong> Déduplication intelligente, normalisation des données, validation métier.</li>
+                                    <li><strong>Consolidation analytique :</strong> Transfert vers schéma DWH optimisé, création d'indicateurs et agrégats précalculés.</li>
+                                    <li><strong>Visualisation :</strong> Tableaux de bord spécifiques par profil utilisateur avec filtres intelligents.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>État actuel et prochaines étapes</h5>
+                                <ul>
+                                    <li>Architecture Docker opérationnelle.</li>
+                                    <li>Base PostgreSQL configurée avec schéma dual.</li>
+                                    <li>Scripts de migration et nettoyage fonctionnels.</li>
+                                    <li>Finalisation des tableaux de bord spécifiques.</li>
+                                    <li>Implémentation complète du système de rôles.</li>
+                                    <li>Tests d'intégration avec les écoles partenaires.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Impact métier attendu</h5>
+                                <ul>
+                                    <li><strong>Pilotage stratégique :</strong> Vision unifiée de l'activité d'alternance régionale.</li>
+                                    <li><strong>Efficacité administrative :</strong> Automatisation des rapports réglementaires.</li>
+                                    <li><strong>Collaboration renforcée :</strong> Partage sécurisé des données entre partenaires.</li>
+                                    <li><strong>Qualité de formation :</strong> Détection précoce des situations à risque.</li>
+                                    <li><strong>Adaptation de l'offre :</strong> Analyse des tendances pour évolution des formations.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Apache Superset</span>
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                    <span class="tech-tag"><i class="fas fa-calendar-alt"></i> Cron</span>
+                                    <span class="tech-tag"><i class="fas fa-network-wired"></i> Flask</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="traitement analyse" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="project-title">Résumé du Projet d'Audit OFA Link</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement</span>
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse</span>
+                        </div>
+                        
+                        <p class="project-summary">Audit complet de la base de données OFA Link pour garantir son intégrité structurelle et optimiser ses performances.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet constitue un audit complet de la base de données OFA Link, visant à garantir son intégrité structurelle et à optimiser ses performances. L'analyse examine en profondeur la structure de la base de données, les relations entre tables, et l'efficacité des requêtes pour identifier les opportunités d'amélioration.</p>
+                            
+                            <div class="details-section">
+                                <h5>Technologies Utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> NumPy</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-bar"></i> Matplotlib</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-pie"></i> Seaborn</span>
+                                    <span class="tech-tag"><i class="fas fa-laptop-code"></i> Jupyter Notebook</span>
+                                </div>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats Obtenus</h5>
+                                <ul>
+                                    <li>Identification et correction des incohérences dans les relations entre tables</li>
+                                    <li>Optimisation des index pour améliorer les performances des requêtes</li>
+                                    <li>Documentation complète de la structure de la base de données</li>
+                                    <li>Recommandations détaillées pour les futures améliorations</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis et Solutions</h5>
+                                <ul>
+                                    <li><strong>Complexité des schémas :</strong> Utilisation de techniques de visualisation avancées pour cartographier les relations</li>
+                                    <li><strong>Volume important de données :</strong> Implémentation d'échantillonnage stratifié pour l'analyse</li>
+                                    <li><strong>Détection d'anomalies :</strong> Développement d'algorithmes personnalisés pour identifier les incohérences subtiles</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Impact du Projet</h5>
+                                <ul>
+                                    <li>Amélioration de l'intégrité des données garantissant des informations fiables pour la prise de décision</li>
+                                    <li>Optimisation des performances réduisant les temps de réponse de 30%</li>
+                                    <li>Établissement d'un cadre pour les audits périodiques futurs</li>
+                                    <li>Documentation complète facilitant la maintenance et les évolutions futures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="project-title">Automatisation de Contrôle FEC</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'une application Python pour automatiser le contrôle des fichiers FEC et des données de versements, permettant d'identifier les anomalies financières.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet consiste en une application Python qui automatise le contrôle entre les fichiers FEC (Fichier des Écritures Comptables) et les données de versements pour identifier les anomalies financières.</p>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li><strong>Importation et nettoyage :</strong> Chargement des données de versements à partir de fichiers Excel et traitement des fichiers FEC (format texte tabulé).</li>
+                                    <li><strong>Détection d'anomalies :</strong> Identification automatique des écarts entre montants facturés et encaissés.</li>
+                                    <li><strong>Interface utilisateur :</strong> Interface graphique intuitive avec visualisation des résultats.</li>
+                                    <li><strong>Export des résultats :</strong> Génération de rapports Excel pour faciliter les actions correctives.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Architecture</h5>
+                                <ul>
+                                    <li><strong>FECAnalyzer :</strong> Gère la logique métier de traitement des données.</li>
+                                    <li><strong>ControleFacturationsApp :</strong> Gère l'interface utilisateur et les interactions.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Réduction significative du temps consacré aux contrôles financiers.</li>
+                                    <li>Identification systématique des écarts entre facturations et encaissements.</li>
+                                    <li>Visualisation claire des anomalies à travers une interface utilisateur intuitive.</li>
+                                    <li>Export des résultats pour faciliter les actions correctives.</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Illustration</h5>
+                                <div class="additional-previews">
+                                    
+                                    <!-- Image illustrative -->
+                                    <div class="preview-item" data-type="image" data-src="assets/images/FEC.png">
+                                        <div class="preview-thumbnail image-thumb">
+                                            <img src="assets/images/FEC.png" alt="Visualisation des données d'audit">
+                                            <div class="preview-overlay">
+                                                <span>Visuel de l'application</span>
+                                                <i class="fas fa-image"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> Pandas</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> openpyxl</span>
+                                    <span class="tech-tag"><i class="fas fa-window-maximize"></i> ttkbootstrap</span>
+                                    <span class="tech-tag"><i class="fas fa-tasks"></i> Threading</span>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h3 class="project-title">Application de Gestion des Versements</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'une application Shiny en R pour automatiser la gestion financière des formations en apprentissage, incluant le traitement des versements, la visualisation et la génération de rapports.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Cette application Shiny développée en R est un outil spécialisé dans la gestion financière des formations en apprentissage. Elle permet d'automatiser le traitement, le calcul et le suivi des versements financiers entre différents établissements de formation et leurs partenaires (OPCO, entreprises).</p>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li><strong>Traitement automatisé des données financières :</strong> Import de fichiers Excel, nettoyage et standardisation des données, calcul des budgets, frais de gestion et montants à verser.</li>
+                                    <li><strong>Visualisation interactive :</strong> Tableaux de bord dynamiques avec vue par formation, établissement ou partenaire, suivi des historiques de versements.</li>
+                                    <li><strong>Génération de documents :</strong> Export de tableaux Excel, création de tableaux de bord personnalisés, rapports synthétiques pour les partenaires.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Bénéfices</h5>
+                                <ul>
+                                    <li>Gain de temps grâce à l'automatisation des calculs complexes.</li>
+                                    <li>Réduction des erreurs par la standardisation des processus.</li>
+                                    <li>Meilleure traçabilité avec l'historisation des versements.</li>
+                                    <li>Amélioration de la communication via des tableaux de bord clairs.</li>
+                                    <li>Flexibilité pour s'adapter aux différentes structures de données.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis techniques surmontés</h5>
+                                <ul>
+                                    <li>Traitement de formats de données variés et parfois incohérents.</li>
+                                    <li>Gestion des règles métier complexes pour les calculs financiers.</li>
+                                    <li>Création d'une interface utilisateur intuitive malgré la complexité des opérations.</li>
+                                    <li>Implémentation d'un système de gestion historique des versements.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
+                                    <span class="tech-tag"><i class="fas fa-window-maximize"></i> Shiny</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> tidyverse</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> readxl</span>
+                                    <span class="tech-tag"><i class="fas fa-file-excel"></i> openxlsx</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> shinydashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3 class="project-title">Tableau de Bord d'Analyse des Formations en Alternance</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'une application Shiny interactive pour analyser les données des formations en alternance et leurs partenaires, avec des visualisations claires et des statistiques clés.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Cette application Shiny crée un tableau de bord interactif permettant d'analyser les données des formations en alternance et leurs partenaires. Elle offre une visualisation claire des statistiques clés à travers plusieurs onglets thématiques.</p>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li><strong>Formations & Partenaires :</strong> Vue d'ensemble des diplômes et établissements partenaires.</li>
+                                    <li><strong>Effectifs par formation :</strong> Analyse détaillée des effectifs par type de diplôme et niveau RNCP.</li>
+                                    <li><strong>Répartition par sexe :</strong> Visualisation de la parité dans les formations.</li>
+                                    <li><strong>Entreprises :</strong> Classification des entreprises partenaires (public/privé et taille).</li>
+                                    <li><strong>Origine géographique :</strong> Répartition territoriale des entreprises partenaires.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Points forts techniques</h5>
+                                <ul>
+                                    <li>Interface utilisateur intuitive avec thème personnalisé.</li>
+                                    <li>Système d'import de données avec validation.</li>
+                                    <li>Détection automatique du niveau des diplômes.</li>
+                                    <li>Tableaux interactifs avec fonctionnalités de tri, regroupement et recherche.</li>
+                                    <li>Guide d'utilisation intégré.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
+                                    <span class="tech-tag"><i class="fas fa-window-maximize"></i> Shiny</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> reactable</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> dplyr</span>
+                                    <span class="tech-tag"><i class="fas fa-file-excel"></i> readxl</span>
+                                    <span class="tech-tag"><i class="fas fa-paint-brush"></i> bslib</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="project-title">Modélisation Thématique d’Archives Policières par LDA</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Automatisation de la structuration d’un corpus d’archives policières par modélisation thématique non supervisée (LDA) pour identifier des thèmes criminels récurrents et appuyer le travail policier.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet visait à structurer automatiquement un corpus d’archives policières en identifiant des thèmes criminels récurrents grâce à la modélisation thématique non supervisée (LDA).</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs</h5>
+                                <ul>
+                                    <li>Identifier les thèmes criminels récurrents dans les archives.</li>
+                                    <li>Créer une base thématique exploitable pour appuyer le travail policier.</li>
+                                    <li>Explorer les usages potentiels dans des produits data décisionnels et prédictifs.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Méthodologie</h5>
+                                <ul>
+                                    <li><strong>Prétraitement & pipeline NLP :</strong> Nettoyage linguistique, lemmatisation, POS tagging, vectorisation en Document-Term Matrix (DTM).</li>
+                                    <li><strong>Modélisation par LDA :</strong> Choix optimal de 12 thèmes via métriques, extraction des mots-clés dominants, visualisation avec LDAvis.</li>
+                                    <li><strong>Interprétation :</strong> Attribution de noms aux thèmes, croisement avec métadonnées spatio-temporelles.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Produits et usages potentiels</h5>
+                                <ul>
+                                    <li><strong>Exploration & suivi des crimes :</strong> Dashboard interactif, rapports périodiques.</li>
+                                    <li><strong>IA appliquée au renseignement :</strong> Générateur de profils criminels, système de recommandations.</li>
+                                    <li><strong>Optimisation opérationnelle :</strong> Cartes de chaleur thématiques, analyse prédictive.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Génération de 12 thèmes clairs et interprétables (espionnage, crimes financiers, etc.).</li>
+                                    <li>Structuration automatisée d’un corpus initialement non balisé.</li>
+                                    <li>Prototype fonctionnel pour une analyse dynamique des thématiques.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-bar"></i> LDA</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> topicmodels</span>
+                                    <span class="tech-tag"><i class="fas fa-text-height"></i> udpipe</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> ggplot2</span>
+                                    <span class="tech-tag"><i class="fas fa-eye"></i> LDAvis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="project-title">Analyse Statistique et Classification sur Données de Croissance</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse des données de croissance d’enfants (1 à 18 ans) pour interpoler les mesures manquantes, produire des courbes normatives et mettre en œuvre des algorithmes de classification supervisée.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet visait à analyser des données de croissance (taille/poids) d’enfants de 1 à 18 ans, en tenant compte du sexe, pour interpoler les mesures manquantes, produire des courbes normatives et détecter des différences significatives entre filles et garçons.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs</h5>
+                                <ul>
+                                    <li>Interpoler et prédire les mesures manquantes.</li>
+                                    <li>Construire des courbes de référence pour taille, poids et IMC.</li>
+                                    <li>Détecter des différences significatives entre filles et garçons.</li>
+                                    <li>Mettre en œuvre des algorithmes de classification supervisée.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Méthodologie</h5>
+                                <ul>
+                                    <li><strong>Préparation des données :</strong> Suppression des valeurs aberrantes, interpolation PCHIP, calcul de l’IMC.</li>
+                                    <li><strong>Analyse statistique :</strong> Calculs des médianes, écarts-types, percentiles, visualisations avancées avec ggplot2.</li>
+                                    <li><strong>Classification :</strong> Comparaison de modèles (KNN, rpart, GLM, LDA, QDA, Naive Bayes), validation croisée, évaluation par exactitude et matrice de confusion.</li>
+                                    <li><strong>Tests de différences significatives :</strong> Comparaison garçons/filles sur taille, poids et vitesse de croissance.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Courbes normatives de croissance produites (médianes ±1σ, ±2σ, ±3σ).</li>
+                                    <li>Différences significatives de taille et poids entre sexes pour les âges 16-18.</li>
+                                    <li>Modèle rpart performant sur les données centrées.</li>
+                                    <li>Visualisation claire de la répartition de l’IMC et des classes à risque.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis rencontrés</h5>
+                                <ul>
+                                    <li>Gestion des cas d’interpolation/extrapolation complexe.</li>
+                                    <li>Comparaison cohérente de nombreux classifieurs.</li>
+                                    <li>Automatisation des tests d’écart significatif sur plusieurs variables et âges.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> ggplot2</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> dplyr</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-area"></i> pchip</span>
+                                    <span class="tech-tag"><i class="fas fa-brain"></i> caret</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3 class="project-title">Analyse de la Couverture Médiatique du Débat entre Kamala Harris et Donald Trump</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse comparative de la tonalité médiatique du débat entre Kamala Harris et Donald Trump, en explorant les biais potentiels des médias nationaux, partisans et internationaux.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet visait à analyser la tonalité des articles de presse couvrant le débat sénatorial entre Kamala Harris et Donald Trump, en identifiant les biais médiatiques potentiels et les différences de perception selon les sources.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs</h5>
+                                <ul>
+                                    <li>Évaluer la tonalité des articles (positive, négative, neutre) pour chaque candidat.</li>
+                                    <li>Identifier les biais médiatiques selon les sources (nationales, partisanes, internationales).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Méthodologie</h5>
+                                <ul>
+                                    <li><strong>Collecte de données :</strong> Articles publiés le 11 septembre 2024 issus de médias nationaux, partisans et internationaux.</li>
+                                    <li><strong>Prétraitement :</strong> Nettoyage des textes, lemmatisation, annotation linguistique avec udpipe.</li>
+                                    <li><strong>Analyse de sentiments :</strong> Utilisation des lexiques AFINN, Bing et NRC pour évaluer les émotions et la valence des articles.</li>
+                                    <li><strong>Visualisations :</strong> Graphiques radar des émotions, barplots et boxplots comparatifs par candidat et source.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Kamala Harris a bénéficié d’une couverture majoritairement positive, notamment dans les médias progressistes et internationaux.</li>
+                                    <li>Donald Trump a reçu une couverture polarisée : positive dans les médias conservateurs, négative dans les médias progressistes.</li>
+                                    <li>Les médias internationaux ont eu une perception nettement plus favorable de Harris.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis rencontrés</h5>
+                                <ul>
+                                    <li>Difficulté des modèles lexicaux à capter les nuances de langage journalistique (sarcasme, ironie).</li>
+                                    <li>Détection imprécise des tonalités neutres ou ambivalentes.</li>
+                                    <li>Biais éventuels hérités des lexiques préexistants.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Améliorations envisagées</h5>
+                                <ul>
+                                    <li>Intégration de modèles pré-entraînés comme BERT pour une meilleure contextualisation.</li>
+                                    <li>Utilisation de Topic Modeling pour explorer les thèmes dominants par source.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
+                                    <span class="tech-tag"><i class="fas fa-text-height"></i> udpipe</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> ggplot2</span>
+                                    <span class="tech-tag"><i class="fas fa-smile"></i> syuzhet</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-pie"></i> radarchart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet: Visualisation des rongeurs à New York -->
+                <div class="project-card" data-category="valorisation analyse" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div>
+                            <h3 class="project-title">Les arrondissements de New York face aux apparitions de rongeurs</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse et visualisation des données sur les apparitions de rats à New York (2010-2017) pour identifier les tendances spatiales et temporelles.</p>
+                    
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet visait à analyser les signalements d'apparition de rongeurs dans les différents arrondissements de New York sur une période de 7 ans afin d'identifier des tendances et des facteurs explicatifs.</p>
+                            
+                            <div class="details-section">
+                                <h5>Informations clés</h5>
+                                <ul>
+                                    <li><strong>Sources :</strong> Données CSV des signalements de rongeurs (2010-2017)</li>
+                                    <li><strong>Méthodes :</strong> Nettoyage des données, analyse exploratoire, visualisation géospatiale</li>
+                                    <li><strong>Résultats :</strong> Dashboard interactif permettant d'explorer les variations saisonnières et géographiques</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> PowerQuery</span>
+                                    <span class="tech-tag"><i class="fas fa-map-marked-alt"></i> Cartographie</span>
+                                </div>
+                            </div>
+                            
+                            <div class="additional-previews">
+                                <div class="preview-item" data-type="pdf" data-src="assets/examples/nyc-rats-analysis.pdf">
+                                    <div class="preview-thumbnail pdf-thumb">
+                                        <div class="preview-overlay">
+                                            <span>Rapport d'analyse</span>
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Anonymisation des données médicales -->
+                <div class="project-card" data-category="traitement cybersecurity" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <h3 class="project-title">Anonymisation de données médicales sensibles</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement</span>
+                            <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'une solution d'anonymisation de données médicales appliquant les principes de K-Anonymité et L-Diversité pour protéger les informations sensibles des patients.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce projet portait sur la protection des données médicales sensibles à travers le développement d'une solution d'anonymisation automatisée. J'ai conçu et implémenté des processus Talend permettant d'identifier, de traiter et d'anonymiser les informations sensibles tout en préservant la valeur analytique des données.</p>
+                            
+                            <div class="details-section">
+                                <h5>Informations clés</h5>
+                                <ul>
+                                    <li><strong>Objectifs :</strong> Protéger les données sensibles des patients tout en conservant l'utilité des données pour les analyses</li>
+                                    <li><strong>Méthodes :</strong> K-Anonymité, L-Diversité, suppression d'attributs, généralisation hiérarchique</li>
+                                    <li><strong>Processus :</strong> Identification des variables sensibles, conception des niveaux d'anonymisation, développement des jobs Talend, validation des résultats</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-network-wired"></i> Talend</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+                                    <span class="tech-tag"><i class="fas fa-lock"></i> K-Anonymité</span>
+                                    <span class="tech-tag"><i class="fas fa-shield-alt"></i> L-Diversité</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet: Analyse de circulation routière -->
+                <div class="project-card" data-category="traitement analyse" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h3 class="project-title">Analyse de Circulation et Évaluation d'une Nouvelle Intersection Routière</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse de l'impact d'une nouvelle intersection sur les flux de circulation urbaine à travers la modélisation statistique, la détection d'anomalies et les prévisions de trafic.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet de groupe réalisé dans le cadre de la SAE 3-03 : Description et prévision de données temporelles (Novembre 2023), en collaboration avec Jehanné Baleydier, Cédric Jestin et Jimmy Yobo.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectif du projet</h5>
+                                <p>Analyser l'impact de la création d'une nouvelle intersection (I4) sur la circulation d'une ville, à partir de données temporelles collectées sur 20 mois. L'étude visait à modéliser les flux de véhicules, détecter des anomalies et évaluer l'efficacité de l'infrastructure sur la répartition du trafic urbain.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Méthodologie et contenu</h5>
+                                <p><strong>Prétraitement des données (R, dplyr, lubridate, tidyverse) :</strong></p>
+                                <ul>
+                                    <li>Nettoyage et restructuration des données horaires (nov. 2015 – juin 2017).</li>
+                                    <li>Création de 3 jeux de données agrégés (heure, jour, mois).</li>
+                                    <li>Calcul de ratios Ei/Ii (entrée par intersection) et de la somme globale des entrées.</li>
+                                </ul>
+                                
+                                <p><strong>Modélisation statistique et analyse exploratoire :</strong></p>
+                                <ul>
+                                    <li>Lissages (moyenne mobile, lissage exponentiel).</li>
+                                    <li>Modèles additifs et multiplicatifs avec saisonnalité (24h et 7 jours).</li>
+                                    <li>Détection d'anomalies par résidus (>99 %).</li>
+                                    <li>Test de coupure structurelle (test de Chow) sur les données d'entrée autour du 1er janvier 2017 (mise en service de I4).</li>
+                                </ul>
+                                
+                                <p><strong>Prédictions :</strong></p>
+                                <ul>
+                                    <li>Prévisions sur 40 jours après le 30/06/2017 à partir du meilleur modèle retenu (additif avec saisonnalité hebdomadaire).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions spécifiques</h5>
+                                <ul>
+                                    <li>Participation à la modélisation des flux, aux analyses de périodicité, et aux visualisations de données.</li>
+                                    <li>Co-rédaction du rapport d'analyse, structuration des observations, interprétation des résultats des tests.</li>
+                                    <li>Réalisation de prédictions sur la base des modèles statistiques (additif, multiplicatif).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Confirmation d'une meilleure répartition du trafic après l'ouverture de l'intersection I4, notamment baisse du ratio E1/I1.</li>
+                                    <li>Pas de cassure significative détectée sur E1, mais cassure validée sur E2, confirmant un changement dans les habitudes de circulation.</li>
+                                    <li>Identification d'un besoin de données plus longues pour des conclusions robustes.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R (RStudio)</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> tidyverse, dplyr</span>
+                                    <span class="tech-tag"><i class="fas fa-clock"></i> lubridate</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> ggplot2</span>
+                                    <span class="tech-tag"><i class="fas fa-vial"></i> gap (test de Chow)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Stage Be Blocks - Outil décisionnel -->
+                <div class="project-card" data-category="conception valorisation traitement" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3 class="project-title">Outil décisionnel de mesure de performance produit</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement</span>
+                        </div>
+                        
+                        <p class="project-summary">Développement d'un outil décisionnel complet pour mesurer les performances d'un produit, incluant l'optimisation d'un datawarehouse et la création de tableaux de bord Grafana.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Lors de mon stage de 3 mois chez Be Blocks, j'ai développé un outil décisionnel complet pour mesurer les performances d'un produit de l'entreprise. Ce projet m'a permis d'acquérir et de renforcer diverses compétences techniques et de gestion.</p>
+                            
+                            <div class="details-section">
+                                <h5>Compétences Démontrées</h5>
+                                <ul>
+                                    <li><strong>Développement d'Outils Décisionnels :</strong> Optimisation et refonte d'un datawarehouse sur différents environnements (production, intégration), utilisation avancée de Talend pour l'ETL, gestion via Talend Administration Center (TAC)</li>
+                                    <li><strong>Gestion de Projet Agile :</strong> Participation aux sprints et réunions de planification, collaboration avec des équipes pluridisciplinaires</li>
+                                    <li><strong>SQL :</strong> Écriture et optimisation de requêtes SQL pour extraire des données pertinentes et performantes</li>
+                                    <li><strong>Datavisualisation :</strong> Création de tableaux de bord Grafana interactifs pour analyser les performances produit</li>
+                                    <li><strong>Communication :</strong> Rédaction de documentation technique, présentation des résultats à l'équipe</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-network-wired"></i> Talend</span>
+                                    <span class="tech-tag"><i class="fas fa-server"></i> Talend Administration Center</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Grafana</span>
+                                    <span class="tech-tag"><i class="fas fa-tasks"></i> Méthodologie Agile</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-section">
+                                <p><em>Note: En raison de la confidentialité des informations liées à ce stage, les détails spécifiques sur les données et les méthodologies exactes ne peuvent pas être partagés.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Analyse Éthique Cambridge Analytica -->
+                <div class="project-card" data-category="traitement cybersecurity" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h3 class="project-title">Analyse éthique du scandale Cambridge Analytica</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement</span>
+                            <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse des implications éthiques du scandale Cambridge Analytica sous l'angle des principes moraux, de la protection des données personnelles, et de l'usage de la data science à des fins politiques.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet individuel réalisé dans le cadre de la SAE R3-01 : Éthique de la donnée (2023-2024). Cette analyse met en lumière l'importance cruciale de l'éthique dans la science des données, en soulignant les risques et les responsabilités associés à la collecte et à l'utilisation des données personnelles.</p>
+                            
+                            <div class="details-section">
+                                <h5>Contexte</h5>
+                                <p>En 2018, il est révélé que Cambridge Analytica a exploité les données personnelles de millions d'utilisateurs Facebook à leur insu, via une application de quiz psychologique. Ces données ont été utilisées pour élaborer des profils psychographiques destinés à influencer des comportements électoraux lors de campagnes politiques majeures.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Axes d'analyse</h5>
+                                <ul>
+                                    <li><strong>Le principe socratique :</strong> Interrogation critique des motivations des acteurs impliqués (Wylie, Kaiser)</li>
+                                    <li><strong>Consentement informé & désengagement :</strong> Violations massives des droits des utilisateurs</li>
+                                    <li><strong>Propriété des données :</strong> Tensions entre réalité juridique et considérations éthiques</li>
+                                    <li><strong>Financement opaque & manipulation :</strong> Liens avec des acteurs politiques radicaux</li>
+                                    <li><strong>Psychographie comme arme :</strong> Dérives comparées aux opérations psychologiques militaires (PSYOPS)</li>
+                                    <li><strong>Équité algorithmique :</strong> Ciblage de populations vulnérables identifiées comme "influençables"</li>
+                                    <li><strong>Impact sur la démocratie :</strong> Manipulation électorale, intimidation des lanceurs d'alerte</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions</h5>
+                                <ul>
+                                    <li>Rédaction complète du rapport éthique à partir de sources académiques, médiatiques et juridiques</li>
+                                    <li>Application des outils de la science morale à un cas réel de dérive techno-politique</li>
+                                    <li>Analyse critique des enjeux liés à la data science non éthique, à la surveillance, et à la transparence algorithmique</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats et compétences développées</h5>
+                                <ul>
+                                    <li>Capacité à mobiliser des concepts éthiques concrets dans un contexte de data science</li>
+                                    <li>Rédaction d'un rapport structuré alliant rigueur académique et portée critique</li>
+                                    <li>Développement d'une réflexion personnelle sur l'usage responsable des technologies</li>
+                                    <li>Compréhension des implications sociétales de la manipulation des données personnelles</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Méthodologie</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-search"></i> Recherche documentaire</span>
+                                    <span class="tech-tag"><i class="fas fa-balance-scale"></i> Analyse éthique</span>
+                                    <span class="tech-tag"><i class="fas fa-gavel"></i> Étude du cadre réglementaire</span>
+                                    <span class="tech-tag"><i class="fas fa-users"></i> Impact social</span>
+                                    <span class="tech-tag"><i class="fas fa-brain"></i> Philosophie morale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Étude de cas tourisme France/Cantal -->
+                <div class="project-card" data-category="analyse valorisation" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h3 class="project-title">Étude de cas – Le tourisme en France et dans le Cantal</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                        </div>
+                        
+                        <p class="project-summary">Analyse de l'impact du tourisme sur l'attractivité territoriale à l'échelle nationale et locale (Cantal), identifiant leviers, freins et actions pour renforcer la compétitivité d'un territoire rural.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet universitaire dans le cadre de la SAE 6-06 : Attractivité territoriale (2024-2025), réalisé en collaboration avec Kilian Giraud et Doudedji Justus Hounton.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <p>Analyser l'impact du tourisme sur l'attractivité territoriale à l'échelle nationale et locale (Cantal), en identifiant les leviers de développement, les freins existants et les actions possibles pour renforcer l'image et la compétitivité d'un territoire rural.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Contenu et approche</h5>
+                                <ul>
+                                    <li><strong>Analyse nationale :</strong> Étude du poids du tourisme en France (8 % du PIB, 2 M d'emplois), tendances post-COVID, digitalisation, tourisme durable, rôle des grands événements (JO 2024, Coupe du Monde Rugby 2023).</li>
+                                    <li><strong>Étude locale :</strong> Diagnostic complet du tourisme dans le Cantal (5,58 M de nuitées, 15 % du PIB local), valorisation des atouts naturels (Puy Mary, Lioran), culturels (villages, gastronomie) et immatériels.</li>
+                                    <li><strong>Méthodologie :</strong> Analyse de données (INSEE, Atout France), benchmarking territorial, identification des axes de modernisation (hébergement, mobilité, communication numérique).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis et solutions proposées</h5>
+                                <table class="challenges-table">
+                                    <tr>
+                                        <th>Défis identifiés</th>
+                                        <th>Solutions proposées</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Faible notoriété internationale</td>
+                                        <td>Campagnes ciblées, réseaux sociaux, labels touristiques</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offre d'hébergement datée</td>
+                                        <td>Éco-lodges, gîtes immersifs, diversification qualitative</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saisonnalité du tourisme</td>
+                                        <td>Slow tourism, bien-être, œnotourisme</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accessibilité limitée</td>
+                                        <td>Meilleure desserte ferroviaire, mobilité douce, amélioration du Wi-Fi rural</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions</h5>
+                                <ul>
+                                    <li>Rédaction de l'analyse territoriale sur le Cantal.</li>
+                                    <li>Élaboration de recommandations stratégiques (communication, diversification de l'offre).</li>
+                                    <li>Mise en forme du rapport final et structuration de la bibliographie (sources INSEE, Atout France, Statista, etc.).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Rapport complet de 20 pages avec diagnostic, analyse et plan d'action.</li>
+                                    <li>Valorisation du Cantal comme destination de tourisme vert et durable.</li>
+                                    <li>Développement de compétences en <strong>analyse territoriale, stratégie touristique, communication institutionnelle</strong>.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies et compétences mobilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-search"></i> Analyse de données</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Analyse statistique</span>
+                                    <span class="tech-tag"><i class="fas fa-table"></i> Benchmarking</span>
+                                    <span class="tech-tag"><i class="fas fa-lightbulb"></i> Stratégie territoriale</span>
+                                    <span class="tech-tag"><i class="fas fa-file-alt"></i> Rédaction analytique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Migration SQL vers NoSQL -->
+                <div class="project-card" data-category="traitement conception" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="project-title">Migration SQL vers NoSQL – Étude comparative PostgreSQL / MongoDB</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                        </div>
+                        
+                        <p class="project-summary">Exploration de la transformation d'une base de données relationnelle vers une base orientée documents, avec évaluation des impacts sur les performances et identification des cas d'usage pertinents pour la dénormalisation.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet individuel réalisé dans le cadre de la SAE 5.02 (2024-2025), ce travail compare les approches SQL et NoSQL à travers une migration pratique de PostgreSQL vers MongoDB.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <p>Explorer la transformation d'une base de données relationnelle (PostgreSQL) vers une base orientée documents (MongoDB), en évaluant les impacts sur les performances, la structure des données, et les cas d'usage adaptés à la dénormalisation.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Contenu et méthodologie</h5>
+                                <ul>
+                                    <li><strong>Base SQL (PostgreSQL) :</strong> Création de 6 tables relationnelles (employés, salaires, titres, départements, etc.), insertion de données, analyse du coût des jointures SQL.</li>
+                                    <li><strong>Optimisation SQL :</strong> Création d'une vue matérialisée pour accélérer les requêtes multi-tables (gain de +99% de temps d'exécution).</li>
+                                    <li><strong>Export JSON :</strong> Transformation des tables en documents JSON via row_to_json, json_agg, et COPY, en vue d'une intégration NoSQL.</li>
+                                    <li><strong>Base NoSQL (MongoDB) :</strong> Import des données, création d'index, usage de $lookup, $project, $merge pour jointures et dénormalisation.</li>
+                                    <li><strong>Mesure des performances :</strong> Comparaison des temps d'accès avec et sans dénormalisation (MongoDB) et analyse avec explain().</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis rencontrés et solutions</h5>
+                                <table class="challenges-table">
+                                    <tr>
+                                        <th>Problème</th>
+                                        <th>Solution apportée</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Jointures coûteuses en SQL</td>
+                                        <td>Utilisation d'une vue matérialisée</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JSON non importable dans MongoDB (format tableau)</td>
+                                        <td>Création d'un script PowerShell pour "aplatir" les documents</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performances faibles lors des requêtes complexes MongoDB</td>
+                                        <td>Dénormalisation et création de collections optimisées avec $merge</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Risques liés à la redondance de données</td>
+                                        <td>Limitation de la dénormalisation aux cas pertinents (lectures fréquentes, données stables)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions</h5>
+                                <ul>
+                                    <li>Écriture complète des scripts de création SQL, export JSON, et manipulations MongoDB.</li>
+                                    <li>Analyse des performances des requêtes dans PostgreSQL et MongoDB.</li>
+                                    <li>Développement d'un script PowerShell personnalisé pour reformater les fichiers JSON.</li>
+                                    <li>Réalisation d'une collection dénormalisée avec aggregate, project, map, et merge.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Temps de requêtes réduit de 425 ms (SQL) à 2 ms (vue matérialisée).</li>
+                                    <li>Import réussi de +6 collections dans MongoDB avec des documents enrichis.</li>
+                                    <li>Création d'une base dénormalisée optimisée pour lecture rapide (temps d'accès réduit à ~100 ms).</li>
+                                    <li>Compréhension approfondie des architectures SQL vs NoSQL et de leurs cas d'usage.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> MongoDB</span>
+                                    <span class="tech-tag"><i class="fas fa-file-code"></i> JSON</span>
+                                    <span class="tech-tag"><i class="fab fa-windows"></i> PowerShell</span>
+                                    <span class="tech-tag"><i class="fas fa-tachometer-alt"></i> Performance Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Gestion des risques informatiques -->
+                <div class="project-card" data-category="cybersecurity" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3 class="project-title">Gestion des risques informatiques – Audit et plan d'action RGPD/ISO 27005</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                        </div>
+                        
+                        <p class="project-summary">Conception et structuration d'une démarche de gestion des risques informatiques pour une PME, avec mise en conformité RGPD et normes ISO 27001/27005 pour protéger les données et assurer la résilience.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet individuel réalisé dans le cadre de la SAE R 5-05 : Gestion de la confidentialité et du risque (2024-2025), ce travail présente une approche méthodique pour identifier, évaluer et traiter les risques informatiques dans une PME.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <p>Concevoir et structurer une démarche de gestion des risques informatiques au sein d'une PME, en conformité avec le RGPD, les normes ISO 27001/27005, et les obligations légales, dans le but de protéger les données, assurer la disponibilité des services et garantir la résilience de l'entreprise.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Contenu et approche</h5>
+                                <p><strong>Étude de cas :</strong> PME e-commerce (jouets en bois) dépendant d'un SI en mode SaaS (site, CRM, logistique, comptabilité).</p>
+                                
+                                <p><strong>Audit complet :</strong></p>
+                                <ul>
+                                    <li>Identification et classification des actifs critiques (base clients, serveurs, flux de commandes, site e-commerce).</li>
+                                    <li>Analyse des vulnérabilités techniques et organisationnelles.</li>
+                                    <li>Élaboration d'une matrice de risques (impact / probabilité).</li>
+                                </ul>
+                                
+                                <p><strong>Traitement des risques :</strong></p>
+                                <ul>
+                                    <li>Risque 1 : Indisponibilité serveur → plan de continuité (PCA/PRA), redondance, SLA.</li>
+                                    <li>Risque 2 : Fuite de données clients → chiffrement, MFA, Zero Trust, clauses contractuelles.</li>
+                                    <li>Risque 3 : Panne du site web → hébergement multi-cloud, anti-DDoS, plan de communication de crise.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Défis et solutions proposées</h5>
+                                <table class="challenges-table">
+                                    <tr>
+                                        <th>Risques majeurs</th>
+                                        <th>Solutions apportées</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Perte d'exploitation suite à une panne serveur</td>
+                                        <td>Architecture redondante, PRA testé, monitoring 24/7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fuite de données personnelles</td>
+                                        <td>Chiffrement AES-256, MFA, sensibilisation, audits prestataires</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Indisponibilité du site e-commerce</td>
+                                        <td>Multi-hébergement, anti-DDoS, plan d'urgence et support 24/7</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions</h5>
+                                <ul>
+                                    <li>Analyse juridique (RGPD, Code civil, directive NIS 2).</li>
+                                    <li>Élaboration de la matrice de risques ISO 27005.</li>
+                                    <li>Définition des mesures de sécurité techniques et organisationnelles.</li>
+                                    <li>Rédaction du plan de réponse aux incidents et recommandations stratégiques.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Dossier structuré de gestion des risques ISO 27005 adapté à une PME réelle.</li>
+                                    <li>Recommandations pratiques pour assurer la conformité RGPD.</li>
+                                    <li>Acquisition de compétences en audit de sécurité, analyse d'impacts, plan de continuité, et privacy by design.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies et méthodologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-tasks"></i> ISO 27005</span>
+                                    <span class="tech-tag"><i class="fas fa-lock"></i> RGPD</span>
+                                    <span class="tech-tag"><i class="fas fa-sitemap"></i> Plan de Continuité d'Activité</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-area"></i> Matrice de risques</span>
+                                    <span class="tech-tag"><i class="fas fa-file-contract"></i> SLA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Cahier des Charges GlobalTrade Inc. -->
+                <div class="project-card" data-category="conception valorisation" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3 class="project-title">Conception d'un Cahier des Charges – Application de Reporting pour GlobalTrade Inc.</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                        </div>
+                        
+                        <p class="project-summary">Élaboration d'un cahier des charges complet pour une application de reporting décisionnel, incluant spécifications fonctionnelles, techniques, architecture des données et prototype d'interface.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet individuel réalisé dans le cadre d'une spécification fonctionnelle et technique (Janvier 2025), en tant qu'analyste fonctionnelle et conceptrice AMOA.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectif du projet</h5>
+                                <p>Concevoir un cahier des charges complet pour le développement d'une application de reporting décisionnel destinée à une startup fictive (GlobalTrade Inc.), dans le cadre d'un projet de business intelligence à faible budget et haute valeur ajoutée.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Contenu du livrable</h5>
+                                <p><strong>Contexte & besoins :</strong></p>
+                                <ul>
+                                    <li>Problèmes de données dispersées, reporting manuel, visibilité réduite sur les performances logistiques et financières.</li>
+                                </ul>
+                                
+                                <p><strong>Objectifs fonctionnels :</strong></p>
+                                <ul>
+                                    <li>Centralisation via un datawarehouse PostgreSQL.</li>
+                                    <li>Visualisations interactives pour les modules Financier (CA, marges, remises) et Logistique (retards, stocks, transport).</li>
+                                    <li>Automatisation des exports de rapports.</li>
+                                </ul>
+                                
+                                <p><strong>Architecture cible :</strong></p>
+                                <ul>
+                                    <li>Stack technique recommandée : R + Shiny + PostgreSQL.</li>
+                                    <li>Modèle en étoile pour le datawarehouse (MCD fourni).</li>
+                                </ul>
+                                
+                                <p><strong>Prototype d'interface :</strong></p>
+                                <ul>
+                                    <li>Navigation, tableaux de bord, filtres et export.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions</h5>
+                                <ul>
+                                    <li>Rédaction intégrale du cahier des charges structuré (fonctionnel, technique, sécurité, calendrier, budget, critères d'acceptation).</li>
+                                    <li>Conception des modèles de données relationnels et analytiques (modèle en étoile).</li>
+                                    <li>Définition des cas d'usage, des exigences fonctionnelles, et des spécifications de tests.</li>
+                                    <li>Comparaison argumentée des technologies envisagées et choix justifiés (RShiny vs React/Python).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Résultats obtenus</h5>
+                                <ul>
+                                    <li>Cahier des charges complet de +30 pages livrable à une équipe technique pour développement.</li>
+                                    <li>Livrable structuré selon les standards professionnels (contenu + UX, sécurité, planning, budget prévisionnel).</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Compétences et technologies</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fas fa-clipboard-check"></i> Spécification fonctionnelle</span>
+                                    <span class="tech-tag"><i class="fas fa-sitemap"></i> Modélisation de données</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                                    <span class="tech-tag"><i class="fab fa-r-project"></i> R Shiny</span>
+                                    <span class="tech-tag"><i class="fas fa-project-diagram"></i> Business Intelligence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: Operation ZeroDay CTF -->
+                <div class="project-card" data-category="cybersecurity conception" data-aos="fade-up">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <h3 class="project-title">Operation ZeroDay – Développement d'un CTF Terminal Challenge</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                        </div>
+                        
+                        <p class="project-summary">Conception et développement d'un challenge CTF (Capture The Flag) complet simulant un terminal Linux avec des énigmes de stéganographie, cryptographie et analyse forensique.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Développement intégral d'un challenge de type Capture The Flag (CTF) orienté cybersécurité, mettant en scène un scénario d'agent secret devant infiltrer un système compromis pour récupérer des fragments d'information cachés et contrer une menace virale.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <p>Créer un environnement d'apprentissage immersif pour les compétences en cybersécurité, combinant des éléments de stéganographie, cryptographie, forensique et navigation système. Le challenge offre une expérience narrative engageante tout en testant des compétences techniques variées.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités implémentées</h5>
+                                <ul>
+                                    <li><strong>Système de fichiers virtuels :</strong> Simulation complète d'une structure Linux avec +50 fichiers et répertoires navigables</li>
+                                    <li><strong>Cryptographie avancée :</strong> Implémentation de chiffrement César, XOR, AES et RSA</li>
+                                    <li><strong>Stéganographie :</strong> Dissimulation de messages dans des fichiers images via techniques LSB (Least Significant Bit)</li>
+                                    <li><strong>Commandes Linux :</strong> Simulation de 25+ commandes Unix (ls, cat, cd, grep, find, etc.)</li>
+                                    <li><strong>Virus simulé :</strong> Menace dynamique avec corruption progressive du système pour ajouter une pression temporelle</li>
+                                    <li><strong>Indices progressifs :</strong> Système d'aide adaptatif qui s'active selon la progression du joueur</li>
+                                    <li><strong>Interface graphique :</strong> Terminal émulé avec Tkinter, incluant une interface utilisateur réactive</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Compétences cybersécurité testées</h5>
+                                <ul>
+                                    <li>Analyse de traces et de logs système</li>
+                                    <li>Cryptanalyse et déchiffrement de messages codés</li>
+                                    <li>Extraction de données cachées (stéganographie)</li>
+                                    <li>Identification et neutralisation de menaces (anti-virus)</li>
+                                    <li>Navigation et reconnaissance de systèmes Linux</li>
+                                    <li>Exploitation de failles de sécurité simulées</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Aspects techniques notables</h5>
+                                <ul>
+                                    <li>Moteur d'exécution de commandes avec interprétation en temps réel</li>
+                                    <li>Système de progression avec sauvegarde d'état</li>
+                                    <li>Fonctions d'encodage/décodage multiples (Base64, XOR, César)</li>
+                                    <li>Gestion des permissions et simulation d'authentification (sudo)</li>
+                                    <li>Génération procédurale de contenu cryptique et d'indices</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies et compétences mobilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                    <span class="tech-tag"><i class="fas fa-window-maximize"></i> Tkinter</span>
+                                    <span class="tech-tag"><i class="fas fa-lock"></i> Cryptographie</span>
+                                    <span class="tech-tag"><i class="fas fa-image"></i> Stéganographie</span>
+                                    <span class="tech-tag"><i class="fas fa-terminal"></i> Émulation terminal</span>
+                                    <span class="tech-tag"><i class="fas fa-virus"></i> Simulation de menaces</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal pour afficher les exemples -->
+            <div id="example-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+                <div class="modal-content">
+                    <span class="close-modal" aria-label="Fermer la fenêtre" role="button" tabindex="0">&times;</span>
+                    <div id="modal-content-container">
+                        <!-- Le contenu sera injecté dynamiquement -->
+                        <h3 id="modal-title" class="visually-hidden">Détail du projet</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact avec design moderne -->
+    <section id="footer" role="contentinfo" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-title" data-aos="fade-up">
+                    <h2 id="contact-title" class="with-gradient">Contact</h2>
+                    <div class="title-underline animated"></div>
+                </div>
+                <div class="contact-card" data-aos="fade-up">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <a href="mailto:challet.marie@icloud.com" class="contact-link" aria-label="Envoyer un email">
+                                challet.marie@icloud.com
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <a href="tel:+33764025741" class="contact-link" aria-label="Appeler">
+                                +33 7 64 02 57 41
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </div>
+                            <a href="https://www.linkedin.com/in/mariechallet/" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn - s'ouvre dans une nouvelle fenêtre">
+                                linkedin.com/in/mariechallet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom" data-aos="fade-up">
+                    <p class="copyright">© 2024 Marie Challet. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cookie Consent -->
+    <div id="cookie-consent" class="cookie-banner" aria-label="Bannière de consentement des cookies" role="alert">
+        <div class="cookie-content">
+            <p>Ce site utilise des cookies pour améliorer votre expérience. <a href="#" class="cookie-policy-link">En savoir plus</a></p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-btn accept">Accepter</button>
+                <button id="decline-cookies" class="cookie-btn decline">Décliner</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Scripts essentiels regroupés et optimisés -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>

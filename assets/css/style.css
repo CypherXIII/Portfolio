@@ -702,91 +702,6 @@ a:hover {
     text-align: center;
 }
 
-/* ============= 5.3 Section Certifications ============= */
-.certifications-section {
-    padding: 4rem 0;
-    background: var(--bg-color);
-    text-align: center;
-}
-
-.certif-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.certif-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.certif-item {
-    background: var(--card-bg);
-    border-radius: 15px;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 10px 20px var(--shadow-color);
-    transition: transform 0.3s;
-    flex: 0 0 350px;
-}
-
-.certif-item:hover {
-    transform: translateY(-5px);
-}
-
-.certif-badge {
-    position: relative;
-    margin-right: 1.5rem;
-}
-
-.certif-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: var(--primary-color);
-    z-index: 2;
-}
-
-.certif-circle .certif-bg {
-    fill: var(--card-bg);
-    stroke: #eee;
-    stroke-width: 8;
-}
-
-.certif-circle .certif-progress {
-    fill: transparent;
-    stroke: url(#certif-gradient);
-    stroke-width: 8;
-    stroke-linecap: round;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    stroke-dasharray: 314;
-    stroke-dashoffset: 314;
-}
-
-.certif-details {
-    text-align: left;
-}
-
-.certif-details h4 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.certif-level {
-    display: inline-block;
-    padding: 0.2rem 0.8rem;
-    background: rgba(94, 84, 203, 0.1);
-    color: var(--primary-color);
-    border-radius: 50px;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
 /* ============= 5.4 Section Skills ============= */
 /* Filtres de compétences */
 .skills-filter {
@@ -851,7 +766,7 @@ a:hover {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    display: inline-block; /* Assure une meilleure compatibilité avec gradient */
+    display: inline-block;
 }
 
 .competence-description p {
@@ -1448,7 +1363,7 @@ a:hover {
 
 /* ============= 5.5 Section Contact / Footer ============= */
 #footer {
-    background-color: var(--card-bg);
+    background-color: transparent;
     color: var(--text-color);
     padding: 5rem 0 2rem;
 }
@@ -1915,7 +1830,7 @@ a:hover {
 
 /* Styles pour la section Formation */
 .style3 {
-    background: var(--bg-color);
+    background: transparent;
     padding: 6rem 0;
     position: relative;
 }

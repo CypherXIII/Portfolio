@@ -1,67 +1,84 @@
-# Portfolio Cédric Jestin - Mars 2025
+# Portfolio - Marie Challet
 
-Ce portfolio a été totalement repensé pour offrir une expérience utilisateur moderne, professionnelle et immersive. Voici les principaux changements et fonctionnalités :
+## Description
+Ce portfolio présente les compétences et projets de Marie Challet en data science, business intelligence et cybersécurité. Il s'agit d'un site web statique conçu pour mettre en valeur un parcours professionnel avec une interface moderne et interactive.
 
-## 🎨 Nouvelle Identité Visuelle
+## Technologies utilisées
+- HTML5
+- CSS3 (avec variables CSS, flexbox, grid, animations)
+- JavaScript vanilla
+- Bibliothèques:
+  - Font Awesome (icônes)
+  - AOS (Animate On Scroll)
+  - GSAP (animations avancées)
+  - PDF.js (visualisation de PDF)
+  - Particles.js (effets de particules)
 
-- **Inspiration neuronale** : Le design s'inspire directement de l'image NIPS_Neural-Architecture-Optimization utilisée comme fond principal, créant une esthétique futuriste et technique.
-- **Palette de couleurs** : Bleu nuit, bleu électrique, blanc éclatant et nuances de gris, créant une ambiance sophistiquée et technologique.
-- **Effets visuels** : Utilisation d'effets de verre (glassmorphism), de néons, et de dégradés subtils pour une expérience visuelle moderne.
+## Structure du projet
+```
+Portfolio/
+├── index.html          # Page principale du portfolio
+├── assets/
+│   ├── css/
+│   │   └── style.css   # Styles du site
+│   ├── js/
+│   │   └── script.js   # Fonctionnalités JavaScript
+│   ├── images/         # Images utilisées dans le portfolio
+│   └── examples/       # Fichiers de démonstration (PDF, etc.)
+└── README.md           # Ce fichier
+```
 
-## 💻 Responsive et Adaptatif
+## Installation
+1. Clonez ce dépôt ou téléchargez-le sous forme d'archive
+2. Aucune dépendance à installer, tous les scripts sont chargés via CDN
+3. Ouvrez `index.html` dans un navigateur web moderne
 
-- **Pleinement responsive** : Adaptation parfaite sur tous les appareils (desktop, tablette, mobile).
-- **Optimisé pour le tactile** : Comportements spécifiques pour les appareils tactiles.
-- **Performance optimisée** : Animations fluides sans ralentissement, même sur les appareils moins puissants.
-
-## 🛠️ Technologies Utilisées
-
-- **HTML5** : Structure sémantique et accessible
-- **CSS3** : Variables CSS, Flexbox, Grid, animations et transitions
-- **JavaScript** : Animations personnalisées, interactions utilisateur et effets visuels
-- **AOS (Animate On Scroll)** : Bibliothèque pour les animations au défilement
-
-## 📱 Compatibilité
-
-- **Navigateurs pris en charge** : Chrome, Firefox, Safari, Edge (dernières versions)
-- **Appareils pris en charge** : Desktop, tablette, mobile
-
-
-
-
-## Structure du Portfolio
-
-Le portfolio est organisé en plusieurs sections :
-
-1. **Accueil** - Une introduction avec une image de fond et un appel à l'action.
-2. **Présentation** - Une brève présentation de qui je suis et de mon parcours.
-3. **Compétences & Technologies** - Les principales technologies et compétences que je maîtrise.
-4. **Projets** - Une présentation de mes projets récents avec des liens vers les rapports détaillés.
-5. **Contact** - Mes informations de contact et liens vers mes profils professionnels.
-
-## Comment Utiliser
-
-1. Clonez ce dépôt sur votre machine locale.
-2. Ouvrez le fichier `index.html` dans votre navigateur pour visualiser le portfolio.
-3. Pour modifier le contenu, éditez le fichier `index.html`.
-4. Pour modifier le style, éditez les fichiers CSS dans le dossier `assets/css/`.
-5. Pour modifier les interactions, éditez les fichiers JavaScript dans le dossier `assets/js/`.
+Pour le développement:
+- Utilisez un éditeur de code comme VS Code, Sublime Text ou WebStorm
+- Pour modifier les styles, éditez `assets/css/style.css`
+- Pour modifier les comportements, éditez `assets/js/script.js`
 
 ## Personnalisation
+### Ajouter un nouveau projet
+1. Ouvrez `index.html`
+2. Repérez la section "projects-grid" 
+3. Ajoutez un nouveau bloc de projet en suivant le modèle existant:
+```html
+<div class="project-card" data-category="categorie1 categorie2" data-aos="fade-up">
+    <div class="project-card-inner">
+        <!-- Contenu du projet -->
+    </div>
+</div>
+```
 
-Vous pouvez personnaliser ce portfolio en :
+### Modifier les catégories
+1. Mettez à jour les boutons de filtre dans la section "skills-filter"
+2. Modifiez les attributs `data-category` des projets correspondants
 
-- Modifiant les couleurs dans le fichier `main.css` (variables CSS)
-- Remplaçant les images dans le dossier `assets/images/`
-- Ajoutant ou supprimant des sections dans le fichier `index.html`
-- Modifiant les informations de contact et les liens vers vos profils
+## Fonctionnalités
+- Design responsive adapté à tous les appareils
+- Filtrage des projets par catégorie
+- Visualisation de documents PDF et images
+- Animations fluides et optimisées
+- Sections détaillées pour chaque compétence
+- Mode sombre intégré
+- Navigation ergonomique
+- Consentement aux cookies
+- Optimisations de performance
 
-## Crédits
+## Résolution de problèmes
+### Images non affichées
+- Vérifiez que l'attribut `data-src` dans les éléments de prévisualisation est correctement défini
+- Assurez-vous que les chemins des images sont corrects
 
-- Icônes : [Font Awesome](https://fontawesome.com/)
-- Police de caractères : Segoe UI
-- Animations : CSS et jQuery
+### Problèmes d'affichage PDF
+- Vérifiez que la bibliothèque PDF.js est correctement chargée
+- Assurez-vous que les chemins des fichiers PDF sont valides
 
 ## Licence
+Tous droits réservés - Marie Challet
 
-Ce projet est libre de droit.
+## Notes de développement
+- Ce portfolio a été développé pour présenter des projets data/cybersécurité
+- Le code est optimisé pour les performances et l'accessibilité
+- Les animations sont désactivées automatiquement si l'utilisateur a activé l'option "réduire les animations" dans son système

@@ -1463,33 +1463,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // Cookie consent banner
-    const cookieBanner = document.getElementById('cookie-consent');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const declineBtn = document.getElementById('decline-cookies');
-    
-    if (!localStorage.getItem('cookieConsent')) {
-        setTimeout(() => {
-            cookieBanner.classList.add('show');
-        }, 2000);
-    }
-    
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            cookieBanner.classList.remove('show');
-            // Ici vous pourriez activer les cookies/trackers
-        });
-    }
-    
-    if (declineBtn) {
-        declineBtn.addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'declined');
-            cookieBanner.classList.remove('show');
-            // Ici vous pourriez désactiver les cookies/trackers
-        });
-    }
 });
 
 // Animation des éléments timeline au défilement

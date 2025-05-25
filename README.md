@@ -26,7 +26,7 @@ Portfolio/
 │   │   └── style.css   # Styles du site
 │   ├── js/
 │   │   └── script.js   # Fonctionnalités JavaScript
-│   └── example/       # Fichiers de démonstration (PDF, etc.)
+│   └── examples/       # Fichiers de démonstration (PDF, etc.)
 └── README.md           # Ce fichier
 ```
 

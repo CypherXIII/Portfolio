@@ -1191,6 +1191,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Nouveau code pour gérer les cartes de projets
     initProjectCards();
+
+    // Gestion du modal
+    const modal = document.getElementById('example-modal');
+    const modalContentContainer = document.getElementById('modal-content-container');
+    const closeModalButton = document.querySelector('.close-modal');
+
+    // Ouvrir le modal
+    document.querySelectorAll('.preview-item').forEach(item => {
+        item.addEventListener('click', function () {
+            const type = this.getAttribute('data-type');
+            const src = this.getAttribute('data-src');
+
+            // Injecter l'image dans le modal
+            if (type === 'image') {
+                modalContentContainer.innerHTML = `<img src="${src}" alt="Image d'exemple" style="width: 100%; height: auto;">`;
+            } else {
+                modalContentContainer.innerHTML = `<p>Type de contenu non pris en charge.</p>`;
+            }
+
+            // Afficher le modal
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
+        });
+    });
+
+    // Fermer le modal
+    closeModalButton.addEventListener('click', function () {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+    });
+
+    // Fermer le modal en cliquant en dehors du contenu
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+    });
 });
 
 // Initialisation des cartes de projets

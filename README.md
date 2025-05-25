@@ -13,7 +13,6 @@ Ce portfolio présente les compétences et projets de Marie Challet en data scie
   - Font Awesome (icônes)
   - AOS (Animate On Scroll)
   - GSAP (animations avancées)
-  - PDF.js (visualisation de PDF)
   - Particles.js (effets de particules)
 
 ## Structure du projet
@@ -67,7 +66,6 @@ Pour le développement:
 
 - Design responsive adapté à tous les appareils
 - Filtrage des projets par catégorie
-- Visualisation de documents PDF et images
 - Animations fluides et optimisées
 - Sections détaillées pour chaque compétence
 - Mode sombre intégré
@@ -75,24 +73,6 @@ Pour le développement:
 - Consentement aux cookies
 - Optimisations de performance
 
-## Résolution de problèmes
-
-### Images non affichées
-
-- Vérifiez que l'attribut `data-src` dans les éléments de prévisualisation est correctement défini
-- Assurez-vous que les chemins des images sont corrects
-
-### Problèmes d'affichage PDF
-
-- Vérifiez que la bibliothèque PDF.js est correctement chargée
-- Assurez-vous que les chemins des fichiers PDF sont valides
-
 ## Licence
 
 Tous droits réservés - Marie Challet
-
-## Notes de développement
-
-- Ce portfolio a été développé pour présenter des projets data/cybersécurité
-- Le code est optimisé pour les performances et l'accessibilité
-- Les animations sont désactivées automatiquement si l'utilisateur a activé l'option "réduire les animations" dans son système

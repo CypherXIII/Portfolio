@@ -652,204 +652,117 @@ document.addEventListener('DOMContentLoaded', function() {
     // Media Viewer - Gestionnaire pour l'affichage des PDFs et images
     function setupMediaViewer() {
         // Fonction pour ouvrir la modale avec le contenu approprié
-        function openModal(type, src) {
+        function openModal(content, type) {
             const modal = document.getElementById('example-modal');
-            const container = document.getElementById('modal-content-container');
-            container.innerHTML = ''; // Vider le contenu précédent
+            const modalContent = document.getElementById('modal-content-container');
             
-            // Afficher la modale
-            modal.style.display = 'block';
+            // Clear previous content
+            modalContent.innerHTML = '';
             
-            // Ajouter un spinner de chargement
-            container.innerHTML = '<div class="loading-spinner"></div>';
-            
-            // Traiter différents types de contenu
-            switch(type) {
-                case 'image':
-                    loadImage(src, container);
-                    break;
-                case 'pdf':
-                    loadPDF(src, container);
-                    break;
-                case 'html':
-                    loadHTML(src, container);
-                    break;
-                default:
-                    container.innerHTML = '<div class="error-message">Type de contenu non supporté</div>';
-            }
-        }
-        
-        // Fonction pour charger une image
-        function loadImage(src, container) {
-            const img = new Image();
-            img.onload = function() {
-                container.innerHTML = '';
-                img.className = 'image-viewer';
-                container.appendChild(img);
-                
-                // Ajouter les contrôles de zoom
-                const controls = document.createElement('div');
-                controls.className = 'zoom-controls';
-                controls.innerHTML = `
-                    <button id="zoom-in">Zoom +</button>
-                    <button id="zoom-out">Zoom -</button>
-                    <button id="zoom-reset">Réinitialiser</button>
-                `;
-                container.appendChild(controls);
-                
-                // Fonctionnalité de zoom
-                let scale = 1;
-                document.getElementById('zoom-in').addEventListener('click', function() {
-                    scale += 0.1;
-                    img.style.transform = `scale(${scale})`;
-                });
-                document.getElementById('zoom-out').addEventListener('click', function() {
-                    scale -= 0.1;
-                    if (scale < 0.1) scale = 0.1;
-                    img.style.transform = `scale(${scale})`;
-                });
-                document.getElementById('zoom-reset').addEventListener('click', function() {
-                    scale = 1;
-                    img.style.transform = 'scale(1)';
-                });
-            };
-            
-            img.onerror = function() {
-                container.innerHTML = '<div class="error-message">Impossible de charger l\'image</div>';
-            };
-            
-            img.src = src;
-        }
-        
-        // Fonction pour charger un PDF
-        function loadPDF(src, container) {
-            // Déclarer correctement les variables
-            let pdfDoc = null;
-            let pageCount = 0;
-            let currentPage = 1;
-            let pageRendering = false;
-            let pageNumPending = null;
-            let scale = 1.0;
-            
-            // Créer la structure pour le lecteur PDF avec les styles unifiés
-            container.innerHTML = `
-                <div class="pdf-controls">
-                    <button id="prev-page">&#8592; Précédent</button>
-                    <div class="page-info">Page <span id="page-num">1</span> / <span id="page-count">-</span></div>
-                    <button id="next-page">Suivant &#8594;</button>
-                    <button id="zoom-in">Zoom +</button>
-                    <button id="zoom-out">Zoom -</button>
-                </div>
-                <canvas id="pdf-canvas" class="pdf-viewer"></canvas>
-            `;
-            
-            const pdfCanvas = document.getElementById('pdf-canvas');
-            const ctx = pdfCanvas.getContext('2d');
-            
-            // Chargement du document PDF
-            pdfjsLib.getDocument(src).promise.then(function(pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                pageCount = pdfDoc.numPages;
-                document.getElementById('page-count').textContent = pageCount;
-                
-                // Rendu de la première page
-                renderPage(currentPage);
-                
-                // Event listeners pour les contrôles
-                document.getElementById('prev-page').addEventListener('click', onPrevPage);
-                document.getElementById('next-page').addEventListener('click', onNextPage);
-                document.getElementById('zoom-in').addEventListener('click', function() {
-                    scale += 0.25;
-                    renderPage(currentPage);
-                });
-                document.getElementById('zoom-out').addEventListener('click', function() {
-                    if (scale > 0.5) {
-                        scale -= 0.25;
-                        renderPage(currentPage);
-                    }
-                });
-            }).catch(function(error) {
-                console.error('Erreur lors du chargement du PDF:', error);
-                container.innerHTML = `<div class="error-message">Erreur lors du chargement du PDF.<br>Message: ${error.message}</div>`;
-            });
-            
-            // Fonction pour le rendu d'une page du PDF
-            function renderPage(num) {
-                pageRendering = true;
-                
-                pdfDoc.getPage(num).then(function(page) {
-                    const viewport = page.getViewport({ scale: scale });
-                    pdfCanvas.height = viewport.height;
-                    pdfCanvas.width = viewport.width;
+            if (type === 'image') {
+                // Create image element with error handling
+                if (!content || content === 'null' || content === 'undefined') {
+                    // Handle null or undefined content
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'modal-error';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Image non disponible';
+                    modalContent.appendChild(errorMessage);
+                } else {
+                    const img = document.createElement('img');
+                    img.className = 'modal-image';
+                    img.alt = 'Aperçu du projet';
                     
-                    const renderContext = {
-                        canvasContext: ctx,
-                        viewport: viewport
+                    // Add error handling for the image
+                    img.onerror = function() {
+                        this.onerror = null;
+                        this.src = 'assets/img/placeholder-image.png';
+                        this.classList.add('fallback-image');
+                        
+                        // Add error message below the fallback image
+                        const errorNote = document.createElement('p');
+                        errorNote.className = 'image-error-note';
+                        errorNote.textContent = 'L\'image originale n\'a pas pu être chargée.';
+                        modalContent.appendChild(errorNote);
                     };
                     
-                    const renderTask = page.render(renderContext);
-                    
-                    renderTask.promise.then(function() {
-                        pageRendering = false;
-                        
-                        if (pageNumPending !== null) {
-                            renderPage(pageNumPending);
-                            pageNumPending = null;
-                        }
-                        
-                        document.getElementById('page-num').textContent = num;
-                    });
-                });
-            }
-            
-            // Navigation entre les pages
-            function queueRenderPage(num) {
-                if (pageRendering) {
-                    pageNumPending = num;
+                    // Set the image source
+                    img.src = content;
+                    modalContent.appendChild(img);
+                }
+            } else if (type === 'pdf') {
+                // Handle PDF content with error handling
+                const pdfContainer = document.createElement('div');
+                pdfContainer.className = 'pdf-container';
+                
+                // Check for valid PDF path
+                if (!content || content === 'null' || content === 'undefined') {
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'modal-error';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Document PDF non disponible';
+                    modalContent.appendChild(errorMessage);
                 } else {
-                    renderPage(num);
+                    // Try to load the PDF with proper error handling
+                    try {
+                        const pdfViewer = document.createElement('iframe');
+                        pdfViewer.className = 'pdf-viewer';
+                        pdfViewer.src = content;
+                        pdfViewer.onerror = function() {
+                            this.style.display = 'none';
+                            const errorMessage = document.createElement('div');
+                            errorMessage.className = 'modal-error';
+                            errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Impossible de charger le PDF';
+                            pdfContainer.appendChild(errorMessage);
+                        };
+                        pdfContainer.appendChild(pdfViewer);
+                        modalContent.appendChild(pdfContainer);
+                    } catch (e) {
+                        const errorMessage = document.createElement('div');
+                        errorMessage.className = 'modal-error';
+                        errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur lors du chargement du PDF';
+                        modalContent.appendChild(errorMessage);
+                    }
+                }
+            } else {
+                // For other content types, just insert as HTML
+                if (!content) {
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'modal-error';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Contenu non disponible';
+                    modalContent.appendChild(errorMessage);
+                } else {
+                    modalContent.innerHTML = content;
                 }
             }
             
-            function onPrevPage() {
-                if (currentPage <= 1) return;
-                currentPage--;
-                queueRenderPage(currentPage);
-            }
+            // Show the modal
+            modal.style.display = 'flex';
             
-            function onNextPage() {
-                if (currentPage >= pageCount) return;
-                currentPage++;
-                queueRenderPage(currentPage);
-            }
+            // Add accessibility focus
+            setTimeout(() => {
+                const closeButton = modal.querySelector('.close-modal');
+                if (closeButton) closeButton.focus();
+            }, 100);
         }
-        
-        // Fonction pour charger un HTML
-        function loadHTML(src, container) {
-            // Créer les contrôles pour l'iframe HTML
-            const controls = document.createElement('div');
-            controls.className = 'html-controls';
-            controls.innerHTML = `
-                <div class="html-info">Démo interactive en HTML</div>
-                <button id="open-new-tab">Ouvrir dans un nouvel onglet</button>
-            `;
-            container.innerHTML = '';
-            container.appendChild(controls);
-            
-            // Créer l'iframe pour le contenu HTML
-            const iframe = document.createElement('iframe');
-            iframe.className = 'html-viewer';
-            iframe.src = src;
-            iframe.title = "Contenu HTML interactif";
-            iframe.setAttribute('loading', 'lazy');
-            container.appendChild(iframe);
-            
-            // Ajouter la fonctionnalité d'ouverture dans un nouvel onglet
-            document.getElementById('open-new-tab').addEventListener('click', function() {
-                window.open(src, '_blank');
+
+        // Fix the preview item click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const previewItems = document.querySelectorAll('.preview-item');
+            previewItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('data-src');
+                    
+                    // Validate the source before opening modal
+                    if (!src || src === 'null' || src === 'undefined') {
+                        console.warn('Invalid source for preview item:', type);
+                        openModal(null, type); // Pass null to trigger error handling
+                    } else {
+                        openModal(src, type);
+                    }
+                });
             });
-        }
-        
+        });
+
         // Fonction pour fermer la modale
         function closeModal() {
             const modal = document.getElementById('example-modal');
@@ -862,7 +775,7 @@ document.addEventListener('DOMContentLoaded', function() {
             item.addEventListener('click', function() {
                 const type = this.getAttribute('data-type');
                 const src = this.getAttribute('data-src');
-                openModal(type, src);
+                openModal(src, type);
             });
         });
         

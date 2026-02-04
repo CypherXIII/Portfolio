@@ -2,7 +2,7 @@
 
 ## Description
 
-Ce portfolio présente les compétences et projets de Marie Challet en data science, business intelligence et cybersécurité. Il s'agit d'un site web statique conçu pour mettre en valeur un parcours professionnel avec une interface moderne et interactive.
+Ce portfolio présente mes compétences et mes projets en data science, business intelligence et cybersécurité. Il s'agit d'un site web statique conçu pour mettre en valeur un parcours professionnel avec une interface moderne et interactive.
 
 ## Technologies utilisées
 

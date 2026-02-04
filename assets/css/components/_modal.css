@@ -1,0 +1,188 @@
+/**
+ * Modal - Styles pour les fenêtres modales
+ */
+
+/* Overlay de la modale */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: var(--z-modal);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Contenu de la modale */
+.modal-content {
+    position: relative;
+    margin: 5vh auto;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+}
+
+/* Bouton de fermeture */
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Conteneur du contenu */
+#modal-content-container {
+    padding: 2rem;
+    max-height: calc(90vh - 4rem);
+    overflow-y: auto;
+}
+
+/* Spinner de chargement */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(var(--primary-rgb), 0.2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 3rem auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Message d'erreur */
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #ef4444;
+}
+
+.error-message i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Visualiseur d'image */
+.image-viewer {
+    max-width: 100%;
+    max-height: 70vh;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+}
+
+/* Contrôles de zoom */
+.zoom-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.zoom-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--primary-rgb), 0.2);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.zoom-btn:hover {
+    background: var(--primary-color);
+}
+
+/* Visualiseur PDF */
+.pdf-viewer {
+    width: 100%;
+    max-height: 65vh;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contrôles PDF */
+.pdf-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+}
+
+.pdf-controls button {
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pdf-controls button:hover {
+    background: var(--primary-dark);
+}
+
+.page-info {
+    color: var(--text-color);
+    font-size: var(--font-size-sm);
+}
+
+/* Conteneur de contenu générique */
+.content-container {
+    padding: 1rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 2vh auto;
+        max-height: 96vh;
+    }
+    
+    #modal-content-container {
+        padding: 1rem;
+    }
+    
+    .pdf-viewer, .image-viewer {
+        max-height: 60vh;
+    }
+}

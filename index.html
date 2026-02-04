@@ -1,40 +1,37 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Marie Challet - Portfolio Science des Données & Cybersécurité</title>
+    <title>Marie Challet - Portfolio Cybersécurité & Data Engineering</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-    <meta name="description" content="Portfolio de Marie Challet, spécialiste en science des données avec une expertise en cybersécurité, recherchant une alternance pour 2025" />
-    <meta name="keywords" content="data science, cybersécurité, portfolio, Marie Challet, alternance, INSA, threat intelligence, SOC" />
+    <meta name="description" content="Portfolio de Marie Challet, future ingénieure en cybersécurité (INSA CVL - SecNumEdu ANSSI) avec un profil hybride data/sécurité, recherchant une alternance 24 mois dès septembre 2026" />
+    <meta name="keywords" content="cybersécurité, data engineering, portfolio, Marie Challet, alternance, INSA, SOC, forensic, threat intelligence, DevSecOps" />
     <meta name="author" content="Marie Challet" />
-    <meta property="og:title" content="Marie Challet - Portfolio Science des Données & Cybersécurité" />
-    <meta property="og:description" content="Découvrez mes projets en data science et cybersécurité" />
+    <meta property="og:title" content="Marie Challet - Portfolio Cybersécurité & Data Engineering" />
+    <meta property="og:description" content="Découvrez mes projets en cybersécurité et data engineering" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#2c3e50" />
-    <!-- Préchargement des ressources critiques -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
-    <link rel="preload" href="assets/css/style.css" as="style" />
+    <meta name="theme-color" content="#2563eb" />
+    
+    <!-- Preconnect pour optimiser le chargement -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Chargement des feuilles de style dans l'ordre (après le preload) -->
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    
+    <!-- Feuilles de style -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- FontAwesome après preload -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Scripts différés -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Configuration du chemin des workers pour PDF.js
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof pdfjsLib !== 'undefined') {
-                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-            }
-        });
-    </script>
     <!-- Données structurées pour le SEO -->
     <script type="application/ld+json">
     {
@@ -42,17 +39,23 @@
         "@type": "Person",
         "name": "Marie Challet",
         "url": "https://cypherxiii.github.io/Portfolio/",
-        "jobTitle": "Future Ingénieure en Cybersécurité",
+        "jobTitle": "Apprentie Ingénieure DevSecOps",
         "worksFor": {
             "@type": "Organization",
             "name": "FormaSup Auvergne"
         },
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "IUT Clermont Auvergne"
-        },
-        "description": "Etudiante en science des données et en cybersécurité",
-        "skills": "Data Science, Cybersécurité, Investigation numérique, Threat intelligence"
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "INSA Centre Val de Loire"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "IUT Clermont Auvergne"
+            }
+        ],
+        "description": "Étudiante ingénieure en cybersécurité (INSA CVL - SecNumEdu ANSSI) avec profil hybride data/sécurité",
+        "skills": "Cybersécurité, DevSecOps, Data Engineering, SOC, Forensic, Threat Intelligence"
     }
     </script>
 </head>
@@ -66,6 +69,30 @@
             </linearGradient>
         </defs>
     </svg>
+    
+    <!-- Menu toggle en haut à gauche -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </button>
+    
+    <!-- Menu latéral vertical -->
+    <nav class="side-menu" id="side-menu" aria-hidden="true">
+        <ul class="side-menu-links">
+            <li><a href="#header"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="#one"><i class="fas fa-user"></i><span>À propos</span></a></li>
+            <li><a href="#formation"><i class="fas fa-graduation-cap"></i><span>Formation</span></a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Expérience</span></a></li>
+            <li><a href="#competences"><i class="fas fa-code"></i><span>Compétences</span></a></li>
+            <li><a href="#footer"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        </ul>
+    </nav>
+    
+    <!-- Overlay pour fermer le menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
     
     <!-- Header avec introduction du portfolio -->
     <section id="header" class="hero" role="banner">
@@ -84,9 +111,6 @@
                 <p class="main-subtitle animate__animated animate__fadeInUp animate__delay-1s">
                     <span class="typed-text"></span><span class="cursor">&nbsp;</span>
                 </p>
-                <div class="portfolio-intro animate__animated animate__fadeIn animate__delay-2s">
-                    <p class="intro-text">Bienvenue dans mon portfolio !</p>
-                </div>
                 <div class="scroll-indicator animate__animated animate__fadeIn animate__delay-2s">
                     <a href="#one" class="scroll-link" aria-label="Découvrir mon profil">
                         <span>Découvrir</span>
@@ -109,11 +133,11 @@
                     </header>
                     <div class="about-content">
                         <div class="about-text">
-                            <p class="text-justify">Spécialiste en devenir à l'interface entre data science et cybersécurité, je présente dans ce portfolio les compétences techniques acquises durant mon Bachelor Universitaire de Technologie en Science des Données à l'IUT Clermont Auvergne.</p>
+                            <p class="text-justify"><strong>Étudiante ingénieure en cybersécurité</strong> à l'INSA Centre Val de Loire (formation labellisée <strong>SecNumEdu par l'ANSSI</strong>), je développe un profil hybride alliant <strong>data engineering</strong> et <strong>sécurité informatique</strong>. En tant qu'apprentie ingénieure DevSecOps chez FormaSup Auvergne, je mets en pratique mes compétences en audit de sécurité SI, durcissement d'infrastructures et déploiement sécurisé de plateformes BI.</p>
                             
-                            <p class="text-justify">Future élève-ingénieure à l'INSA Centre Val de Loire (2025-2028) en Sécurité et Technologies Informatiques, mon parcours académique et mes projets m'ont permis de développer une expertise en <strong>analyse de données</strong>, <strong>développement d'outils décisionnels</strong> et <strong>sécurisation des systèmes d'information</strong>. Je m'intéresse particulièrement à l'investigation numérique forensique et aux infrastructures SOC (Security Operations Center).</p>
+                            <p class="text-justify"><strong>Major de promotion</strong> du B.U.T Science des Données (option Cybersécurité) avec mention <strong>Très Bien</strong>, j'ai construit une expertise solide en <strong>DevSecOps</strong>, <strong>sécurisation des systèmes d'information</strong> et <strong>ingénierie des données</strong>. Mes domaines de prédilection : SOC, investigation numérique forensique et threat intelligence.</p>
                             
-                            <p class="text-justify">Ce portfolio illustre mon approche technique et analytique à travers différents projets concrets réalisés dans des contextes professionnels et académiques.</p>
+                            <p class="text-justify">À la recherche d'une <strong>alternance de 24 mois dès septembre 2026</strong> dans les domaines du SOC, forensic, threat intelligence ou DevSecOps. Ce portfolio témoigne de mon parcours à travers des projets concrets, réalisés en contexte professionnel comme académique.</p>
                        </div>
                     </div>
                 </div>
@@ -140,11 +164,12 @@
                             <span>2025-2028</span>
                         </div>
                         <div class="timeline-content" data-aos="fade-right">
-                            <h3 class="timeline-title">Diplôme d'Ingénieur en Sécurité et Technologies Informatiques</h3>
-                            <p class="timeline-location">INSA Centre Val de Loire</p>
+                            <h3 class="timeline-title">Diplôme d'Ingénieur, spécialité « Sécurité Informatique » (STI)</h3>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> INSA Centre Val de Loire, Bourges</p>
                             <div class="timeline-tags">
                                 <span class="timeline-tag">En alternance</span>
-                                <span class="timeline-tag">SecNumdu</span>
+                                <span class="timeline-tag">SecNumEdu ANSSI</span>
+                                <span class="timeline-tag">Reconnue CTI</span>
                             </div>
                         </div>
                     </div>
@@ -155,9 +180,11 @@
                         </div>
                         <div class="timeline-content" data-aos="fade-left">
                             <h3 class="timeline-title">B.U.T. Science des Données - Option Cybersécurité - Parcours Visualisation, Conception d'Outils Décisionnels</h3>
-                            <p class="timeline-location">IUT Clermont Auvergne</p>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> IUT Clermont Auvergne, Aurillac</p>
                             <div class="timeline-tags">
-                                <span class="timeline-tag">En alternance</span>
+                                <span class="timeline-tag">Major de promotion</span>
+                                <span class="timeline-tag">Mention Très Bien</span>
+                                <span class="timeline-tag">3ème année en alternance</span>
                             </div>
                         </div>
                     </div>
@@ -168,7 +195,7 @@
                         </div>
                         <div class="timeline-content" data-aos="fade-right">
                             <h3 class="timeline-title">L1 Sciences de l'éducation</h3>
-                            <p class="timeline-location">Université Clermont Auvergne</p>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Université Clermont Auvergne</p>
                         </div>
                     </div>
 
@@ -178,7 +205,92 @@
                         </div>
                         <div class="timeline-content" data-aos="fade-left">
                             <h3 class="timeline-title">L1 Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales</h3>
-                            <p class="timeline-location">Université Clermont Auvergne</p>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Université Clermont Auvergne</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Expériences Professionnelles -->
+    <section id="experience" class="main style2" role="region" aria-labelledby="experience-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="section-header" data-aos="fade-up">
+                        <h2 id="experience-title" class="section-title with-gradient">Expériences Professionnelles</h2>
+                        <div class="title-underline animated"></div>
+                    </header>
+                </div>
+            </div>
+            
+            <div class="timeline-container" data-aos="fade-up">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>Sept. 2025 - Août 2026</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-right">
+                            <h3 class="timeline-title">Apprentie Ingénieure DevSecOps</h3>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> FormaSup Auvergne, Aubière</p>
+                            <ul class="experience-list">
+                                <li>Audit de sécurité du SI et renforcement des infrastructures internes</li>
+                                <li>Implémentation de mesures de cybersécurité adaptées à l'organisation</li>
+                                <li>Sensibilisation et formation de l'équipe (10 personnes) aux bonnes pratiques</li>
+                                <li>Maintenance et optimisation des bases de données et applications</li>
+                                <li>Déploiement sécurisé d'une plateforme BI avec contrôle d'accès granulaire</li>
+                                <li>Configuration et administration d'un serveur d'infrastructure</li>
+                                <li>Encadrement et formation d'un stagiaire sur les outils développés</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">DevSecOps</span>
+                                <span class="timeline-tag">Audit SI</span>
+                                <span class="timeline-tag">Durcissement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>Sept. 2024 - Août 2025</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-left">
+                            <h3 class="timeline-title">Apprentie Data Engineer & BI Developer</h3>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> FormaSup Auvergne, Aubière</p>
+                            <ul class="experience-list">
+                                <li>Conception d'une plateforme BI complète pour les acteurs de l'alternance en Auvergne (UCA, ClermontSB, ISRP)</li>
+                                <li>Développement d'applications métier : tableaux de bord Shiny/Dash, outil Tkinter de contrôle FEC</li>
+                                <li>Ingénierie des données : base PostgreSQL, traitement automatisé de fichiers Excel</li>
+                                <li>Intégration d'APIs externes pour enrichissement automatique</li>
+                                <li>Documentation technique complète et formation des utilisateurs finaux</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Data Engineering</span>
+                                <span class="timeline-tag">BI</span>
+                                <span class="timeline-tag">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>Avr. - Juin 2024</span>
+                        </div>
+                        <div class="timeline-content" data-aos="fade-right">
+                            <h3 class="timeline-title">Stagiaire Data Engineer & BI Developer</h3>
+                            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> BeBlocks France, Clermont-Ferrand</p>
+                            <ul class="experience-list">
+                                <li>Optimisation d'un Data Warehouse PostgreSQL : réduction de 100 Go à 40 Go (-60%)</li>
+                                <li>Conception et automatisation d'ETL avec Talend</li>
+                                <li>Refonte des dashboards Grafana pour le monitoring de la solution BeExchange</li>
+                                <li>Collaboration en méthodologie Agile : gestion de sprint avec Jira et GitLab</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Data Warehouse</span>
+                                <span class="timeline-tag">Talend</span>
+                                <span class="timeline-tag">Agile</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,7 +299,7 @@
     </section>
     
     <!-- Section Compétences et Projets -->
-    <section id="competences" class="main style2" role="region" aria-labelledby="competences-title">
+    <section id="competences" class="main style3" role="region" aria-labelledby="competences-title">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -201,240 +313,275 @@
             <!-- Filtres pour les compétences -->
             <div class="skills-filter" data-aos="fade-up" role="tablist">
                 <button class="filter-btn active" data-filter="all" aria-selected="true" role="tab">Tous les projets</button>
-                <button class="filter-btn" data-filter="traitement" aria-selected="false" role="tab">Traitement des données</button>
-                <button class="filter-btn" data-filter="analyse" aria-selected="false" role="tab">Analyse statistique</button>
-                <button class="filter-btn" data-filter="valorisation" aria-selected="false" role="tab">Valorisation</button>
-                <button class="filter-btn" data-filter="conception" aria-selected="false" role="tab">Conception d'outils</button>
-                <button class="filter-btn" data-filter="cybersecurity" aria-selected="false" role="tab">Cybersécurité</button>
+                <button class="filter-btn" data-filter="cybersecurity" aria-selected="false" role="tab"><i class="fas fa-shield-alt"></i> Cybersécurité</button>
+                <button class="filter-btn" data-filter="bi" aria-selected="false" role="tab"><i class="fas fa-chart-pie"></i> Business Intelligence</button>
+                <button class="filter-btn" data-filter="dataeng" aria-selected="false" role="tab"><i class="fas fa-database"></i> Data Engineering</button>
+                <button class="filter-btn" data-filter="datascience" aria-selected="false" role="tab"><i class="fas fa-brain"></i> Data Science</button>
+                <button class="filter-btn" data-filter="dev" aria-selected="false" role="tab"><i class="fas fa-code"></i> Développement</button>
+                <button class="filter-btn" data-filter="humanities" aria-selected="false" role="tab"><i class="fas fa-book"></i> Humanités</button>
             </div>
             
             <!-- Descriptions des compétences -->
             <div class="competence-descriptions" data-aos="fade-up" aria-live="polite">
-                <div class="competence-description" id="traitement-description">
-                    <h3><i class="fas fa-database"></i>Traitement des données à des fins décisionnelles</h3>
-                    <p>Cette compétence couvre la collecte, le nettoyage, l'intégration et la transformation des données brutes en informations exploitables pour la prise de décision.</p>
-                    
-                    <p>Cette compétence aborde l'approche décisionnelle à travers des situations d'apprentissage et d'évaluation introduisant la manipulation des données structurées et le développement de visualisations et de reportings performants.</p>
-                    
-                    <p>Elle comprend notamment :</p>
-                    <ul class="compact-list">
-                        <li>L'extraction de données depuis diverses sources</li>
-                        <li>La conception et l'implémentation de pipelines ETL</li>
-                        <li>Le nettoyage et la préparation des données</li>
-                        <li>La modélisation de données relationnelle et dimensionnelle</li>
-                    </ul>
-                    
-                    <div class="professional-contexts">
-                        <h4>Contextes professionnels d'application</h4>
-                        <ul class="context-list">
-                            <li><i class="fas fa-chart-line"></i> Développement de systèmes d'information décisionnels</li>
-                            <li><i class="fas fa-tasks"></i> Préparation des données à des fins d'analyses statistiques</li>
-                            <li><i class="fas fa-project-diagram"></i> Conception d'entrepôts de données et datawarehouses</li>
-                            <li><i class="fas fa-business-time"></i> Création de tableaux de bord pour l'aide à la décision</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="competence-description" id="analyse-description">
-                    <h3><i class="fas fa-chart-bar"></i>Analyse statistique pour l'aide à la décision</h3>
-                    <p>Cette compétence couvre l'application de méthodes statistiques pour extraire des connaissances significatives à partir de données complexes.</p>
-                    
-                    <p>Cette compétence aborde l'approche statistique à travers des situations d'apprentissage et d'évaluation introduisant la description de données dans le cadre de l'analyse d'une variable et des liens entre variables. Les premiers éléments inférentiels sont également abordés.</p>
-                    
-                    <p>Elle comprend notamment :</p>
-                    <ul class="compact-list">
-                        <li>L'analyse descriptive et exploratoire des données</li>
-                        <li>L'étude des corrélations et des relations entre variables</li>
-                        <li>L'application de tests statistiques appropriés</li>
-                        <li>L'interprétation des résultats pour la prise de décision</li>
-                    </ul>
-                    
-                    <div class="professional-contexts">
-                        <h4>Contextes professionnels d'application</h4>
-                        <ul class="context-list">
-                            <li><i class="fas fa-tools"></i> Programmation d'outils d'aide à la décision</li>
-                            <li><i class="fas fa-search"></i> Conduite de projets d'études statistiques</li>
-                            <li><i class="fas fa-lightbulb"></i> Analyse prédictive et modélisation</li>
-                            <li><i class="fas fa-chart-pie"></i> Élaboration de tableaux de bord analytiques</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="competence-description" id="valorisation-description">
-                    <h3><i class="fas fa-chart-pie"></i>Valorisation des données et restitution des résultats</h3>
-                    <p>Cette compétence couvre l'art de communiquer efficacement les insights et conclusions tirés des données pour faciliter la prise de décision.</p>
-                    
-                    <p>Cette compétence aborde la valorisation des résultats, à travers les notions de rédaction et de présentation de résultats, tout en s'attachant à leur mise en contexte. Les situations d'apprentissages et d'évaluation introduisent la valorisation à travers la production des données et la restitution de résultats statistiques.</p>
-                    
-                    <p>Elle comprend notamment :</p>
-                    <ul class="compact-list">
-                        <li>La création de visualisations percutantes et informatives</li>
-                        <li>La conception de tableaux de bord interactifs</li>
-                        <li>La rédaction de rapports analytiques clairs et concis</li>
-                        <li>La présentation orale adaptée aux différents publics cibles</li>
-                    </ul>
-                    
-                    <div class="professional-contexts">
-                        <h4>Contextes professionnels d'application</h4>
-                        <ul class="context-list">
-                            <li><i class="fas fa-tachometer-alt"></i> Développement d'outils décisionnels et tableaux de bord</li>
-                            <li><i class="fas fa-file-alt"></i> Restitution des résultats d'études statistiques</li>
-                            <li><i class="fas fa-users"></i> Présentation de résultats à des décideurs ou parties prenantes</li>
-                            <li><i class="fas fa-laptop-code"></i> Conception d'interfaces de visualisation de données</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="competence-description" id="conception-description">
-                    <h3><i class="fas fa-tools"></i>Conception et développement d'outils décisionnels</h3>
-                    <p>Cette compétence couvre la création et l'implémentation de solutions permettant aux organisations de prendre des décisions éclairées basées sur leurs données.</p>
-                    
-                    <p>Cette compétence englobe plusieurs aspects techniques et méthodologiques, allant de la collecte et la transformation des données à la visualisation des résultats pour les utilisateurs finaux.</p>
-                    
-                    <p>Elle comprend notamment :</p>
-                    <ul class="compact-list">
-                        <li>La conception et le développement de tableaux de bord interactifs</li>
-                        <li>L'implémentation de solutions BI (Business Intelligence)</li>
-                        <li>La mise en place de systèmes ETL (Extract, Transform, Load)</li>
-                        <li>La création d'interfaces utilisateur ergonomiques et intuitives</li>
-                    </ul>
-                    
-                    <div class="professional-contexts">
-                        <h4>Contextes professionnels d'application</h4>
-                        <ul class="context-list">
-                            <li><i class="fas fa-rocket"></i> Déploiement de solutions décisionnelles complètes</li>
-                            <li><i class="fas fa-cogs"></i> Automatisation de reporting et de visualisation</li>
-                            <li><i class="fas fa-database"></i> Implémentation de datawarehouses et datamarts</li>
-                            <li><i class="fas fa-users-cog"></i> Développement de solutions adaptées aux besoins utilisateurs</li>
-                        </ul>
-                    </div>
-                </div>
-                
                 <div class="competence-description" id="cybersecurity-description">
-                    <h3><i class="fas fa-shield-alt"></i>Sécurisation des données et cybersécurité</h3>
-                    <p>Cette compétence couvre la protection des données et des systèmes d'information contre les menaces informatiques, les accès non autorisés, et les vulnérabilités de sécurité.</p>
-                    
-                    <p>Elle englobe les aspects de gouvernance, de conformité réglementaire et de mise en œuvre des mesures techniques pour garantir la confidentialité, l'intégrité et la disponibilité des données tout au long de leur cycle de vie.</p>
+                    <h3><i class="fas fa-shield-alt"></i>Cybersécurité</h3>
+                    <p>Protection des systèmes d'information, gestion des risques, conformité réglementaire et investigation numérique.</p>
                     
                     <p>Elle comprend notamment :</p>
                     <ul class="compact-list">
-                        <li>L'identification et l'évaluation des risques liés à la sécurité des données</li>
-                        <li>La mise en œuvre de solutions d'anonymisation et de pseudonymisation</li>
-                        <li>La gestion des accès et des identités selon le principe du moindre privilège</li>
-                        <li>L'application des réglementations sur la protection des données (RGPD, etc.)</li>
+                        <li>Audit de sécurité et analyse de vulnérabilités</li>
+                        <li>Gouvernance et conformité (RGPD, ISO 27001/27005)</li>
+                        <li>Anonymisation et protection des données sensibles</li>
+                        <li>Investigation numérique (forensic) et réponse à incident</li>
+                        <li>Sécurisation des infrastructures et durcissement</li>
                     </ul>
                     
                     <div class="professional-contexts">
-                        <h4>Contextes professionnels d'application</h4>
+                        <h4>Domaines d'application</h4>
                         <ul class="context-list">
-                            <li><i class="fas fa-lock"></i> Sécurisation des environnements de données sensibles</li>
-                            <li><i class="fas fa-search"></i> Investigation numérique et analyse de menaces</li>
-                            <li><i class="fas fa-file-alt"></i> Conception de politiques de sécurité des données</li>
-                            <li><i class="fas fa-code"></i> Implémentation de mécanismes de protection des données</li>
+                            <li><i class="fas fa-lock"></i> SOC (Security Operations Center)</li>
+                            <li><i class="fas fa-search"></i> Threat Intelligence & Forensic</li>
+                            <li><i class="fas fa-file-alt"></i> GRC (Gouvernance, Risques, Conformité)</li>
+                            <li><i class="fas fa-code"></i> DevSecOps</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="bi-description">
+                    <h3><i class="fas fa-chart-pie"></i>Business Intelligence</h3>
+                    <p>Conception et développement de solutions décisionnelles pour transformer les données en insights actionnables.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>Création de tableaux de bord interactifs</li>
+                        <li>Reporting automatisé et KPIs</li>
+                        <li>Visualisation de données avancée</li>
+                        <li>Déploiement de plateformes BI (Superset, Power BI, Grafana)</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Outils maîtrisés</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-chart-bar"></i> Apache Superset, Power BI, Grafana</li>
+                            <li><i class="fas fa-table"></i> Excel avancé, PowerQuery</li>
+                            <li><i class="fab fa-r-project"></i> R Shiny, Dash (Python)</li>
+                            <li><i class="fas fa-project-diagram"></i> Data modeling & DAX</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="dataeng-description">
+                    <h3><i class="fas fa-database"></i>Data Engineering</h3>
+                    <p>Architecture et gestion des pipelines de données, de la collecte au stockage optimisé.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>Conception et optimisation de bases de données (SQL/NoSQL)</li>
+                        <li>Développement de pipelines ETL/ELT</li>
+                        <li>Architecture Data Warehouse et Data Lake</li>
+                        <li>Automatisation et orchestration des flux de données</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Technologies maîtrisées</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-database"></i> PostgreSQL, MySQL, MongoDB</li>
+                            <li><i class="fas fa-cogs"></i> Talend, Python (pandas, SQLAlchemy)</li>
+                            <li><i class="fab fa-docker"></i> Docker, Docker Compose</li>
+                            <li><i class="fas fa-server"></i> Administration serveur Linux</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="datascience-description">
+                    <h3><i class="fas fa-brain"></i>Data Science</h3>
+                    <p>Analyse statistique avancée, machine learning et extraction de connaissances à partir des données.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>Analyse exploratoire et statistique descriptive</li>
+                        <li>Machine Learning (classification, régression, clustering)</li>
+                        <li>NLP (Natural Language Processing)</li>
+                        <li>Modélisation prédictive et séries temporelles</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Méthodes et outils</h4>
+                        <ul class="context-list">
+                            <li><i class="fab fa-python"></i> Python (scikit-learn, TensorFlow)</li>
+                            <li><i class="fab fa-r-project"></i> R (tidyverse, caret)</li>
+                            <li><i class="fas fa-chart-line"></i> Jupyter, RStudio</li>
+                            <li><i class="fas fa-robot"></i> LDA, Word2Vec, Transformers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="dev-description">
+                    <h3><i class="fas fa-code"></i>Développement</h3>
+                    <p>Conception et développement d'applications, d'outils d'automatisation et de solutions logicielles.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>Développement d'applications desktop et web</li>
+                        <li>Automatisation de processus métier</li>
+                        <li>API REST et intégrations</li>
+                        <li>Versioning et CI/CD</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Stack technique</h4>
+                        <ul class="context-list">
+                            <li><i class="fab fa-python"></i> Python (Flask, Tkinter, pytest)</li>
+                            <li><i class="fab fa-js"></i> JavaScript, TypeScript</li>
+                            <li><i class="fab fa-git-alt"></i> Git, GitHub, GitLab</li>
+                            <li><i class="fas fa-terminal"></i> Bash, PowerShell</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="competence-description" id="humanities-description">
+                    <h3><i class="fas fa-book"></i>Humanités</h3>
+                    <p>Réflexion critique, analyse éthique et communication autour des enjeux sociétaux liés aux données et au numérique.</p>
+                    
+                    <p>Elle comprend notamment :</p>
+                    <ul class="compact-list">
+                        <li>Éthique des données et de l'IA</li>
+                        <li>Analyse d'impact sociétal et territorial</li>
+                        <li>Rédaction de rapports et documentation technique</li>
+                        <li>Communication scientifique et vulgarisation</li>
+                    </ul>
+                    
+                    <div class="professional-contexts">
+                        <h4>Domaines d'application</h4>
+                        <ul class="context-list">
+                            <li><i class="fas fa-balance-scale"></i> Éthique et conformité</li>
+                            <li><i class="fas fa-file-alt"></i> Rédaction technique</li>
+                            <li><i class="fas fa-users"></i> Impact social</li>
+                            <li><i class="fas fa-lightbulb"></i> Veille et prospective</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
-            <!-- Conteneur de projets restructuré -->
             <div class="projects-grid">
-                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                <div class="project-card" data-category="bi dataeng cybersecurity" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
-                                <i class="fas fa-database"></i>
+                                <i class="fas fa-chart-pie"></i>
                             </div>
-                            <h3 class="project-title">Plateforme Data Analytics FormaSup Auvergne</h3>
+                            <h3 class="project-title">FormaSup BI Platform – Plateforme Business Intelligence</h3>
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
+                            <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
                         </div>
                         
-                        <p class="project-summary">Développement d'une plateforme data collaborative pour FormaSup Auvergne, intégrant une architecture multi-conteneurs et des tableaux de bord analytiques personnalisés.</p>
+                        <p class="project-summary">Plateforme BI production-ready basée sur Apache Superset 6.0.0 avec traduction française complète, outils de migration MariaDB→PostgreSQL, et déploiement Docker sécurisé pour FormaSup Auvergne et ses partenaires académiques.</p>
                         
                         <div class="project-footer">
                             <button class="project-details-btn">Voir détails</button>
                             <div class="project-status">
                                 <div class="status-indicator in-progress"></div>
-                                <span>En développement</span>
+                                <span>En cours</span>
                             </div>
                         </div>
                         
                         <!-- Contenu détaillé (caché par défaut) -->
                         <div class="project-details-content">
                             <h4>Description détaillée</h4>
-                            <p>Ce projet consiste en la conception et le développement d'une plateforme data complète pour FormaSup Auvergne, transformant des données métier disparates en un système décisionnel centralisé et sécurisé. La solution permet une analyse et un partage d'informations entre le CFA et ses établissements partenaires, avec des vues personnalisées pour chaque partenaire.</p>
+                            <p>Plateforme Business Intelligence complète conçue pour FormaSup Auvergne et ses partenaires académiques (UCA, Clermont School of Business, ISRP). Ce projet fournit des tableaux de bord analytiques pour l'analyse des données éducatives de l'alternance, avec une interface 100% française et des outils de migration de données robustes.</p>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li><strong>Apache Superset 6.0.0 :</strong> Plateforme BI complète avec SQL Lab, dashboards interactifs et charts avancés</li>
+                                    <li><strong>Traduction française complète :</strong> Interface 100% française (correction du bug Superset #35569)</li>
+                                    <li><strong>Migration de données :</strong> Outils MariaDB vers PostgreSQL avec déduplication intelligente</li>
+                                    <li><strong>Enrichissement API :</strong> Intégration APIs gouvernementales (INSEE, Recherche Entreprises) pour données entreprises</li>
+                                    <li><strong>Validation SIRET :</strong> Correction et validation automatique avec rapports détaillés</li>
+                                </ul>
+                            </div>
                             
                             <div class="details-section">
                                 <h5>Architecture technique</h5>
                                 <ul>
-                                    <li><strong>PostgreSQL :</strong> Base de données centrale avec double schéma (staging pour nettoyage, DWH pour analyses).</li>
-                                    <li><strong>Apache Superset :</strong> Interface de visualisation et d'analyse personnalisée.</li>
-                                    <li><strong>Service de migration :</strong> Scripts Python pour ETL, transformation et nettoyage des données.</li>
-                                    <li><strong>Service de planification :</strong> Automatisation des tâches récurrentes via cron (mises à jour, rapports).</li>
+                                    <li><strong>Superset (superset-fsa) :</strong> Interface BI et SQL Lab sur port 8088</li>
+                                    <li><strong>PostgreSQL 17 (postgres-fsa) :</strong> Base de données métier sur port 5432</li>
+                                    <li><strong>PostgreSQL 15 (superset-db) :</strong> Métadonnées Superset sur port 5442</li>
+                                    <li><strong>Service Migration :</strong> ETL automatisé avec batch processing et rate limiting</li>
+                                    <li><strong>Service Backup :</strong> Sauvegardes quotidiennes automatisées à 3h (configurable)</li>
                                 </ul>
                             </div>
                             
                             <div class="details-section">
-                                <h5>Caractéristiques techniques</h5>
+                                <h5>Sécurité et bonnes pratiques</h5>
                                 <ul>
-                                    <li>Infrastructure Docker multi-conteneurs avec réseau dédié sécurisé.</li>
-                                    <li>Scripts d'initialisation automatisés pour PostgreSQL et Superset.</li>
-                                    <li>Volumes Docker pour persistance des données et mise à jour des scripts.</li>
-                                    <li>Healthchecks pour garantir la disponibilité des services critiques.</li>
+                                    <li><strong>Configuration par environnement :</strong> Aucun secret codé en dur, tout via variables d'environnement</li>
+                                    <li><strong>Protection CSRF :</strong> Activée par défaut dans Superset</li>
+                                    <li><strong>Isolation réseau :</strong> Services communiquant via réseau Docker interne</li>
+                                    <li><strong>Health checks :</strong> Récupération automatique des services</li>
+                                    <li><strong>Requêtes paramétrées :</strong> Prévention des injections SQL dans les outils de migration</li>
                                 </ul>
                             </div>
                             
                             <div class="details-section">
-                                <h5>Processus de data management</h5>
+                                <h5>Sauvegarde et récupération</h5>
                                 <ul>
-                                    <li><strong>Ingestion et transformation :</strong> Extraction depuis sources hétérogènes, transformation vers un modèle unifié.</li>
-                                    <li><strong>Nettoyage et validation :</strong> Déduplication intelligente, normalisation des données, validation métier.</li>
-                                    <li><strong>Consolidation analytique :</strong> Transfert vers schéma DWH optimisé, création d'indicateurs et agrégats précalculés.</li>
-                                    <li><strong>Visualisation :</strong> Tableaux de bord spécifiques par profil utilisateur avec filtres intelligents.</li>
+                                    <li>Sauvegardes quotidiennes automatisées (expression cron configurable)</li>
+                                    <li>Archives compressées tar.gz (-50% stockage)</li>
+                                    <li>Sauvegardes par schéma pour restauration granulaire</li>
+                                    <li>Rétention configurable (7 jours par défaut)</li>
+                                    <li>Script de restauration en une commande</li>
                                 </ul>
                             </div>
                             
                             <div class="details-section">
-                                <h5>État actuel et prochaines étapes</h5>
+                                <h5>Tests et qualité</h5>
                                 <ul>
-                                    <li>Architecture Docker opérationnelle.</li>
-                                    <li>Base PostgreSQL configurée avec schéma dual.</li>
-                                    <li>Scripts de migration et nettoyage fonctionnels.</li>
-                                    <li>Finalisation des tableaux de bord spécifiques.</li>
-                                    <li>Implémentation complète du système de rôles.</li>
-                                    <li>Tests d'intégration avec les écoles partenaires.</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="details-section">
-                                <h5>Impact métier attendu</h5>
-                                <ul>
-                                    <li><strong>Pilotage stratégique :</strong> Vision unifiée de l'activité d'alternance régionale.</li>
-                                    <li><strong>Efficacité administrative :</strong> Automatisation des rapports réglementaires.</li>
-                                    <li><strong>Collaboration renforcée :</strong> Partage sécurisé des données entre partenaires.</li>
-                                    <li><strong>Qualité de formation :</strong> Détection précoce des situations à risque.</li>
-                                    <li><strong>Adaptation de l'offre :</strong> Analyse des tendances pour évolution des formations.</li>
+                                    <li><strong>Migration :</strong> 106 tests, couverture 80%+ (Database, API, SIRET, OPCO)</li>
+                                    <li><strong>Superset :</strong> 25 tests, couverture 85%+ (Configuration et build)</li>
+                                    <li>Scripts de test PowerShell et Bash fournis</li>
                                 </ul>
                             </div>
                             
                             <div class="details-section">
                                 <h5>Technologies utilisées</h5>
                                 <div class="tech-tags">
-                                    <span class="tech-tag"><i class="fab fa-docker"></i> Docker</span>
-                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
-                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Apache Superset</span>
-                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                                    <span class="tech-tag"><i class="fas fa-calendar-alt"></i> Cron</span>
-                                    <span class="tech-tag"><i class="fas fa-network-wired"></i> Flask</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-bar"></i> Apache Superset 6.0.0</span>
+                                    <span class="tech-tag"><i class="fab fa-docker"></i> Docker & Docker Compose</span>
+                                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL 17 & 15</span>
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python 3.10+</span>
+                                    <span class="tech-tag"><i class="fab fa-js"></i> TypeScript</span>
+                                    <span class="tech-tag"><i class="fas fa-flask"></i> pytest</span>
+                                    <span class="tech-tag"><i class="fas fa-server"></i> Nginx</span>
+                                    <span class="tech-tag"><i class="fas fa-lock"></i> HTTPS/SSL</span>
                                 </div>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Autonomie :</strong> Architecture et développement complet en indépendance</li>
+                                    <li><strong>Rigueur :</strong> Tests automatisés et couverture de code élevée</li>
+                                    <li><strong>Communication :</strong> Documentation technique détaillée</li>
+                                    <li><strong>Résolution de problèmes :</strong> Intégration de technologies complexes</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="download-container">
+                                <a href="https://github.com/CypherXIII/formasup-bi-platform" class="download-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                    Voir sur GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="traitement analyse" data-aos="fade-up">
+                <div class="project-card" data-category="dataeng datascience" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -444,8 +591,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Audit complet de la base de données OFA Link pour garantir son intégrité structurelle et optimiser ses performances.</p>
@@ -504,10 +651,20 @@
                                     <li>Documentation complète facilitant la maintenance et les évolutions futures</li>
                                 </ul>
                             </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Analyse critique :</strong> Examen méthodique des structures de données</li>
+                                    <li><strong>Esprit de synthèse :</strong> Documentation des recommandations</li>
+                                    <li><strong>Force de proposition :</strong> Suggestions d'optimisation concrètes</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                <div class="project-card" data-category="dev dataeng" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -517,8 +674,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
                         </div>
                         
                         <p class="project-summary">Développement d'une application Python pour automatiser le contrôle des fichiers FEC et des données de versements, permettant d'identifier les anomalies financières.</p>
@@ -563,6 +720,16 @@
                                     <li>Export des résultats pour faciliter les actions correctives.</li>
                                 </ul>
                             </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Autonomie :</strong> Conception et développement en totale indépendance</li>
+                                    <li><strong>Écoute des besoins :</strong> Analyse des attentes métier pour concevoir une solution adaptée</li>
+                                    <li><strong>Résolution de problèmes :</strong> Traitement de formats de données hétérogènes</li>
+                                </ul>
+                            </div>
+                            
                             <div class="details-section">
                                 <h5>Technologies utilisées</h5>
                                 <div class="tech-tags">
@@ -582,7 +749,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                <div class="project-card" data-category="dev dataeng" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -592,8 +760,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
                         </div>
                         
                         <p class="project-summary">Développement d'une application Shiny en R pour automatiser la gestion financière des formations en apprentissage, incluant le traitement des versements, la visualisation et la génération de rapports.</p>
@@ -642,6 +810,15 @@
                             </div>
                             
                             <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Autonomie :</strong> Projet individuel mené de A à Z</li>
+                                    <li><strong>Rigueur :</strong> Gestion de données financières sensibles</li>
+                                    <li><strong>Pédagogie :</strong> Documentation et formation des utilisateurs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
                                 <h5>Technologies utilisées</h5>
                                 <div class="tech-tags">
                                     <span class="tech-tag"><i class="fab fa-r-project"></i> R</span>
@@ -655,7 +832,8 @@
                         </div>
                     </div>
                 </div> 
-                <div class="project-card" data-category="conception traitement" data-aos="fade-up">
+                <div class="project-card" data-category="bi dataeng" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -665,8 +843,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
                         </div>
                         
                         <p class="project-summary">Développement d'une application Shiny interactive pour analyser les données des formations en alternance et leurs partenaires, avec des visualisations claires et des statistiques clés.</p>
@@ -722,7 +900,8 @@
                 </div>
 
                
-                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                <div class="project-card" data-category="datascience" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -732,8 +911,7 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Automatisation de la structuration d’un corpus d’archives policières par modélisation thématique non supervisée (LDA) pour identifier des thèmes criminels récurrents et appuyer le travail policier.</p>
@@ -815,7 +993,8 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                <div class="project-card" data-category="datascience" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -825,8 +1004,7 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Analyse des données de croissance d’enfants (1 à 18 ans) pour interpoler les mesures manquantes, produire des courbes normatives et mettre en œuvre des algorithmes de classification supervisée.</p>
@@ -903,7 +1081,8 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="analyse traitement" data-aos="fade-up">
+                <div class="project-card" data-category="datascience" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -913,8 +1092,7 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Analyse comparative de la tonalité médiatique du débat entre Kamala Harris et Donald Trump, en explorant les biais potentiels des médias nationaux, partisans et internationaux.</p>
@@ -996,7 +1174,8 @@
                     </div>
                 </div>
                 <!-- Projet: Visualisation des rongeurs à New York -->
-                <div class="project-card" data-category="valorisation analyse" data-aos="fade-up">
+                <div class="project-card" data-category="bi datascience" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1006,8 +1185,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Analyse et visualisation des données sur les apparitions de rats à New York (2010-2017) pour identifier les tendances spatiales et temporelles.</p>
@@ -1054,7 +1233,8 @@
                 </div>
                 
                 <!-- Projet: Anonymisation des données médicales -->
-                <div class="project-card" data-category="traitement cybersecurity" data-aos="fade-up">
+                <div class="project-card" data-category="cybersecurity dataeng" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1064,8 +1244,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
                             <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
                         </div>
                         
                         <p class="project-summary">Développement d'une solution d'anonymisation de données médicales appliquant les principes de K-Anonymité et L-Diversité pour protéger les informations sensibles des patients.</p>
@@ -1112,7 +1292,8 @@
                 </div>
 
                 <!-- Projet: Analyse de circulation routière -->
-                <div class="project-card" data-category="traitement analyse" data-aos="fade-up">
+                <div class="project-card" data-category="datascience" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1122,8 +1303,7 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
                         </div>
                         
                         <p class="project-summary">Analyse de l'impact d'une nouvelle intersection sur les flux de circulation urbaine à travers la modélisation statistique, la détection d'anomalies et les prévisions de trafic.</p>
@@ -1197,6 +1377,16 @@
                                     <span class="tech-tag"><i class="fas fa-vial"></i> gap (test de Chow)</span>
                                 </div>
                             </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Travail en binôme :</strong> Collaboration étroite et répartition des tâches</li>
+                                    <li><strong>Communication :</strong> Co-rédaction du rapport d'analyse</li>
+                                    <li><strong>Esprit d'analyse :</strong> Interprétation rigoureuse des résultats statistiques</li>
+                                </ul>
+                            </div>
+                            
                              <div class="download-container">
                                 <a href="assets/examples/rapport_circulation_JJMC.pdf" class="download-btn" download>
                                     <i class="fa-solid fa-download"></i>
@@ -1208,7 +1398,8 @@
                 </div>
                 
                 <!-- Projet: Stage Be Blocks - Outil décisionnel -->
-                <div class="project-card" data-category="conception valorisation traitement" data-aos="fade-up">
+                <div class="project-card" data-category="bi dev" data-aos="fade-up">
+                    <span class="project-type-badge professional">Pro</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1218,9 +1409,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
                         </div>
                         
                         <p class="project-summary">Développement d'un outil décisionnel complet pour mesurer les performances d'un produit, incluant l'optimisation d'un datawarehouse et la création de tableaux de bord Grafana.</p>
@@ -1260,6 +1450,16 @@
                                 </div>
                             </div>
                             
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Travail d'équipe :</strong> Intégration dans une équipe pluridisciplinaire</li>
+                                    <li><strong>Adaptabilité :</strong> Prise en main rapide de nouvelles technologies</li>
+                                    <li><strong>Communication :</strong> Présentations régulières aux stakeholders</li>
+                                    <li><strong>Agilité :</strong> Participation active aux cérémonies Scrum</li>
+                                </ul>
+                            </div>
+                            
                             <div class="note-section">
                                 <p><em>Note: En raison de la confidentialité des informations liées à ce stage, les détails spécifiques sur les données et les méthodologies exactes ne peuvent pas être partagés.</em></p>
                             </div>
@@ -1268,7 +1468,8 @@
                 </div>
                 
                 <!-- Projet: Analyse Éthique Cambridge Analytica -->
-                <div class="project-card" data-category="traitement cybersecurity" data-aos="fade-up">
+                <div class="project-card" data-category="cybersecurity humanities" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1278,8 +1479,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
                             <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
+                            <span class="project-tag humanities"><i class="fas fa-book"></i> Humanités</span>
                         </div>
                         
                         <p class="project-summary">Analyse des implications éthiques du scandale Cambridge Analytica sous l'angle des principes moraux, de la protection des données personnelles, et de l'usage de la data science à des fins politiques.</p>
@@ -1355,7 +1556,8 @@
                 </div>
                 
                 <!-- Projet: Étude de cas tourisme France/Cantal -->
-                <div class="project-card" data-category="analyse valorisation" data-aos="fade-up">
+                <div class="project-card" data-category="datascience bi humanities" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1365,8 +1567,9 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag analyse"><i class="fas fa-chart-bar"></i> Analyse statistique</span>
-                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag humanities"><i class="fas fa-book"></i> Humanités</span>
                         </div>
                         
                         <p class="project-summary">Analyse de l'impact du tourisme sur l'attractivité territoriale à l'échelle nationale et locale (Cantal), identifiant leviers, freins et actions pour renforcer la compétitivité d'un territoire rural.</p>
@@ -1463,7 +1666,8 @@
                 </div>
                 
                 <!-- Projet: Migration SQL vers NoSQL -->
-                <div class="project-card" data-category="traitement conception" data-aos="fade-up">
+                <div class="project-card" data-category="dataeng" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1473,8 +1677,7 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag traitement"><i class="fas fa-database"></i> Traitement des données</span>
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag dataeng"><i class="fas fa-database"></i> Data Engineering</span>
                         </div>
                         
                         <p class="project-summary">Exploration de la transformation d'une base de données relationnelle vers une base orientée documents, avec évaluation des impacts sur les performances et identification des cas d'usage pertinents pour la dénormalisation.</p>
@@ -1576,6 +1779,7 @@
                 
                 <!-- Projet: Gestion des risques informatiques -->
                 <div class="project-card" data-category="cybersecurity" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1689,7 +1893,8 @@
                 </div>
                 
                 <!-- Projet: Cahier des Charges GlobalTrade Inc. -->
-                <div class="project-card" data-category="conception valorisation" data-aos="fade-up">
+                <div class="project-card" data-category="bi dev" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1699,8 +1904,8 @@
                         </div>
                         
                         <div class="project-tags">
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
-                            <span class="project-tag valorisation"><i class="fas fa-chart-pie"></i> Valorisation</span>
+                            <span class="project-tag bi"><i class="fas fa-chart-pie"></i> BI</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
                         </div>
                         
                         <p class="project-summary">Élaboration d'un cahier des charges complet pour une application de reporting décisionnel, incluant spécifications fonctionnelles, techniques, architecture des données et prototype d'interface.</p>
@@ -1788,7 +1993,8 @@
                 </div>
                 
                 <!-- Projet: Operation ZeroDay CTF -->
-                <div class="project-card" data-category="cybersecurity conception" data-aos="fade-up">
+                <div class="project-card" data-category="cybersecurity dev" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
                     <div class="project-card-inner">
                         <div class="project-header">
                             <div class="project-icon">
@@ -1799,7 +2005,7 @@
                         
                         <div class="project-tags">
                             <span class="project-tag cybersecurity"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
-                            <span class="project-tag conception"><i class="fas fa-tools"></i> Conception d'outils</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
                         </div>
                         
                         <p class="project-summary">Conception et développement d'un challenge CTF (Capture The Flag) complet simulant un terminal Linux avec des énigmes de stéganographie, cryptographie et analyse forensique.</p>
@@ -1859,6 +2065,15 @@
                             </div>
                             
                             <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Créativité :</strong> Conception du scénario et des énigmes</li>
+                                    <li><strong>Autonomie :</strong> Projet personnel mené de bout en bout</li>
+                                    <li><strong>Pédagogie :</strong> Vulgarisation de concepts cybersec via le jeu</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
                                 <h5>Technologies et compétences mobilisées</h5>
                                 <div class="tech-tags">
                                     <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
@@ -1874,6 +2089,211 @@
                                     <i class="fa-solid fa-download"></i>
                                     Code
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet: MedievAIl bAIttle generAIl -->
+                <div class="project-card" data-category="datascience dev" data-aos="fade-up">
+                    <span class="project-type-badge academic">Académique</span>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chess-knight"></i>
+                            </div>
+                            <h3 class="project-title">MedievAIl bAIttle generAIl – Simulateur de Batailles Médiévales avec IA</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag datascience"><i class="fas fa-brain"></i> Data Science</span>
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
+                        </div>
+                        
+                        <p class="project-summary">Simulateur de batailles médiévales en Python avec généraux IA, architecture MVC, analyses statistiques basées sur les lois de Lanchester et système de tournois. Projet collaboratif (7 développeurs) réalisé à l'INSA CVL.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Projet de groupe réalisé lors du premier semestre à l'INSA Centre Val de Loire (2025-2026). Développement d'un simulateur complet de batailles médiévales opposant des généraux IA avec différentes stratégies, incluant des analyses statistiques avancées pour valider les modèles de combat de Lanchester.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs du projet</h5>
+                                <p>Créer un simulateur de batailles permettant d'étudier l'efficacité de différentes stratégies de combat via des IA autonomes, tout en validant empiriquement les lois de Lanchester (loi linéaire pour le mêlée, loi carrée pour les unités à distance).</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li><strong>Vues multiples :</strong> Interface terminal (curses) et vue 2.5D isométrique (Pygame) avec bascule en temps réel (F9)</li>
+                                    <li><strong>Généraux IA :</strong> 5 stratégies (BRAINDEAD, DAFT, SOMEIQ, RPC, RANDOMIQ) avec comportements distincts</li>
+                                    <li><strong>Unités médiévales :</strong> Chevaliers, piquiers, arbalétriers avec stats et comportements uniques</li>
+                                    <li><strong>Scénarios variés :</strong> Classic, Cavalry Charge, Shield Wall, Cannae, Lanchester</li>
+                                    <li><strong>Système de tournois :</strong> Matchs automatisés avec classements et statistiques</li>
+                                    <li><strong>Analyses statistiques :</strong> Validation des lois de Lanchester avec graphiques et rapports HTML</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Mes contributions personnelles</h5>
+                                <ul>
+                                    <li><strong>Vue Terminal :</strong> Développement complet de l'interface terminal avec curses (navigation, zoom, auto-follow, panneaux d'info)</li>
+                                    <li><strong>Controller Terminal :</strong> Gestion des inputs clavier, contrôle de caméra, gestion des états</li>
+                                    <li><strong>Analyses statistiques :</strong> Implémentation des tests statistiques et validation des données</li>
+                                    <li><strong>Module Lanchester :</strong> Conception des analyses basées sur les lois de Lanchester (pentes théoriques vs empiriques)</li>
+                                    <li><strong>Système de tournois :</strong> Logique de matchmaking, calcul des scores et classements</li>
+                                    <li><strong>Module Plotting :</strong> Graphiques avec plotnine (ggplot2 pour Python), génération de visualisations</li>
+                                    <li><strong>Controllers Plotting :</strong> Orchestration de la collecte de données et génération de rapports</li>
+                                    <li><strong>Controller principal :</strong> Participation à l'architecture et au dispatcher CLI</li>
+                                    <li><strong>Documentation :</strong> Rédaction partielle du README et documentation technique</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Lois de Lanchester implémentées</h5>
+                                <table class="challenges-table">
+                                    <tr>
+                                        <th>Loi</th>
+                                        <th>Type de combat</th>
+                                        <th>Pente théorique</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Loi Linéaire</td>
+                                        <td>Mêlée (1v1)</td>
+                                        <td>≈ 1.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loi Carrée</td>
+                                        <td>À distance (focus fire)</td>
+                                        <td>≈ 0.27</td>
+                                    </tr>
+                                </table>
+                                <p>Analyse : équipe A (N unités) vs équipe B (2N unités) pour mesurer les pertes et comparer aux prédictions théoriques.</p>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Architecture technique</h5>
+                                <ul>
+                                    <li><strong>Pattern MVC :</strong> Séparation stricte Model (unités, généraux, simulation) / View (terminal, pygame) / Controller</li>
+                                    <li><strong>Factory Pattern :</strong> Création dynamique des généraux et stratégies</li>
+                                    <li><strong>Multiprocessing :</strong> Collection parallèle des données pour les analyses statistiques</li>
+                                    <li><strong>Sauvegarde/Chargement :</strong> Sérialisation pickle des parties en cours</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Travail d'équipe :</strong> Collaboration étroite avec 6 autres développeurs</li>
+                                    <li><strong>Communication :</strong> Coordination via Git, revues de code, réunions techniques</li>
+                                    <li><strong>Gestion de projet :</strong> Répartition des tâches et respect des deadlines</li>
+                                    <li><strong>Adaptabilité :</strong> Intégration de contraintes techniques variées</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies et compétences mobilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                                    <span class="tech-tag"><i class="fas fa-gamepad"></i> Pygame</span>
+                                    <span class="tech-tag"><i class="fas fa-terminal"></i> Curses</span>
+                                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Plotnine/ggplot2</span>
+                                    <span class="tech-tag"><i class="fas fa-brain"></i> Intelligence Artificielle</span>
+                                    <span class="tech-tag"><i class="fas fa-calculator"></i> Statistiques</span>
+                                    <span class="tech-tag"><i class="fas fa-project-diagram"></i> Architecture MVC</span>
+                                    <span class="tech-tag"><i class="fab fa-git-alt"></i> Git collaboratif</span>
+                                </div>
+                            </div>
+                            <div class="download-container">
+                                <a href="https://github.com/D-Lilian/medievAIl_bAIttle_generAIl" class="download-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                    Voir sur GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet: Portfolio Personnel -->
+                <div class="project-card" data-category="dev" data-aos="fade-up">
+                    <span class="project-type-badge personal">Personnel</span>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="project-title">Portfolio Personnel – Cybersécurité & Data</h3>
+                        </div>
+                        
+                        <div class="project-tags">
+                            <span class="project-tag dev"><i class="fas fa-code"></i> Développement</span>
+                        </div>
+                        
+                        <p class="project-summary">Conception et développement d'un portfolio web moderne présentant mon parcours, mes compétences et mes réalisations en cybersécurité et data engineering.</p>
+                        
+                        <div class="project-footer">
+                            <button class="project-details-btn">Voir détails</button>
+                            <div class="project-status">
+                                <div class="status-indicator completed"></div>
+                                <span>Complété</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenu détaillé (caché par défaut) -->
+                        <div class="project-details-content">
+                            <h4>Description détaillée</h4>
+                            <p>Ce portfolio est le site que vous consultez actuellement. Il a été entièrement conçu et développé par mes soins pour présenter de manière professionnelle mon parcours, mes compétences techniques et mes projets.</p>
+                            
+                            <div class="details-section">
+                                <h5>Objectifs</h5>
+                                <ul>
+                                    <li>Créer une vitrine professionnelle moderne et responsive</li>
+                                    <li>Mettre en valeur mes compétences en développement web</li>
+                                    <li>Démontrer ma capacité à mener un projet de A à Z</li>
+                                    <li>Faciliter la prise de contact avec des recruteurs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Fonctionnalités</h5>
+                                <ul>
+                                    <li><strong>Design responsive :</strong> Adaptation optimale sur mobile, tablette et desktop</li>
+                                    <li><strong>Navigation fluide :</strong> Scroll smooth et menu dynamique</li>
+                                    <li><strong>Filtrage des projets :</strong> Système de filtres par catégorie de compétences</li>
+                                    <li><strong>Animations :</strong> Effets visuels subtils avec AOS et CSS transitions</li>
+                                    <li><strong>Accessibilité :</strong> Respect des bonnes pratiques ARIA</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Soft Skills mobilisées</h5>
+                                <ul>
+                                    <li><strong>Autonomie :</strong> Projet personnel mené de bout en bout</li>
+                                    <li><strong>Créativité :</strong> Conception du design et de l'expérience utilisateur</li>
+                                    <li><strong>Rigueur :</strong> Code propre, maintenable et documenté</li>
+                                    <li><strong>Amélioration continue :</strong> Itérations successives basées sur les retours</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="details-section">
+                                <h5>Technologies utilisées</h5>
+                                <div class="tech-tags">
+                                    <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+                                    <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                                    <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+                                    <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                                    <span class="tech-tag"><i class="fas fa-magic"></i> AOS Animations</span>
+                                    <span class="tech-tag"><i class="fab fa-font-awesome"></i> Font Awesome</span>
+                                    <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1911,10 +2331,9 @@
         <i class="fas fa-chevron-up"></i>
     </button>
     
-    <!-- Scripts essentiels regroupés et optimisés -->
+    <!-- Scripts essentiels -->
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 </body>
 </html>
+

@@ -1,0 +1,122 @@
+/**
+ * Sections - Styles communs aux sections
+ */
+
+/* Section de base - Espacement généreux */
+.main {
+    position: relative;
+    padding: var(--spacing-section) 0;
+    overflow: hidden;
+}
+
+/* Séparateurs de section - Gradient élégant */
+.main:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(var(--primary-rgb), 0.2) 20%,
+        rgba(var(--accent-rgb), 0.3) 50%,
+        rgba(var(--primary-rgb), 0.2) 80%,
+        transparent
+    );
+}
+
+/* Variantes de section */
+.style1, .style2 {
+    background: transparent;
+    color: var(--text-color);
+    position: relative;
+}
+
+/* Effets de profondeur pour les sections - Gradient subtil */
+.style1::before, .style2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(var(--primary-rgb), 0.04) 0%, transparent 60%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* En-tête de section - Plus d'impact */
+.section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: var(--font-size-lg);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Titre de section avec lignes décoratives - Design premium */
+.section-title {
+    position: relative;
+    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
+    display: inline-block;
+    padding: 0 2rem;
+    margin-bottom: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.section-title::before, 
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--primary-color));
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.section-title::before {
+    right: 100%;
+}
+
+.section-title::after {
+    left: 100%;
+    background: linear-gradient(to left, transparent, var(--primary-color));
+}
+
+/* Titre avec gradient - Plus vif */
+.section-title.with-gradient {
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-color), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+}
+
+/* Ligne sous le titre */
+.title-underline {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.title-underline.animated {
+    transition: width 0.6s ease;
+}
+
+.title-underline.animated.visible {
+    width: 120px;
+}

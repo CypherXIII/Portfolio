@@ -1,0 +1,232 @@
+/**
+ * Hero - Section d'en-tête principale avec impact visuel
+ */
+
+/* Section Hero - Design immersif */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, var(--header-bg) 0%, var(--bg-color) 50%, var(--bg-secondary) 100%);
+    overflow: hidden;
+}
+
+/* Overlay de bruit subtil */
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAHEElEQVRogZ2aS5McxxHHf9X1ZVnmECxIAoRJUQJJWlArZvUZHL7hc/jD7BMGZFh6hQECxJJccndmenr6keFD1WznzHTP7IJcPhTZ1dlfZvXvsmvvvdchxojWGq01WiuUUiilEBEARASA9Xpt1+s1x+ORaZqYpondbsflcsG9996HWpKGUkorRTLdFJFuhDydHCMxJr621ppxHFmv16zXa8ZxZBgGhmHAWkvkvBJUiJE4ngJccvTNbr88ybBcSoNvmUuXjnnJc8n5AIbDuTrP8UPnfF63EvfpQ45fCJF3SwEQkZLrp4E4pben+bxW4/xZtPGKXgAXUAHxOT3OoVZra608eC1UNQsPczXn0qA5iFiw5YlnEFAV7/F1jaq+VQcgdZL7KEVKeCz5vrhMseNpJZ12VAaVEEXMeSoQv8j3kt7eu/Re1UBlJJf8wVBKl2vs/lxUzbpp8DrdF1hpA02VBqQ2q+Izaom+mkaS33YnmU5aUUjkIZbVV0XXanhGkRiJf/6e+PiE5NP7VIClkVEVUJBOY5COKj4eH3+FWP2V5wAxnnxZqSZ8bvnGSQeVKlJluZIQte+oJw0oXgJc4i8Cf/zA9F/vGXv4VQFZrE2KVR3rTl/Prc7zJt8XIDfNE1wBFuMASDUvEkpBEaysQIY+UKCI/3xO/Onvqf+LOQeR0RqttdLOS2o1UmHwOgpr54nfHBGlAzi5e0Ken1Mf/J3DzQ0vr9dYrdBaFUpmgkjQNXHNQ9+VxH1cNFK8eqavKQCoFjo/T49OoZTEnz8Sf/oH6nBCA8pq+mGgsxa3XjMMm9MgquNu/T0CsLDsUXxxc/QAyGJPyhfFO8C9e0d8/JH49JT9dsuuAKlBxqqRJuJXHr6dCxAfP6dOyaoMRge2L4/E5+cYrdjZ1KwdVpZh1WNswxwt/Vq3JiAiKqcUObRflBDSvncPwtMz9B/QWnFm4MJqthuLcb34U491HQzjmZBdYQbMN0+rnPZzKp36ItCQzu0thF99wE+He65uLI9uLOa6Yev6tLLylA4oz0/z7EvX/VoNBiCj5rjdcdzu8JuRw/XAj2vL4/X1WYiTmbXVF0KrqcihJ8XTeGiNOhjcesRtLLcWfnNlOe72bHvAFkKYhud6io5kj/lCKVQDMue4DbY9YLaas7XwwaHDHXZnQaSjkvKw/Hw8AvDhM+LzU7jkh2Rgar3FbQ27reV47FdkuenLGqdGX0CB1GeFC2fscbwAXeEL1znGimm1wm8dd0fH8WbPrNgXvkvh6wJ4JwFYI2pHddqoYRWTnRrLbg27jQNgD2tk3oBsLW4YOGwdh8OOeU8vBP2Z0+ksFHZU5uidPG8wY0XUmpj7rhXRGsyqYzMO7LdJ+m9sk+918uFnQBZlMCWKlGUkZ0ieUhadMoR0vYdgDNEajDUMo8WuHG4Y2G8dh73loKBdEd95+JMg0lRI5xSg1GpYoNpKD6SMqRy2SjTWEtcGaw3W/RKkxM2eULs22mkBrbLCJwJRCXIXNCaMDjt2DIPhejOw3TmuN2u8ovAzitVplzoHQwPUORCm+Uj8fM2YZxye9TgfuNq4ouQVL5kDWqtU6Xeum0Qkm7kMOeQhsIp+dSgRxgBxXOGMZhhXPImWiEzTx8g4jgzDULpOZP5wr1KGC05c493NqFw0M5t5Zp4m9vsdu/3A7qWiS7PJr/8ly25g0Fod1tJvMRyOO07HnPMFM2C9p9u4MkIi58Rut+PFi5+5vHzBresC58U4ylKf75f9JaS25hQGn4PMPpVWGvO0ZDOd8Zfkzlpn7PT75FrYpgNQXwQphzfD5CiRqQARg2GPv9gTnp8Rn56KVyRx0/Z1xhg2mw1GawJLVe9pyULsicTDFeHvHwhP/0Ltb4muZWjzI+X/qiYEPfidD2IT9XXzOglBfXM5Nd3bBd7n9cUAVKJsoUl5UTSp/D2Bm4lG7H68gw1ugijbATP6REW8fDnvslVzbFIGvXq76lcxv9+8vtXbf1WnUYJwxc2fbbX15HrRP6z7LXVHizKLzXtDVn6ny6+/Ffj4Q95beLUHn7Lp8/2qZTNUORQXktW5LKE/96N2wBNN/1r7FeBrfULM/cCCKl1qY2nxtZW9ssTGk1ZN/QxN3cSJx1RF0qupkmopfTLH2BkZq0825+EVbZRqrKOdRLtNVgEukhsSnAeZJarGVd1BK6+l0+5c3JqBaKJKS2lTnZQqUMWETNNQ7FMg5935HLwpjcqjs0NOoJS5qKftaCXU2dpcoFAGkt4gQsNb1U8UNKz8o5qb/ByqrNGCs+xWVJPXpqmvwFqtIrFsyVXpbcd223jeeURro+6aJrVfFU1CaI9uVTsHrb5CKJPdJDw3AE+nv/U5eU34Hd5c8K6awDvFAX8BP92AOFG13TUAAAAASUVORK5CYII=');
+    opacity: 0.04;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Gradient overlay pour profondeur */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center bottom, transparent 0%, var(--header-bg) 80%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero .inner {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Conteneur du texte glitch - Animation subtile */
+.glitch-container {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, var(--primary-lighter) 50%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+/* Ligne d'accent sous le nom - Plus élégante */
+.glitch-text::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--primary-color) 20%, 
+        var(--accent-color) 50%, 
+        var(--primary-color) 80%, 
+        transparent
+    );
+    border-radius: var(--radius-full);
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
+}
+
+/* Sous-titre - Plus lisible et élégant */
+.main-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+    color: var(--text-light);
+    margin: 2.5rem 0 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    opacity: 0.95;
+}
+
+/* Curseur clignotant */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #fff;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+/* Indicateur de scroll - Design moderne */
+.scroll-indicator {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+    transition: all var(--transition-speed);
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.scroll-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-light);
+    transition: all var(--transition-speed);
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    gap: 0.75rem;
+}
+
+.scroll-link:hover {
+    color: var(--primary-light);
+}
+
+.scroll-link i {
+    font-size: 1.25rem;
+    animation: bounce 2s infinite;
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-speed);
+}
+
+.scroll-link:hover i {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Formes géométriques de fond */
+.geometry-shapes .shape {
+    position: absolute;
+    opacity: 0.4;
+    filter: blur(20px);
+    z-index: 1;
+}
+
+.shape-1 {
+    top: 10%;
+    left: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulseShape 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    bottom: 10%;
+    right: 5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulseShape 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    top: 50%;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(var(--accent-secondary-rgb), 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulseShape 12s ease-in-out infinite;
+}
+
+@keyframes pulseShape {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .glitch-text {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .glitch-text {
+        font-size: 2.5rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .scroll-indicator {
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .glitch-text {
+        font-size: 2.2rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,83 @@
+/**
+ * Reset CSS - Normalisation des styles navigateurs
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--header-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Suppression des styles par défaut des listes */
+ul, ol {
+    list-style: none;
+}
+
+/* Images responsives */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Suppression du outline par défaut, ajout d'un focus visible */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Boutons sans styles par défaut */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Liens sans soulignement */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Formulaires */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Éviter le débordement du texte */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}

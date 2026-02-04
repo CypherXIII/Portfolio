@@ -1,0 +1,214 @@
+/**
+ * Animations - Toutes les animations et keyframes
+ */
+
+/* ===== Keyframes de base ===== */
+
+/* Clignotement */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Rebond */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Rotation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade in vers le haut */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade in simple */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide down */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Noise (effet de bruit) */
+@keyframes noise {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -1%); }
+    30% { transform: translate(1%, -1%); }
+    50% { transform: translate(-1%, 1%); }
+    70% { transform: translate(1%, -1%); }
+    90% { transform: translate(-1%, 1%); }
+}
+
+/* Gradient animé */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Pulse pour les formes */
+@keyframes pulseShape {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* ===== Classes d'animation ===== */
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-delay-1 {
+    animation: fadeInUp 0.6s ease 0.1s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-2 {
+    animation: fadeInUp 0.6s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-3 {
+    animation: fadeInUp 0.6s ease 0.3s forwards;
+    opacity: 0;
+}
+
+/* Animation au scroll */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Preload state */
+.is-preload body:before {
+    display: block;
+}
+
+/* ===== Effets sur body ===== */
+
+/* Overlay de bruit animé */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAOHElEQVR4nO1dbVczNw69JCEvBJInEEIgEIb//6/6fbu73e77tt0P1o2vZQ3QPgRCmHsOJ8mMx5ZlWZJljQEynlBKkf9ZayjP/5BS6B8ppT7n/H3O+R85Z7nve2mt6W0N5xz9J+fM72mtKaWU7TFcw/se4/tr9Dvf27QtpZTmnNcY932mbUwpob+Hfe51+8LvHvcTY+L32XM2H2nex77u+75CMfWNvN77fvS9tXbtc0r8j5YB9S1p3P+z9S8FZJySc14E13GGpwM55310/rMSXLYl5MM5Z5pzJv...abbreviated...');
+    opacity: 0.035;
+    z-index: -1;
+    pointer-events: none;
+    animation: noise 8s steps(10) infinite;
+}
+
+/* Gradient animé en arrière-plan */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(125deg, 
+            rgba(var(--bg-rgb), 0.4) 0%, 
+            rgba(var(--bg-rgb), 0.2) 40%, 
+            rgba(var(--primary-rgb), 0.05) 60%, 
+            rgba(var(--bg-rgb), 0.2) 70%, 
+            rgba(var(--bg-rgb), 0.4) 100%);
+    background-size: 400% 400%;
+    opacity: 0.4;
+    z-index: -2;
+    animation: gradientBG 30s ease infinite;
+}
+
+/* ===== Scroll Progress Bar - Design premium ===== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--accent-secondary));
+    z-index: var(--z-max);
+    width: 0%;
+    transition: width 0.1s ease-out;
+    box-shadow: 
+        0 0 15px rgba(var(--primary-rgb), 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Custom Scrollbar - Design moderne ===== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.4), rgba(var(--accent-rgb), 0.3));
+    border-radius: 6px;
+    border: 3px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, rgba(var(--primary-rgb), 0.6), rgba(var(--accent-rgb), 0.5));
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--primary-rgb), 0.4) var(--bg-color);
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .scroll-progress {
+        transition: none;
+    }
+}

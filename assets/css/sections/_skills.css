@@ -1,0 +1,253 @@
+/**
+ * Skills - Section Compétences - Design premium
+ */
+
+/* Filtres de compétences - Centré et espacé */
+.competence-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* Descriptions des compétences - Design card premium */
+.competence-descriptions {
+    margin-bottom: 2.5rem;
+}
+
+.competence-description {
+    background: var(--card-bg);
+    border-radius: var(--radius-2xl);
+    padding: 2rem;
+    margin-bottom: 1.75rem;
+    box-shadow: var(--card-shadow);
+    display: none;
+    animation: fadeIn 0.4s var(--transition-smooth);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(var(--glass-blur));
+    position: relative;
+    overflow: hidden;
+}
+
+.competence-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--accent-secondary));
+}
+
+.competence-description.active {
+    display: block;
+}
+
+.competence-description h3 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(var(--primary-rgb), 0.15);
+    padding-bottom: 12px;
+}
+
+.competence-description h3 i {
+    margin-right: 1rem;
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.competence-description p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+.competence-description ul {
+    margin-left: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.competence-description li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.competence-description li::marker {
+    color: var(--primary-color);
+}
+
+/* Grille de compétences - Meilleur espacement */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    transition: transform var(--transition-speed) var(--transition-smooth);
+    position: relative;
+    animation: cardAppear 0.5s var(--transition-smooth) forwards;
+    opacity: 0;
+}
+
+.skill-item:nth-child(2) { animation-delay: 0.08s; }
+.skill-item:nth-child(3) { animation-delay: 0.16s; }
+.skill-item:nth-child(4) { animation-delay: 0.24s; }
+.skill-item:nth-child(5) { animation-delay: 0.32s; }
+.skill-item:nth-child(6) { animation-delay: 0.4s; }
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Barre de progression - Design moderne */
+.progress-container {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    margin: 0 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--radius-full);
+    transition: width 0.6s var(--transition-smooth);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.4);
+}
+
+/* Aperçus - Design amélioré */
+.example-previews {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.example-item {
+    width: 55px;
+    height: 55px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid rgba(var(--primary-rgb), 0.2);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.example-item:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
+}
+
+.example-thumbnail {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.example-item:hover .example-thumbnail {
+    transform: scale(1.15);
+}
+
+/* Soft skills - Design premium */
+.soft-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+}
+
+.soft-skill-item {
+    padding: 2rem;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    backdrop-filter: blur(var(--glass-blur));
+    transition: all var(--transition-speed) var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.soft-skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.soft-skill-item:hover {
+    transform: translateY(-8px);
+    background: var(--card-bg-hover);
+    box-shadow: var(--card-shadow-hover), var(--glow-primary);
+    border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+.soft-skill-item:hover::before {
+    opacity: 1;
+}
+
+.soft-skill-item i {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    transition: transform var(--transition-speed);
+}
+
+.soft-skill-item:hover i {
+    transform: scale(1.1);
+}
+
+.soft-skill-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.soft-skill-item p {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .soft-skills {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

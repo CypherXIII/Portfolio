@@ -1,0 +1,175 @@
+/**
+ * Navigation - Barre de navigation flottante premium
+ */
+
+/* Navigation flottante principale - Design glass premium */
+.floating-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.8);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(var(--glass-blur-strong));
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    z-index: var(--z-fixed);
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.floating-nav::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.3), transparent 50%, rgba(var(--accent-rgb), 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+    pointer-events: none;
+}
+
+.floating-nav:hover {
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(var(--primary-rgb), 0.15);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.floating-nav:hover::before {
+    opacity: 1;
+}
+
+/* Liste de liens */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.3rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+/* Liens de navigation */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-shadow: none;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, rgba(var(--primary-rgb), 0.1), rgba(var(--primary-rgb), 0.2));
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.nav-links a i {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-links a span {
+    display: none;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+}
+
+/* États actif et hover */
+.nav-links a.active,
+.nav-links a:hover {
+    color: white;
+    background: linear-gradient(120deg, var(--primary-dark), var(--primary-color));
+    box-shadow: 
+        0 4px 12px rgba(var(--primary-rgb), 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.nav-links a:hover i {
+    transform: scale(1.1);
+}
+
+.nav-links a.active span,
+.nav-links a:hover span {
+    display: inline-block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nav-links a:not(.active):not(:hover)::before {
+    opacity: 0;
+}
+
+/* Indicateur sous le lien actif */
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0.4rem;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(-50%);
+    border-radius: 1px;
+    box-shadow: 0 0 5px rgba(var(--accent-rgb), 0.5);
+}
+
+/* Animation glow pour lien actif */
+@keyframes navGlow {
+    0% { box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3); }
+    50% { box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5); }
+    100% { box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3); }
+}
+
+.nav-links a.active {
+    animation: navGlow 3s infinite;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .floating-nav {
+        padding: 0.4rem;
+        bottom: 1.5rem;
+    }
+    
+    .nav-links a {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+        display: none;
+    }
+}

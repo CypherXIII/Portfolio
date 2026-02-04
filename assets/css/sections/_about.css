@@ -1,0 +1,194 @@
+/**
+ * About - Section À propos - Design premium
+ */
+
+/* Wrapper du profil - Meilleur espacement */
+.profile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Conteneur de l'image */
+.profile-image-container {
+    flex: 0 0 320px;
+}
+
+/* Wrapper hexagonal - Effet premium */
+.hexagon-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(var(--primary-rgb), 0.15);
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.hexagon-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--accent-secondary));
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    animation: rotateGradient 6s linear infinite paused;
+}
+
+@keyframes rotateGradient {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.hexagon-wrapper:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+.hexagon-shape {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    background: var(--card-bg);
+}
+
+.hexagon-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.5s var(--transition-smooth);
+}
+
+.hexagon-wrapper:hover .hexagon-img {
+    transform: scale(1.08);
+}
+
+.hexagon-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 35px 60px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(var(--primary-rgb), 0.2);
+}
+
+/* Contenu About */
+.about-content-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+/* Contextes professionnels - Design premium */
+.professional-contexts {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.08), rgba(var(--accent-rgb), 0.05));
+    border-radius: var(--radius-xl);
+    border-left: 4px solid;
+    border-image: linear-gradient(to bottom, var(--primary-color), var(--accent-color)) 1;
+    backdrop-filter: blur(var(--glass-blur));
+    position: relative;
+    overflow: hidden;
+}
+
+.professional-contexts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.professional-contexts h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 1.25rem;
+    color: var(--text-color);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.professional-contexts h4::before {
+    content: '\f1b0';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-light);
+    font-size: 1rem;
+}
+
+/* Liste des contextes - Style pill moderne */
+.context-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+}
+
+.context-item {
+    background: rgba(var(--primary-rgb), 0.12);
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--text-color);
+    border: 1px solid rgba(var(--primary-rgb), 0.25);
+    transition: all var(--transition-speed) var(--transition-smooth);
+    cursor: default;
+}
+
+.context-item:hover {
+    background: rgba(var(--primary-rgb), 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.2);
+    border-color: var(--primary-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .profile-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image-container {
+        flex: 0 0 auto;
+    }
+    
+    .about-content-wrapper {
+        min-width: 100%;
+    }
+    
+    .professional-contexts {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hexagon-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+}

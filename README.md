@@ -1,8 +1,10 @@
 # Portfolio - Marie Challet
 
-## Description
+> Site web personnel présentant mon parcours, mes compétences et mes projets.
 
-Ce portfolio présente mes compétences et mes projets en data science, business intelligence et cybersécurité. Il s'agit d'un site web statique conçu pour mettre en valeur un parcours professionnel avec une interface moderne et interactive.
+## À propos
+
+Ce portfolio est mon site web personnel. Il présente mes compétences et mes projets en data science, business intelligence et cybersécurité. Il s'agit d'un site web statique conçu pour mettre en valeur mon parcours professionnel avec une interface moderne et interactive.
 
 ## Technologies utilisées
 
@@ -87,53 +89,6 @@ Chaque module est indépendant et suit le pattern Module :
 - **Scroll** - Navigation, progression, back-to-top
 - **CertificationCircles** - Cercles animés de progression
 
-## Installation
-
-1. Clonez ce dépôt ou téléchargez-le sous forme d'archive
-2. Aucune dépendance à installer, tous les scripts sont chargés via CDN
-3. Ouvrez `index.html` dans un navigateur web moderne
-
-Pour le développement:
-
-- Utilisez un éditeur de code comme VS Code
-- Pour modifier les styles, éditez les fichiers dans `assets/css/`
-- Pour modifier les comportements, éditez les modules dans `assets/js/modules/`
-- Le fichier `main.js` gère l'initialisation de tous les modules
-
-## Personnalisation
-
-### Modifier les couleurs
-
-Éditez les variables dans `assets/css/base/_variables.css` :
-
-```css
-:root {
-    --primary: #00b4d8;
-    --primary-dark: #0077b6;
-    --accent: #f72585;
-    /* ... */
-}
-```
-
-### Ajouter un nouveau projet
-
-1. Ouvrez `index.html`
-2. Repérez la section "projects-grid"
-3. Ajoutez un nouveau bloc de projet en suivant le modèle existant:
-
-```html
-<div class="project-card" data-category="categorie1 categorie2" data-aos="fade-up">
-    <div class="project-card-inner">
-        <!-- Contenu du projet -->
-    </div>
-</div>
-```
-
-### Modifier les catégories
-
-1. Mettez à jour les boutons de filtre dans la section "skills-filter"
-2. Modifiez les attributs `data-category` des projets correspondants
-
 ## Fonctionnalités
 
 - Design responsive adapté à tous les appareils
@@ -147,4 +102,5 @@ Pour le développement:
 
 ## Licence
 
-Tous droits réservés - Marie Challet
+© 2026 Marie Challet — Tous droits réservés.  
+Ce dépôt est public à titre de présentation. Le code et le contenu ne sont pas destinés à être réutilisés sans autorisation.

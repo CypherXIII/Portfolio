@@ -140,7 +140,7 @@ const Animation = {
 const TypedText = {
     config: {
         texts: [
-            "Apprentie Ingénieure DevSecOps",
+            "Apprentie Ingénieure DevSecOps & IT",
             "Future Ingénieure en Cybersécurité",
             "Data Engineer",
             "BI Developer"
@@ -425,19 +425,97 @@ const ProjectCards = {
     },
 
     bindDetailButtons() {
-        Utils.$$('.project-details-btn').forEach(btn => {
+        const allButtons = Utils.$$('.project-details-btn');
+        
+        // Ajouter chevron et préparer chaque bouton
+        allButtons.forEach(btn => {
+            // Ajouter l'icône chevron si pas déjà présente
+            if (!btn.querySelector('.chevron-icon')) {
+                const label = document.createElement('span');
+                label.textContent = btn.textContent.trim();
+                const chevron = document.createElement('i');
+                chevron.className = 'fas fa-chevron-down chevron-icon';
+                btn.textContent = '';
+                btn.appendChild(label);
+                btn.appendChild(chevron);
+            }
+            
+            // Préparer le contenu des détails
+            const card = btn.closest('.project-card-inner');
+            const details = card?.querySelector('.project-details-content');
+            if (!details) return;
+            
+            // Supprimer display:none et utiliser max-height
+            details.style.display = '';
+            
+            // Ajouter bouton fermer en bas si pas déjà présent
+            if (!details.querySelector('.project-details-close')) {
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'project-details-close';
+                closeBtn.innerHTML = '<i class="fas fa-chevron-up"></i> Réduire';
+                closeBtn.addEventListener('click', () => btn.click());
+                details.appendChild(closeBtn);
+            }
+        });
+        
+        // Gérer le clic sur chaque bouton
+        allButtons.forEach(btn => {
             btn.addEventListener('click', function() {
                 const card = this.closest('.project-card-inner');
                 const details = card?.querySelector('.project-details-content');
                 if (!details) return;
                 
-                const isOpen = details.style.display === 'block';
-                this.textContent = isOpen ? 'Voir détails' : 'Masquer détails';
+                const isOpen = this.classList.contains('active');
+                const label = this.querySelector('span');
                 
                 if (isOpen) {
-                    Animation.slideUp(details, 300);
+                    // Fermer ce panneau
+                    this.classList.remove('active');
+                    if (label) label.textContent = 'Voir détails';
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                    requestAnimationFrame(() => {
+                        details.style.maxHeight = '0px';
+                        details.classList.remove('open');
+                    });
                 } else {
-                    Animation.slideDown(details, 300);
+                    // Fermer les autres panneaux ouverts (accordion)
+                    allButtons.forEach(otherBtn => {
+                        if (otherBtn !== this && otherBtn.classList.contains('active')) {
+                            const otherCard = otherBtn.closest('.project-card-inner');
+                            const otherDetails = otherCard?.querySelector('.project-details-content');
+                            if (otherDetails) {
+                                otherBtn.classList.remove('active');
+                                const otherLabel = otherBtn.querySelector('span');
+                                if (otherLabel) otherLabel.textContent = 'Voir détails';
+                                otherDetails.style.maxHeight = otherDetails.scrollHeight + 'px';
+                                requestAnimationFrame(() => {
+                                    otherDetails.style.maxHeight = '0px';
+                                    otherDetails.classList.remove('open');
+                                });
+                            }
+                        }
+                    });
+                    
+                    // Ouvrir ce panneau
+                    this.classList.add('active');
+                    if (label) label.textContent = 'Masquer détails';
+                    details.classList.add('open');
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                    
+                    // Retirer max-height après la transition pour permettre le contenu dynamique
+                    setTimeout(() => {
+                        if (this.classList.contains('active')) {
+                            details.style.maxHeight = 'none';
+                        }
+                    }, 550);
+                    
+                    // Scroll fluide vers le contenu
+                    setTimeout(() => {
+                        const cardEl = this.closest('.project-card');
+                        if (cardEl) {
+                            cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    }, 100);
                 }
             });
         });

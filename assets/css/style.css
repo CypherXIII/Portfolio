@@ -1026,7 +1026,7 @@ a:hover {
 /* Nouvelle grille de projets */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -1100,6 +1100,33 @@ a:hover {
     background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
     color: #1e293b;
     border: none;
+}
+
+/* Badge année du projet */
+.project-year-badge {
+    position: absolute;
+    top: -4px;
+    left: 16px;
+    padding: 6px 10px 8px 10px;
+    border-radius: 0 0 4px 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg, #64748b 0%, #475569 100%);
+    color: white;
+}
+.project-year-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -6px;
+    border-style: solid;
+    border-width: 0 0 6px 6px;
+    border-color: transparent;
+    border-left-color: #334155;
 }
 
 .project-card-inner {
@@ -1365,6 +1392,19 @@ a:hover {
     transition: all 0.35s var(--transition-spring);
     position: relative;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-details-btn .chevron-icon {
+    display: inline-block;
+    transition: transform 0.35s ease;
+    font-size: 0.75rem;
+}
+
+.project-details-btn.active .chevron-icon {
+    transform: rotate(180deg);
 }
 
 .project-details-btn::before {
@@ -1386,6 +1426,17 @@ a:hover {
 
 .project-details-btn:hover::before {
     opacity: 1;
+}
+
+.project-details-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+.project-details-btn.active::before {
+    opacity: 0;
 }
 
 .project-status {
@@ -1454,13 +1505,26 @@ a:hover {
     margin-right: 0.25rem;
 }
 
-/* Détails cachés */
+/* Détails cachés - animation améliorée */
 .project-details-content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.35s ease 0.1s,
+                margin-top 0.3s ease,
+                padding-top 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.project-details-content.open {
+    opacity: 1;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
-    animation: slideDown 0.3s ease-out forwards;
 }
 
 .project-details-content h4 {
@@ -1475,6 +1539,31 @@ a:hover {
     margin-bottom: 0.5rem;
     color: var(--text-color);
     font-weight: 600;
+}
+
+/* Bouton fermer en bas des détails */
+.project-details-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.project-details-close:hover {
+    background: var(--bg-tertiary, var(--bg-secondary));
+    color: var(--primary-light);
+    border-color: var(--primary-color);
 }
 
 .details-section {

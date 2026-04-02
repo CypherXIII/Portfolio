@@ -29,11 +29,11 @@ const App = {
     config: {
         debug: false,
         typedStrings: [
-            'Data & BI Developer',
-            'Business Intelligence',
-            'Data Analysis',
-            'Machine Learning',
-            'Cybersécurité'
+            'Future Ingénieure en Cybersécurité',
+            'Apprentie Ingénieure DevSecOps & IT',
+            'Incident Response | SOC | Threat Intelligence',
+            'Data Engineering & Business Intelligence',
+            'INSA CVL — SecNumEdu ANSSI'
         ],
         particlesEnabled: true,
         reducedMotion: false

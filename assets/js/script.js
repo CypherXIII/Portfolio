@@ -140,10 +140,11 @@ const Animation = {
 const TypedText = {
     config: {
         texts: [
-            "Apprentie Ingénieure DevSecOps & IT",
             "Future Ingénieure en Cybersécurité",
-            "Data Engineer",
-            "BI Developer"
+            "Apprentie Ingénieure DevSecOps & IT",
+            "Incident Response | SOC | Threat Intelligence",
+            "Data Engineering & Business Intelligence",
+            "INSA CVL — SecNumEdu ANSSI"
         ],
         typingDelay: 100,
         erasingDelay: 50,

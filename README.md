@@ -95,7 +95,7 @@ Chaque module est indépendant et suit le pattern Module :
 ## Sections du portfolio
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | **Accueil** | Hero avec effet de particules, texte tapé et CTA |
 | **À propos** | Présentation, domaines de prédilection |
 | **Formation** | Timeline : INSA CVL (Ingénieur Sécurité), B.U.T. SD (Major), engagement associatif |
@@ -107,7 +107,7 @@ Chaque module est indépendant et suit le pattern Module :
 ## Projets présentés
 
 | Projet | Catégories | Type |
-|---|---|---|
+| --- | --- | --- |
 | FormaSup BI Platform | BI, Data Engineering, Cybersécurité | Pro |
 | Portfolio Personnel | Développement | Personnel |
 | Audit base de données OFA Link | Data Engineering, Data Science | Pro |

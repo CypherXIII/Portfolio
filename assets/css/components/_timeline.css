@@ -31,6 +31,12 @@
     margin-left: -2px;
     border-radius: var(--radius-full);
     box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+    animation: timelineGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes timelineGlow {
+    0% { box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.2); }
+    100% { box-shadow: 0 0 25px rgba(var(--primary-rgb), 0.45); }
 }
 
 /* Élément de timeline */

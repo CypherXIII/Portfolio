@@ -102,19 +102,20 @@
     color: transparent;
     text-shadow: none;
 }
-}
 
-/* Ligne sous le titre */
+/* Ligne sous le titre - Animée avec glow */
 .title-underline {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--accent-secondary));
     margin: 0 auto;
     border-radius: 2px;
+    position: relative;
+    box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.3);
 }
 
 .title-underline.animated {
-    transition: width 0.6s ease;
+    transition: width 0.6s var(--transition-smooth);
 }
 
 .title-underline.animated.visible {

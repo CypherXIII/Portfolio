@@ -140,10 +140,10 @@ const Animation = {
 const TypedText = {
     config: {
         texts: [
-            "Future Ingénieure en Cybersécurité",
-            "Apprentie Ingénieure DevSecOps & IT",
-            "Incident Response | SOC | Threat Intelligence",
-            "Data Engineering & Business Intelligence",
+            "Future Ingénieure en Cybersécurité Défensive",
+            "Profil Hybride Data × Cybersécurité",
+            "SOC | CERT/CSIRT | Threat Intelligence | Forensic",
+            "La Data au service de la Cybersécurité",
             "INSA CVL — SecNumEdu ANSSI"
         ],
         typingDelay: 100,

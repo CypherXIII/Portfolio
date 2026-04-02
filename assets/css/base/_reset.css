@@ -18,6 +18,17 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+/* Sélection de texte personnalisée */
+::selection {
+    background: rgba(var(--primary-rgb), 0.3);
+    color: var(--text-color);
+}
+
+::-moz-selection {
+    background: rgba(var(--primary-rgb), 0.3);
+    color: var(--text-color);
+}
+
 body {
     font-family: var(--font-primary);
     color: var(--text-color);

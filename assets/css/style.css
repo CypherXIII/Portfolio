@@ -2748,15 +2748,24 @@ a:hover {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--accent-secondary));
+    background-size: 200% 100%;
+    animation: gradientSlide 3s ease infinite;
     opacity: 0;
     transition: opacity 0.3s;
 }
 
+@keyframes gradientSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-shadow-hover);
-    border-color: rgba(var(--primary-rgb), 0.2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--card-shadow-hover),
+                0 0 30px rgba(var(--primary-rgb), 0.1);
+    border-color: rgba(var(--primary-rgb), 0.25);
 }
 
 .cert-card:hover::before {
@@ -2819,13 +2828,29 @@ a:hover {
     position: relative;
     background: var(--card-bg);
     border: 3px solid rgba(var(--primary-rgb), 0.3);
-    transition: all 0.3s;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.language-level::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--primary-color), var(--accent-color), var(--accent-secondary), var(--primary-color));
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+    filter: blur(6px);
 }
 
 .language-level:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(var(--primary-rgb), 0.25);
+    transform: scale(1.1);
+}
+
+.language-level:hover::after {
+    opacity: 0.5;
 }
 
 .language-level span {
@@ -2851,7 +2876,7 @@ a:hover {
 /* ============= Hero CTA Buttons ============= */
 .hero-cta {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
     margin-top: 2rem;
     flex-wrap: wrap;
@@ -2861,48 +2886,62 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.85rem 1.75rem;
+    padding: 0.9rem 2rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.35s var(--transition-smooth);
     letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.6s ease;
+}
+
+.hero-btn:hover::before {
+    left: 100%;
 }
 
 .hero-btn.primary {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
-    box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.4);
+    box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
     border: none;
 }
 
 .hero-btn.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.5);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(var(--primary-rgb), 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .hero-btn.secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-light);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
 }
 
 .hero-btn.secondary:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    background: rgba(var(--accent-rgb), 0.1);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(var(--accent-rgb), 0.2);
 }
 
-/* ============= Hero Tagline ============= */
-.hero-tagline {
-    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 1rem auto 0;
-    line-height: 1.6;
-    opacity: 0.85;
-}
+/* ============= Hero Tagline - Overridden in _hero.css ============= */
 
 /* ============= Section separator ============= */
 .section-separator {

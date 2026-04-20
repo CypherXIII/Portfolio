@@ -560,9 +560,9 @@
                                 Cybersécurité</span>
                         </div>
 
-                        <p class="project-summary">Plateforme BI production-ready basée sur Apache Superset 6.0.0 avec
-                            traduction française complète, outils de migration MariaDB→PostgreSQL, et déploiement Docker
-                            sécurisé pour FormaSup Auvergne et ses partenaires académiques.</p>
+                        <p class="project-summary">Plateforme BI production-ready v3.0.0 basée sur Apache Superset 6.0.0 avec
+                            traduction française complète, pipeline GitLab CI/CD (lint → test → build → deploy → monitor),
+                            310 tests automatisés, et déploiement Docker sécurisé pour FormaSup Auvergne.</p>
 
                         <div class="project-footer">
                             <button class="project-details-btn">Voir détails</button>
@@ -575,10 +575,10 @@
                         <!-- Contenu détaillé (caché par défaut) -->
                         <div class="project-details-content">
                             <h4>Description détaillée</h4>
-                            <p>Plateforme Business Intelligence complète conçue pour FormaSup Auvergne et ses
+                            <p>Plateforme Business Intelligence production-ready <strong>v3.0.0</strong> conçue pour FormaSup Auvergne et ses
                                 partenaires académiques (UCA, Clermont School of Business, ISRP). Ce projet fournit des
                                 tableaux de bord analytiques pour l'analyse des données éducatives de l'alternance, avec
-                                une interface 100% française et des outils de migration de données robustes.</p>
+                                une interface 100% française, un pipeline DevSecOps complet, et des outils d'administration opérationnelle.</p>
 
                             <div class="details-section">
                                 <h5>Fonctionnalités principales</h5>
@@ -586,65 +586,71 @@
                                     <li><strong>Apache Superset 6.0.0 :</strong> Plateforme BI complète avec SQL Lab,
                                         dashboards interactifs et charts avancés</li>
                                     <li><strong>Traduction française complète :</strong> Interface 100% française
-                                        (correction du bug Superset #35569)</li>
-                                    <li><strong>Migration de données :</strong> Outils MariaDB vers PostgreSQL avec
-                                        déduplication intelligente</li>
+                                        (correction du bug Superset #35569, patches côté client)</li>
+                                    <li><strong>Migration de données :</strong> ETL MariaDB → PostgreSQL avec
+                                        déduplication, batch processing et rate limiting</li>
                                     <li><strong>Enrichissement API :</strong> Intégration APIs gouvernementales (INSEE,
                                         Recherche Entreprises) pour données entreprises</li>
                                     <li><strong>Validation SIRET :</strong> Correction et validation automatique avec
                                         rapports détaillés</li>
+                                    <li><strong>App desktop Windows :</strong> <code>lanceur-vps.py</code> — interface
+                                        d'administration VPS compilée en .exe autonome (PyInstaller + customtkinter)</li>
+                                </ul>
+                            </div>
+
+                            <div class="details-section">
+                                <h5>Pipeline CI/CD — GitLab (5 stages)</h5>
+                                <ul>
+                                    <li><strong>lint :</strong> Ruff (Python), pip-audit (audit de dépendances CVE)</li>
+                                    <li><strong>test :</strong> pytest avec couverture, rapports JUnit XML</li>
+                                    <li><strong>build :</strong> Build des images Docker et push vers GitLab Container Registry</li>
+                                    <li><strong>deploy :</strong> Déploiement automatisé sur VPS via SSH</li>
+                                    <li><strong>monitor :</strong> Trivy — scan de vulnérabilités des images (critiques uniquement, unfixed ignorés)</li>
                                 </ul>
                             </div>
 
                             <div class="details-section">
                                 <h5>Architecture technique</h5>
                                 <ul>
-                                    <li><strong>Superset (superset-fsa) :</strong> Interface BI et SQL Lab sur port 8088
-                                    </li>
-                                    <li><strong>PostgreSQL 17 (postgres-fsa) :</strong> Base de données métier sur port
-                                        5432</li>
-                                    <li><strong>PostgreSQL 15 (superset-db) :</strong> Métadonnées Superset sur port
-                                        5442</li>
-                                    <li><strong>Service Migration :</strong> ETL automatisé avec batch processing et
-                                        rate limiting</li>
-                                    <li><strong>Service Backup :</strong> Sauvegardes quotidiennes automatisées à 3h
-                                        (configurable)</li>
+                                    <li><strong>Superset (superset-fsa) :</strong> Interface BI et SQL Lab — reverse proxy Nginx + HTTPS/SSL</li>
+                                    <li><strong>PostgreSQL 17 (postgres-fsa) :</strong> Base de données métier</li>
+                                    <li><strong>PostgreSQL 15 (superset-db) :</strong> Métadonnées Superset</li>
+                                    <li><strong>Service Migration :</strong> ETL automatisé avec batch processing</li>
+                                    <li><strong>Service Backup :</strong> Sauvegardes quotidiennes à 3h (cron configurable)</li>
+                                    <li><strong>Portainer 2.39.1 :</strong> Interface de gestion des conteneurs Docker</li>
                                 </ul>
                             </div>
 
                             <div class="details-section">
-                                <h5>Sécurité et bonnes pratiques</h5>
+                                <h5>Sécurité (approche DevSecOps)</h5>
                                 <ul>
-                                    <li><strong>Configuration par environnement :</strong> Aucun secret codé en dur,
-                                        tout via variables d'environnement</li>
-                                    <li><strong>Protection CSRF :</strong> Activée par défaut dans Superset</li>
-                                    <li><strong>Isolation réseau :</strong> Services communiquant via réseau Docker
-                                        interne</li>
-                                    <li><strong>Health checks :</strong> Récupération automatique des services</li>
-                                    <li><strong>Requêtes paramétrées :</strong> Prévention des injections SQL dans les
-                                        outils de migration</li>
+                                    <li><strong>Trivy :</strong> Scan de vulnérabilités CVE des images Docker en CI</li>
+                                    <li><strong>pip-audit :</strong> Audit de dépendances Python à chaque push</li>
+                                    <li><strong>Secrets via variables d'environnement :</strong> Aucun secret codé en dur</li>
+                                    <li><strong>Protection CSRF :</strong> Activée dans Superset</li>
+                                    <li><strong>Isolation réseau Docker :</strong> Services sur réseau interne uniquement</li>
+                                    <li><strong>Requêtes paramétrées :</strong> Prévention des injections SQL</li>
+                                    <li><strong>Monitoring sécurité :</strong> Logs structurés, health-check automatisé</li>
                                 </ul>
                             </div>
 
                             <div class="details-section">
                                 <h5>Sauvegarde et récupération</h5>
                                 <ul>
-                                    <li>Sauvegardes quotidiennes automatisées (expression cron configurable)</li>
-                                    <li>Archives compressées tar.gz (-50% stockage)</li>
+                                    <li>Sauvegardes quotidiennes automatisées (cron configurable)</li>
+                                    <li>Archives compressées tar.gz (-50% stockage) avec vérification SHA256</li>
                                     <li>Sauvegardes par schéma pour restauration granulaire</li>
                                     <li>Rétention configurable (7 jours par défaut)</li>
-                                    <li>Script de restauration en une commande</li>
+                                    <li>Script de restauration en une commande + 14 scripts ops (health-check, update, cleanup…)</li>
                                 </ul>
                             </div>
 
                             <div class="details-section">
                                 <h5>Tests et qualité</h5>
                                 <ul>
-                                    <li><strong>Migration :</strong> 106 tests, couverture 80%+ (Database, API, SIRET,
-                                        OPCO)</li>
-                                    <li><strong>Superset :</strong> 25 tests, couverture 85%+ (Configuration et build)
-                                    </li>
-                                    <li>Scripts de test PowerShell et Bash fournis</li>
+                                    <li><strong>Migration :</strong> 149 tests, couverture 80%+ (Database, API, SIRET, OPCO)</li>
+                                    <li><strong>Superset :</strong> 161 tests, couverture 85%+ (configuration, build, assets)</li>
+                                    <li><strong>Total : 310 tests automatisés</strong> — rapports JUnit XML en artefacts CI</li>
                                 </ul>
                             </div>
 
@@ -654,23 +660,26 @@
                                     <span class="tech-tag"><i class="fas fa-chart-bar"></i> Apache Superset 6.0.0</span>
                                     <span class="tech-tag"><i class="fab fa-docker"></i> Docker & Docker Compose</span>
                                     <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL 17 & 15</span>
-                                    <span class="tech-tag"><i class="fab fa-python"></i> Python 3.10+</span>
-                                    <span class="tech-tag"><i class="fab fa-js"></i> TypeScript</span>
-                                    <span class="tech-tag"><i class="fas fa-flask"></i> pytest</span>
+                                    <span class="tech-tag"><i class="fab fa-python"></i> Python 3.12</span>
+                                    <span class="tech-tag"><i class="fab fa-gitlab"></i> GitLab CI/CD</span>
+                                    <span class="tech-tag"><i class="fas fa-shield-virus"></i> Trivy</span>
+                                    <span class="tech-tag"><i class="fas fa-bug"></i> pip-audit</span>
+                                    <span class="tech-tag"><i class="fas fa-flask"></i> pytest (310 tests)</span>
                                     <span class="tech-tag"><i class="fas fa-server"></i> Nginx</span>
                                     <span class="tech-tag"><i class="fas fa-lock"></i> HTTPS/SSL</span>
+                                    <span class="tech-tag"><i class="fas fa-cubes"></i> Portainer 2.39.1</span>
+                                    <span class="tech-tag"><i class="fas fa-desktop"></i> PyInstaller (.exe)</span>
                                 </div>
                             </div>
 
                             <div class="details-section">
                                 <h5>Soft Skills mobilisées</h5>
                                 <ul>
-                                    <li><strong>Autonomie :</strong> Architecture et développement complet en
-                                        indépendance</li>
-                                    <li><strong>Rigueur :</strong> Tests automatisés et couverture de code élevée</li>
-                                    <li><strong>Communication :</strong> Documentation technique détaillée</li>
-                                    <li><strong>Résolution de problèmes :</strong> Intégration de technologies complexes
-                                    </li>
+                                    <li><strong>Autonomie :</strong> Architecture, développement et mise en production complète en indépendance</li>
+                                    <li><strong>Rigueur :</strong> 310 tests automatisés, couverture élevée, pipeline CI bloquant sur erreur</li>
+                                    <li><strong>Communication :</strong> Documentation technique multi-niveaux (RUNBOOK opérateur, DEV_RULES, INCIDENT playbook)</li>
+                                    <li><strong>Résolution de problèmes :</strong> Diagnostic d'incidents VPS production, correction de bugs upstream Superset</li>
+                                    <li><strong>Livraison orientée utilisateur :</strong> App desktop .exe pour non-techniciens, interface 100% française</li>
                                 </ul>
                             </div>
 

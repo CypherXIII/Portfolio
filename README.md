@@ -108,7 +108,7 @@ Chaque module est indépendant et suit le pattern Module :
 
 | Projet | Catégories | Type |
 | --- | --- | --- |
-| FormaSup BI Platform | BI, Data Engineering, Cybersécurité | Pro |
+| FormaSup BI Platform v3.0.0 | BI, Data Engineering, Cybersécurité, DevSecOps | Pro |
 | Portfolio Personnel | Développement | Personnel |
 | Audit base de données OFA Link | Data Engineering, Data Science | Pro |
 | Automatisation de Contrôle FEC | Développement, Data Engineering | Pro |

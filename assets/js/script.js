@@ -100,37 +100,17 @@ const Animation = {
         }, duration + 10);
     },
 
-    /**
-     * Animation fade in avec GSAP ou fallback CSS
-     */
     fadeIn(element, duration = 0.5) {
         if (!element) return;
-        
-        if (window.gsap) {
-            gsap.to(element, { opacity: 1, duration });
-        } else {
-            element.style.transition = `opacity ${duration}s ease`;
-            element.style.opacity = 1;
-        }
+        element.style.transition = `opacity ${duration}s ease`;
+        element.style.opacity = 1;
     },
 
-    /**
-     * Animation fade out avec GSAP ou fallback CSS
-     */
     fadeOut(element, duration = 0.5, callback) {
         if (!element) return;
-        
-        if (window.gsap) {
-            gsap.to(element, { 
-                opacity: 0, 
-                duration, 
-                onComplete: callback 
-            });
-        } else {
-            element.style.transition = `opacity ${duration}s ease`;
-            element.style.opacity = 0;
-            if (callback) setTimeout(callback, duration * 1000);
-        }
+        element.style.transition = `opacity ${duration}s ease`;
+        element.style.opacity = 0;
+        if (callback) setTimeout(callback, duration * 1000);
     }
 };
 
@@ -206,8 +186,12 @@ const TypedText = {
 // ============================================================================
 const Particles = {
     init() {
-        if (typeof particlesJS === 'undefined' || !Utils.$('#particles-js')) return;
-        
+        const container = Utils.$('#particles-js');
+        if (typeof particlesJS === 'undefined' || !container) return;
+
+        const existingCanvas = container.querySelector('canvas');
+        if (existingCanvas) existingCanvas.remove();
+
         const particleCount = Utils.isMobile() ? 30 : 80;
         
         particlesJS('particles-js', {
@@ -574,24 +558,30 @@ const Scroll = {
         this.backToTopBtn = Utils.$('#back-to-top');
         this.bindScrollEvents();
         this.bindSmoothScroll();
-        this.initScrollProgress();
         this.initScrollObserver();
     },
 
     bindScrollEvents() {
+        const progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        document.body.appendChild(progress);
+
         const handleScroll = Utils.debounce(() => {
-            const scrollY = window.pageYOffset;
-            
-            // Back to top button visibility
+            const scrollY = window.scrollY;
+            const scrollHeight = document.body.scrollHeight - window.innerHeight;
+
             if (this.backToTopBtn) {
                 this.backToTopBtn.classList.toggle('visible', scrollY > 300);
                 this.backToTopBtn.classList.toggle('show', scrollY > 300);
             }
-        }, 100);
+
+            if (scrollHeight > 0) {
+                progress.style.width = `${(scrollY / scrollHeight) * 100}%`;
+            }
+        }, 50);
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        
-        // Back to top click
+
         this.backToTopBtn?.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -602,24 +592,10 @@ const Scroll = {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (!href?.startsWith('#')) return;
-                
                 e.preventDefault();
-                const target = Utils.$(href);
-                target?.scrollIntoView({ behavior: 'smooth' });
+                Utils.$(href)?.scrollIntoView({ behavior: 'smooth' });
             });
         });
-    },
-
-    initScrollProgress() {
-        const progress = document.createElement('div');
-        progress.className = 'scroll-progress';
-        document.body.appendChild(progress);
-        
-        window.addEventListener('scroll', Utils.debounce(() => {
-            const scrollHeight = document.body.scrollHeight - window.innerHeight;
-            const scrolled = (window.pageYOffset / scrollHeight) * 100;
-            progress.style.width = `${scrolled}%`;
-        }, 10), { passive: true });
     },
 
     initScrollObserver() {
@@ -701,15 +677,10 @@ const CertificationCircles = {
 
     animate(circle, circumference, percent) {
         const offset = circumference - (percent / 100 * circumference);
-        
-        if (window.gsap) {
-            gsap.to(circle, { strokeDashoffset: offset, duration: 1.5, ease: "power2.out" });
-        } else {
-            setTimeout(() => {
-                circle.style.transition = 'stroke-dashoffset 1.5s ease-out';
-                circle.style.strokeDashoffset = offset;
-            }, 300);
-        }
+        setTimeout(() => {
+            circle.style.transition = 'stroke-dashoffset 1.5s ease-out';
+            circle.style.strokeDashoffset = offset;
+        }, 300);
     }
 };
 

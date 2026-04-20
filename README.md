@@ -8,19 +8,18 @@
 
 Étudiante ingénieure en cybersécurité à l'INSA Centre Val de Loire (SecNumEdu ANSSI), ce portfolio présente mon profil hybride **cybersécurité défensive / data engineering**. Il regroupe mes expériences, formations, certifications et projets classés par compétences (cybersécurité, BI, data engineering, data science, développement, humanités).
 
-**Recherche une alternance de 24 mois en cybersécurité défensive dès septembre 2026** — Bourges / Clermont-Ferrand.
+**Disponible pour une alternance de 24 mois dès septembre 2026** — cybersécurité défensive, SOC, CERT/CSIRT, DevSecOps — Bourges / Clermont-Ferrand.
 
 ## Technologies utilisées
 
 - HTML5 sémantique (SEO, accessibilité ARIA, données structurées JSON-LD)
-- CSS3 (architecture ITCSS, variables CSS, flexbox, grid, animations)
-- JavaScript vanilla (architecture modulaire ES6)
+- CSS3 (variables CSS, flexbox, grid, animations, `prefers-reduced-motion`)
+- JavaScript vanilla (modules inline ES6)
 - Bibliothèques :
   - [Font Awesome 6.4](https://fontawesome.com/) — icônes
-  - [AOS](https://michalsnik.github.io/aos/) — Animate On Scroll
-  - [Animate.css](https://animate.style/) — animations CSS
-  - [Particles.js](https://vincentgarreau.com/particles.js/) — effets de particules
-  - [PDF.js](https://mozilla.github.io/pdf.js/) — visualisation de PDF
+  - [AOS 2.3.4](https://michalsnik.github.io/aos/) — Animate On Scroll
+  - [Particles.js 2.0.0](https://vincentgarreau.com/particles.js/) — effets de particules
+  - [PDF.js 3.11.174](https://mozilla.github.io/pdf.js/) — visualisation de PDF
 
 ## Architecture du projet
 
@@ -28,69 +27,41 @@
 
 ```txt
 Portfolio/
-├── index.html              # Page principale du portfolio
+├── index.html              # Page principale du portfolio (source unique)
 ├── README.md               # Ce fichier
 ├── assets/
 │   ├── css/
-│   │   ├── style.css       # Point d'entrée CSS (imports)
-│   │   ├── base/           # Styles fondamentaux
-│   │   │   ├── _variables.css   # Variables CSS (couleurs, espacements, etc.)
-│   │   │   ├── _reset.css       # Reset et normalisation
-│   │   │   └── _typography.css  # Typographie globale
-│   │   ├── layout/         # Mise en page
-│   │   │   ├── _container.css   # Conteneurs et grilles
-│   │   │   └── _sections.css    # Structure des sections
-│   │   ├── components/     # Composants réutilisables
-│   │   │   ├── _navigation.css  # Menu latéral et navigation
-│   │   │   ├── _buttons.css     # Boutons et CTA
-│   │   │   ├── _cards.css       # Cartes (projets, certifications)
-│   │   │   ├── _timeline.css    # Timeline expérience/formation
-│   │   │   ├── _modal.css       # Modal pour images/PDF
-│   │   │   └── _footer.css      # Footer et contact
-│   │   ├── sections/       # Styles spécifiques aux sections
-│   │   │   ├── _hero.css        # Section hero avec particules
-│   │   │   ├── _about.css       # Section à propos
-│   │   │   ├── _skills.css      # Section compétences
-│   │   │   └── _projects.css    # Section projets
-│   │   └── utilities/      # Utilitaires
-│   │       ├── _animations.css  # Animations et keyframes
-│   │       └── _responsive.css  # Media queries
+│   │   └── style.css       # Fichier CSS unique (variables, composants, sections, responsive)
 │   ├── js/
-│   │   ├── script.js       # Point d'entrée JS (initialisation)
-│   │   └── modules/        # Modules JavaScript
-│   │       ├── utils.js         # Fonctions utilitaires
-│   │       ├── animation.js     # Animations (slide, fade)
-│   │       ├── typedText.js     # Effet de texte tapé
-│   │       ├── particles.js     # Configuration des particules
-│   │       ├── modal.js         # Gestion des modales
-│   │       ├── projectCards.js  # Filtrage et interactions des projets
-│   │       ├── scroll.js        # Navigation et scroll
-│   │       └── certificationCircles.js  # Cercles de progression
+│   │   └── script.js       # Fichier JS unique (tous les modules inline)
 │   └── examples/           # Fichiers de démonstration (PDF, HTML, Python)
 ```
 
-### Architecture CSS (ITCSS)
+> **Note architecture** : Les sous-dossiers `assets/css/*/` et `assets/js/modules/` contiennent des fichiers de référence hérités. Seuls `style.css` et `script.js` sont chargés par le HTML.
 
-Le CSS suit l'architecture **ITCSS** (Inverted Triangle CSS) pour une gestion claire de la spécificité :
+### Architecture CSS
 
-1. **Base** — Variables, reset, typographie
-2. **Layout** — Conteneurs et structure de page
-3. **Components** — Éléments réutilisables (navigation, cartes, timeline, modal…)
-4. **Sections** — Styles spécifiques (hero, à propos, compétences, projets)
-5. **Utilities** — Animations et responsive
+Le fichier `style.css` est organisé en sections commentées :
 
-### Architecture JavaScript (Modules)
+1. **Variables** — Design tokens (couleurs, espacements, typographie, effets)
+2. **Reset & base** — Normalisation, typographie globale
+3. **Layout** — Conteneurs, grilles
+4. **Components** — Navigation, boutons, cartes, timeline, modal, footer
+5. **Sections** — Hero, à propos, compétences, projets, accréditations
+6. **Utilities** — Animations keyframes, responsive (breakpoints 360px → 1200px), `prefers-reduced-motion`
 
-Chaque module est indépendant et suit le pattern Module :
+### Architecture JavaScript
 
-- **utils.js** — Fonctions utilitaires (debounce, throttle…)
-- **animation.js** — Gestion des animations CSS
-- **typedText.js** — Effet de texte tapé dynamique
-- **particles.js** — Configuration Particles.js
-- **modal.js** — Système de modal (images, PDF)
-- **projectCards.js** — Filtrage par catégorie et interactions des projets
-- **scroll.js** — Navigation, barre de progression, back-to-top
-- **certificationCircles.js** — Cercles animés de progression
+Le fichier `script.js` expose des modules inline initialisés au `DOMContentLoaded` :
+
+- **Utils** — `debounce`, `throttle`, sélecteurs DOM
+- **Animation** — Gestion des classes d'animation CSS
+- **TypedText** — Effet de texte tapé dynamique
+- **Particles** — Configuration Particles.js (avec guard anti-duplication canvas)
+- **Modal** — Système de modal (images, PDF via PDF.js)
+- **ProjectCards** — Filtrage par catégorie et interactions des projets
+- **Scroll** — Navigation, barre de progression, back-to-top (handler unique debouncé 50ms)
+- **CertificationCircles** — Cercles animés de progression
 
 ## Sections du portfolio
 
@@ -98,10 +69,10 @@ Chaque module est indépendant et suit le pattern Module :
 | --- | --- |
 | **Accueil** | Hero avec effet de particules, texte tapé et CTA |
 | **À propos** | Présentation, domaines de prédilection |
-| **Formation** | Timeline : INSA CVL (Ingénieur Sécurité), B.U.T. SD (Major), engagement associatif |
+| **Formation** | Timeline : INSA CVL (Ingénieur Sécurité), B.U.T. SD (Major de promotion), engagement associatif |
 | **Expériences** | Apprentie DevSecOps & IT (FormaSup), Data Engineer & BI (FormaSup, BeBlocks) |
-| **Projets** | 17 projets filtrables par compétence (cyber, BI, data eng., data science, dev, humanités) |
-| **Certifications & Langues** | SecNumEdu ANSSI, Diplôme Ingénieur CTI, B.U.T. SD — Français natif, Anglais C1 |
+| **Projets** | 20 projets filtrables par compétence (cyber, BI, data eng., data science, dev, humanités) |
+| **Accréditations & Langues** | SecNumEdu ANSSI, Diplôme Ingénieur CTI, B.U.T. SD — Français natif, Anglais C1 (TOEIC 970/990) |
 | **Contact** | LinkedIn, GitHub |
 
 ## Projets présentés
@@ -131,17 +102,17 @@ Chaque module est indépendant et suit le pattern Module :
 
 ## Fonctionnalités
 
-- Design responsive (mobile, tablette, desktop)
+- Design responsive (mobile 360px → desktop 1200px+)
 - Filtrage des projets par catégorie de compétences
-- Animations fluides (AOS, Animate.css, CSS transitions)
+- Animations fluides (AOS, CSS keyframes, transitions)
 - Effet de particules interactif en arrière-plan
-- Effet de texte tapé dynamique (typed text)
+- Effet de texte tapé dynamique
 - Navigation latérale avec menu hamburger
 - Sections détaillées dépliables pour chaque projet
-- Visualisation de documents PDF intégrée
-- Accessibilité (ARIA, navigation clavier)
-- SEO optimisé (données structurées JSON-LD, meta tags Open Graph)
-- Optimisations de performance
+- Visualisation de documents PDF intégrée (PDF.js)
+- Accessibilité (ARIA, navigation clavier, `prefers-reduced-motion`)
+- SEO optimisé (JSON-LD Schema.org, meta Open Graph, Twitter Card, canonical)
+- Performance : handler scroll unique debouncé, guard anti-duplication canvas
 
 ## Licence
 

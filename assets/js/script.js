@@ -133,7 +133,8 @@ const TypedText = {
 
     state: {
         textIndex: 0,
-        charIndex: 0
+        charIndex: 0,
+        currentCycle: 0
     },
 
     elements: {
@@ -176,6 +177,8 @@ const TypedText = {
         } else {
             this.elements.cursor.classList.remove('typing');
             this.state.textIndex = (this.state.textIndex + 1) % texts.length;
+            if (this.state.textIndex === 0) this.state.currentCycle++;
+            if (this.state.currentCycle >= 3) return;
             setTimeout(() => this.type(), typingDelay + 500);
         }
     }
@@ -278,22 +281,29 @@ const Modal = {
     open(type, src) {
         const { modal, content } = this.elements;
         if (!modal || !content) return;
-        
+
+        this._triggerElement = document.activeElement;
+
         content.innerHTML = '<div class="loading-spinner"></div>';
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        
+        setTimeout(() => Utils.$('.close-modal')?.focus(), 50);
+
         if (!src || src === 'null' || src === 'undefined') {
             this.showError('Contenu non disponible');
             return;
         }
-        
+
         if (type === 'image') {
             this.loadImage(src);
         } else if (type === 'pdf') {
             this.loadPDF(src);
         } else {
-            content.innerHTML = `<div class="content-container">${src}</div>`;
+            content.innerHTML = '';
+            const container = document.createElement('div');
+            container.className = 'content-container';
+            container.textContent = src;
+            content.appendChild(container);
         }
     },
 
@@ -385,16 +395,22 @@ const Modal = {
     },
 
     showError(message) {
-        this.elements.content.innerHTML = `
-            <div class="error-message">
-                <i class="fas fa-exclamation-triangle"></i> ${message}
-            </div>`;
+        const div = document.createElement('div');
+        div.className = 'error-message';
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-exclamation-triangle';
+        icon.setAttribute('aria-hidden', 'true');
+        div.appendChild(icon);
+        div.appendChild(document.createTextNode(' ' + message));
+        this.elements.content.innerHTML = '';
+        this.elements.content.appendChild(div);
     },
 
     close() {
         if (this.elements.modal) {
             this.elements.modal.style.display = 'none';
             document.body.style.overflow = '';
+            this._triggerElement?.focus();
         }
     }
 };
@@ -414,6 +430,8 @@ const ProjectCards = {
         
         // Ajouter chevron et préparer chaque bouton
         allButtons.forEach(btn => {
+            btn.setAttribute('aria-expanded', 'false');
+
             // Ajouter l'icône chevron si pas déjà présente
             if (!btn.querySelector('.chevron-icon')) {
                 const label = document.createElement('span');
@@ -452,7 +470,8 @@ const ProjectCards = {
                 
                 const isOpen = this.classList.contains('active');
                 const label = this.querySelector('span');
-                
+                this.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+
                 if (isOpen) {
                     // Fermer ce panneau
                     this.classList.remove('active');
@@ -470,6 +489,7 @@ const ProjectCards = {
                             const otherDetails = otherCard?.querySelector('.project-details-content');
                             if (otherDetails) {
                                 otherBtn.classList.remove('active');
+                                otherBtn.setAttribute('aria-expanded', 'false');
                                 const otherLabel = otherBtn.querySelector('span');
                                 if (otherLabel) otherLabel.textContent = 'Voir détails';
                                 otherDetails.style.maxHeight = otherDetails.scrollHeight + 'px';
@@ -526,8 +546,12 @@ const ProjectCards = {
                 const filter = this.dataset.filter;
                 
                 // Update button states
-                buttons.forEach(b => b.classList.remove('active'));
+                buttons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
                 this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
                 
                 // Filter cards
                 cards.forEach(card => {

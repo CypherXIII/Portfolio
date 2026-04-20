@@ -19,6 +19,7 @@
     <meta name="twitter:description" content="Étudiante ingénieure en cybersécurité défensive (INSA CVL - SecNumEdu ANSSI) avec profil hybride data/sécurité." />
     <link rel="canonical" href="https://cypherxiii.github.io/Portfolio/" />
     <meta name="theme-color" content="#2563eb" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self'; worker-src https://cdnjs.cloudflare.com blob:; frame-src 'none'; object-src 'none'; base-uri 'self';" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%232563eb'/><stop offset='100%25' stop-color='%237c3aed'/></linearGradient></defs><path d='M50 5L15 20v25c0 24 15 42 35 50 20-8 35-26 35-50V20L50 5z' fill='url(%23g)'/><path d='M38 50l8 8 16-16' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
 
     <!-- Preconnect pour optimiser le chargement -->
@@ -72,6 +73,7 @@
 </head>
 
 <body class="is-preload">
+    <a href="#one" class="skip-to-main">Aller au contenu principal</a>
     <!-- SVG Definitions for gradients -->
     <svg class="defs-only">
         <defs>
@@ -1708,7 +1710,7 @@
                                 </a>
                             </div>
                             <div class="download-container">
-                                <a href="assets/examples/L'analyse  thématique  LDA .html" class="download-btn" target="_blank"
+                                <a href="assets/examples/L'analyse thématique LDA.html" class="download-btn" target="_blank"
                                     rel="noopener noreferrer">
                                     <i class="fa-solid fa-eye"></i>
                                     Rapport 2
@@ -2748,11 +2750,21 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-                    <p class="copyright">&copy; 2025 Marie Challet. Tous droits réservés.</p>
+                    <p class="copyright">&copy; 2026 Marie Challet. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal de prévisualisation -->
+    <div id="example-modal" class="modal" role="dialog" aria-modal="true" aria-label="Aperçu du document">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer l'aperçu">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div id="modal-content-container"></div>
+        </div>
+    </div>
 
     <!-- Back to top button -->
     <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top-btn">
